@@ -1,0 +1,24 @@
+Jun 17, 2019 12:08:21 PM com.muhib.log.TestLog main
+FINEST: all is well
+Jun 17, 2019 12:08:21 PM com.muhib.log.TestLog main
+SEVERE: Danger Servere Death 
+Jun 17, 2019 12:08:21 PM com.muhib.log.TestLog main
+WARNING: warning road blocked
+Jun 17, 2019 12:08:21 PM com.muhib.log.TestLog main
+INFO: hi this is just a Info
+Jun 17, 2019 12:08:21 PM com.muhib.log.TestLog main
+CONFIG: this a config Level
+Jun 17, 2019 12:08:21 PM com.muhib.log.TestLog main
+FINEST: all is well
+Jun 17, 2019 12:08:21 PM com.muhib.log.TestA buy
+FINEST: all is well
+Jun 17, 2019 12:08:21 PM com.muhib.log.TestA buy
+SEVERE: Danger Servere Death 
+Jun 17, 2019 12:08:21 PM com.muhib.log.TestA buy
+WARNING: warning road blocked
+Jun 17, 2019 12:08:21 PM com.muhib.log.TestA buy
+INFO: hi this is just a Info
+Jun 17, 2019 12:08:21 PM com.muhib.log.TestA buy
+CONFIG: this a config Level
+Jun 17, 2019 12:08:21 PM com.muhib.log.TestA buy
+FINEST: all is well

@@ -1,0 +1,16 @@
+Jun 17, 2019 12:48:18 PM com.muhib.log.FlipkartLogger main
+SEVERE: connection lost
+Jun 17, 2019 12:48:18 PM com.muhib.log.Register ConnectDB
+SEVERE: Logging failed
+Jun 17, 2019 12:48:18 PM com.muhib.log.Register ConnectDB
+WARNING: not recog.
+Jun 17, 2019 12:48:18 PM com.muhib.log.FlipkartLogger main
+SEVERE: failed to store
+Jun 17, 2019 12:48:18 PM com.muhib.log.Register store
+SEVERE: data loss
+Jun 17, 2019 12:48:18 PM com.muhib.log.Register store
+WARNING: retry
+Jun 17, 2019 12:48:18 PM com.muhib.log.Login navigate
+WARNING: cannot navigate
+Jun 17, 2019 12:48:18 PM com.muhib.log.Login validateUser
+SEVERE: invalid user
