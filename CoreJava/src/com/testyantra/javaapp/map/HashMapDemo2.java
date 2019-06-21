@@ -1,0 +1,41 @@
+package com.testyantra.javaapp.map;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+public class HashMapDemo2 {
+	public static void main(String[] args) {
+
+		HashMap<Character, Double> hm = new HashMap<Character, Double>();
+		hm.put('c', 11.2);
+		hm.put('a', 50.5);
+		hm.put('e', 33.6);
+		hm.put('d', 44.9);
+
+		for (Map.Entry<Character, Double> e : hm.entrySet()) {
+			Character key = e.getKey();
+			Double val = e.getValue();
+
+			System.out.println("Key --->" + key);
+			System.out.println("value -->" + val);
+
+		}
+
+		Set<Character> s = hm.keySet();
+		for (Character c : s) {
+			System.out.println("Key :-  " + c);
+		}
+
+		Collection<Double> ci = hm.values();
+		Iterator<Double> ii = ci.iterator();
+
+		while (ii.hasNext()) {
+			Double double1 = ii.next();
+			System.out.println(double1);
+		}
+
+	}
+}
