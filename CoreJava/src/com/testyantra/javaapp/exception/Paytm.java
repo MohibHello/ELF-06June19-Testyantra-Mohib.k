@@ -1,14 +1,17 @@
 package com.testyantra.javaapp.exception;
 
+import lombok.extern.java.Log;
+
+@Log
 public class Paytm extends KSRTC {
 
 	KSRTC k = new KSRTC();
 
 	void bookTicket() {
 
-		System.out.println("Booking ticket");
+		log.info("Booking ticket");
 		k.ticket();
-		System.out.println("Booking ");
+		log.info("Booking ");
 
 	}
 }

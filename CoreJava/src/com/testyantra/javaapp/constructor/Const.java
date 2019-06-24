@@ -1,24 +1,26 @@
 package com.testyantra.javaapp.constructor;
 
-public class Const
-{
-	public Const() 
-	{
-		System.out.println("this a constructor");
+import lombok.extern.java.Log;
+
+@Log
+public class Const {
+	public Const() {
+		log.info("this a constructor");
 	}
-	public Const(int x)
-	{
-		System.out.println(x);
+
+	public Const(int x) {
+		log.info("" + x);
 	}
-	public Const(double s)
-	{
-		System.out.println(s);
+
+	public Const(double s) {
+		log.info("" + s);
 	}
+
 	public static void main(String[] args) {
-		
+
 		new Const();
 		new Const(5);
 		new Const(5.5);
-		
+
 	}
 }

@@ -1,22 +1,21 @@
 package com.testyantra.javaapp.exception;
 
+import lombok.extern.java.Log;
+
+@Log
 class KSRTC {
 
 	void ticket() {
 
-		System.out.println("ticket generating");
-
-		/*
-		 * File f = new File("hello.txt"); f.createNewFile();
-		 */
+		log.info("ticket generating");
 
 		try {
 
-			System.out.println("exception not occured" + (10 / 0));
+			log.info("exception not occured" + (10 / 0));
 
-			System.out.println("ticket generated sucessfully");
+			log.info("ticket generated sucessfully");
 		} catch (ArithmeticException e) {
-			System.out.println("exception occured");
+			log.info("exception occured");
 
 		}
 

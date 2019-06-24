@@ -1,11 +1,12 @@
 package com.testyantra.javaapp.constructor;
 
-public class Animals
-{
-	
-void eat()
-{
-	System.out.println("eating food");
-}
+import lombok.extern.java.Log;
+
+@Log
+public class Animals {
+
+	void eat() {
+		log.info("eating food");
+	}
 
 }

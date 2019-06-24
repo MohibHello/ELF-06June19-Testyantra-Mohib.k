@@ -1,18 +1,20 @@
 package com.testyantra.javaapp.exception;
 
+import lombok.extern.java.Log;
+
+@Log
 public class TestCustom {
 
 	public static void main(String[] args) {
 
-		System.out.println("main started");
+		log.info("main started");
 		StringValidate s = new StringValidate();
 		try {
 			s.validate("hey");
 		} catch (CustomException e) {
-			System.out.println(e.getMessage());
-			;
+			log.info(e.getMessage());
 		}
-		System.out.println("main ended");
+		log.info("main ended");
 
 	}
 }

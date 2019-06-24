@@ -1,10 +1,12 @@
 package com.testyantra.javaapp.functions;
 
-public class Maths 
-{
-public static void main(String[] args) {
-	
-	System.out.println(5+10);
-	
-}
+import lombok.extern.java.Log;
+
+@Log
+public class Maths {
+	public static void main(String[] args) {
+
+		log.info("" + (5 + 10));
+
+	}
 }

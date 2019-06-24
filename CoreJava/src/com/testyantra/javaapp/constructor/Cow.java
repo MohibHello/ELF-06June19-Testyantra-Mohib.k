@@ -1,9 +1,10 @@
 package com.testyantra.javaapp.constructor;
 
-public class Cow extends Animals
-{
-void eat()
-{
-	System.out.println("eating grass");
-}
+import lombok.extern.java.Log;
+
+@Log
+public class Cow extends Animals {
+	void eat() {
+		log.info("eating grass");
+	}
 }

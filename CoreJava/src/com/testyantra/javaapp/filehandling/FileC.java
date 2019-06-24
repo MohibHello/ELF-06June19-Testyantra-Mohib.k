@@ -1,9 +1,11 @@
 package com.testyantra.javaapp.filehandling;
 
-
 import java.io.File;
 import java.io.IOException;
 
+import lombok.extern.java.Log;
+
+@Log
 public class FileC {
 
 	public static void main(String[] args) {
@@ -12,11 +14,11 @@ public class FileC {
 
 		try {
 			boolean res = f.createNewFile();
-			System.out.println("result : " + res);
-			System.out.println("done");
+			log.info("result : " + res);
+			log.info("done");
 
 		} catch (IOException e) {
-			e.printStackTrace();
+			log.warning("ioexception" + e);
 		}
 	}
 }

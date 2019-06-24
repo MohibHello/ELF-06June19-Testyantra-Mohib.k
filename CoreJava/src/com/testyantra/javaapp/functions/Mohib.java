@@ -1,9 +1,12 @@
 package com.testyantra.javaapp.functions;
 
+import lombok.extern.java.Log;
+
+@Log
 public class Mohib {
 
 	public static void main(String[] args) {
 
-		System.out.println("my name is Mohib");
+		log.info("my name is Mohib");
 	}
 }

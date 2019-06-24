@@ -1,19 +1,22 @@
 package com.testyantra.javaapp.functions;
 
+import lombok.extern.java.Log;
+
+@Log
 public class SampleProgram {
 
 	int a = 100;
 	String h = "ok";
 
 	void check() {
-		int a = 10;
-		String HhhhhH = "1233";
+		int a1 = 10;
+		String str = "1233";
 
-		System.out.println(a + "" + HhhhhH);
+		log.info(a1 + "" + str);
 
 	}
 
-	void Hello() {
-
+	void hello() {
+		log.info("hello");
 	}
 }

@@ -1,11 +1,14 @@
 package com.testyantra.javaapp.constructor;
 
+import lombok.extern.java.Log;
+
+@Log
 public class Gift {
 	void receive(Phone p) {
 		if (p instanceof IPhone) {
-			System.out.println("i love u");
+			log.info("i love u");
 		} else {
-			System.out.println("thk u bro");
+			log.info("thk u bro");
 		}
 	}
 }

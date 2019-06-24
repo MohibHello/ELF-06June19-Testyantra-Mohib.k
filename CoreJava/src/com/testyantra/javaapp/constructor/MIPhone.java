@@ -1,7 +1,10 @@
 package com.testyantra.javaapp.constructor;
 
+import lombok.extern.java.Log;
+
+@Log
 public class MIPhone extends Phone {
 	void ptype() {
-		System.out.println("MI Phone");
+		log.info("MI Phone");
 	}
 }

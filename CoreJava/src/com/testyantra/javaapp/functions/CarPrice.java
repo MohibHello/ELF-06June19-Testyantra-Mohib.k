@@ -1,21 +1,22 @@
 package com.testyantra.javaapp.functions;
 
-public class CarPrice
-{
-public static void main(String[] args) 
-{
-int exshowroomprice=570000;
-double rto=14.26;
-double insurance=9.26;
-int onroadprice=7_92_862;
+import lombok.extern.java.Log;
 
-double rto_ins=(exshowroomprice*rto)/100;
+@Log
+public class CarPrice {
+	public static void main(String[] args) {
+		int exshowroomprice = 570000;
+		double rto = 14.26;
+		double insurance = 9.26;
+		int onroadprice = 7_92_862;
 
-System.out.println("Ex-showroom Price (incl GST) :- "+exshowroomprice);
-System.out.println("RTO :- "+rto_ins);
-System.out.println("Insurance :- "+insurance);
-System.out.println("On-Road Price :- "+onroadprice);
-	
-}
-	
+		double rtoins = (exshowroomprice * rto) / 100;
+
+		log.info("Ex-showroom Price (incl GST) :- " + exshowroomprice);
+		log.info("RTO :- " + rtoins);
+		log.info("Insurance :- " + insurance);
+		log.info("On-Road Price :- " + onroadprice);
+
+	}
+
 }

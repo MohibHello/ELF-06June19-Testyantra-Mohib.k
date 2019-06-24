@@ -1,18 +1,19 @@
 package com.testyantra.javaapp.functions;
 
-public class RecurNumber 
-{
-public static void main(String[] args) {
-	
-	int a=recu(5);
-	System.out.println(a);
-}
-public static int recu(int a)
-{
-	if(a==0)
-	{
-		return a++;
+import lombok.extern.java.Log;
+
+@Log
+public class RecurNumber {
+	public static void main(String[] args) {
+
+		int a = recu(5);
+		log.info("" + a);
 	}
-	return recu(a-1);
-}
+
+	public static int recu(int a) {
+		if (a == 0) {
+			return ++a;
+		}
+		return a * recu(a - 1);
+	}
 }

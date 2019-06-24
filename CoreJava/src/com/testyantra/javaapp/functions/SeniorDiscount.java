@@ -1,18 +1,18 @@
 package com.testyantra.javaapp.functions;
 
-public class SeniorDiscount
-{
+import lombok.extern.java.Log;
+
+@Log
+public class SeniorDiscount {
 	public static void main(String[] args) {
 
+		double price = 100;
+		boolean issenior = false;
+		double discount = 15.2;
 
-		double price=100;
-		boolean issenior=true;
-		double discount=15.2;
-
-		if(issenior==true)
-		{
-		price=price-(price*discount)/100;
+		if (issenior) {
+			price = price - (price * discount) / 100;
 		}
-		System.out.println("price of ticket :- "+price);
+		log.info("price of ticket :- " + price);
 	}
 }

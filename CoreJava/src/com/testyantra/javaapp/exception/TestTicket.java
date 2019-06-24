@@ -1,14 +1,17 @@
 package com.testyantra.javaapp.exception;
 
+import lombok.extern.java.Log;
+
+@Log
 public class TestTicket {
 
 	public static void main(String[] args) {
 
-		System.out.println("Main started");
+		log.info("Main started");
 		Paytm p = new Paytm();
 
 		p.bookTicket();
 
-		System.out.println("Main Ended");
+		log.info("Main Ended");
 	}
 }

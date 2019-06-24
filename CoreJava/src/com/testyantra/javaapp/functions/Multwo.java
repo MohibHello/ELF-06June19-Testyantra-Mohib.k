@@ -1,10 +1,13 @@
 package com.testyantra.javaapp.functions;
 
+import lombok.extern.java.Log;
+
+@Log
 public class Multwo {
 
 	public static void main(String[] args) {
- 		
-		System.out.println(10*50);
+
+		log.info("" + (10 * 50));
 	}
 
 }

@@ -1,10 +1,11 @@
 package com.testyantra.javaapp.functions;
 
-public class Van 
-{
-	public static void main(String[] args) 
-	{
-		System.out.println("im interested");	
+import lombok.extern.java.Log;
+
+@Log
+public class Van {
+	public static void main(String[] args) {
+		log.info("im interested");
 	}
 
 }
