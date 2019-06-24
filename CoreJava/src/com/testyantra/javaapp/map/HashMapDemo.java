@@ -1,5 +1,7 @@
 package com.testyantra.javaapp.map;
+import lombok.extern.java.Log;
 
+@Log
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,8 +19,8 @@ public class HashMapDemo {
 			String key = e.getKey();
 			Integer val = e.getValue();
 
-			System.out.println("Key --->" + key);
-			System.out.println("value -->" + val);
+			log.info("Key --->" + key);
+			log.info("value -->" + val);
 
 		}
 	}

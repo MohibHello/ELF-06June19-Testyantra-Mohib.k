@@ -1,14 +1,16 @@
 package com.testyantra.javaapp.inheritance;
+import lombok.extern.java.Log;
 
+@Log
 public class ScientificCalc extends Calculator {
 
 	void sin()
 	{
-		System.out.println("sin() method");
+		log.info("sin() method");
 	}
 	void cos()
 	{
-		System.out.println("cos() method");
+		log.info("cos() method");
 	}
 	
 }

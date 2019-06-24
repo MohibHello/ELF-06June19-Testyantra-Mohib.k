@@ -15,23 +15,23 @@ public class BMIcalc
 	{
 		if(bmi>=30.0)
 		{
-			System.out.println(" Obese");
+			log.info(" Obese");
 		}
 		else if(bmi>=25)
 		{
-			System.out.println("overweight");
+			log.info("overweight");
 		}
 		else if(bmi>=18.5)
 		{
-			System.out.println("normal");
+			log.info("normal");
 		}
 		else if(bmi>=16.5)
 		{
-			System.out.println("underweight");
+			log.info("underweight");
 		}
 		else
 		{
-			System.out.println("severe underweight");
+			log.info("severe underweight");
 		}
 	}
 	public static void main(String[] args) {
@@ -40,7 +40,7 @@ public class BMIcalc
 		bm.height=78;
 		bm.weight=2.5;
 		double bmi=bm.bmiult();
-		System.out.println(bmi);
+		log.info(bmi);
 		bm.overalbmiresult(bmi);
 	}
 

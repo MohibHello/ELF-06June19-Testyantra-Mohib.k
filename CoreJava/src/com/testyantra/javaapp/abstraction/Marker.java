@@ -1,9 +1,11 @@
 package com.testyantra.javaapp.abstraction;
 
+import lombok.extern.java.Log;
+
+@Log
 public class Marker extends Pen {
-	void color()
-	{
-		System.out.println("Marker");
+	void color() {
+		log.info("marker");
 	}
-	
+
 }

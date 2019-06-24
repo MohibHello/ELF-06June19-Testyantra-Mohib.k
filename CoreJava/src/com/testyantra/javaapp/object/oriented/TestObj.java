@@ -1,5 +1,7 @@
 package com.testyantra.javaapp.object.oriented;
+import lombok.extern.java.Log;
 
+@Log
 public class TestObj
 {
 	public static void main(String[] args) 
@@ -12,9 +14,9 @@ public class TestObj
 		a.seats=4;
 		a.wheels=4;
 		
-		System.out.println("Car Name :- "+a.name);
-		System.out.println("No. of seats :- "+a.seats);
-		System.out.println("No. of wheels :- "+a.wheels);
+		log.info("Car Name :- "+a.name);
+		log.info("No. of seats :- "+a.seats);
+		log.info("No. of wheels :- "+a.wheels);
 		a.run();
 
 		b.color="white";
@@ -22,10 +24,10 @@ public class TestObj
 		b.weight=2.1;
 		b.size=12;
 		
-		System.out.println("Board Color ="+b.color);
-		System.out.println("Board height ="+b.height);
-		System.out.println("board weight ="+b.weight);
-		System.out.println("board size ="+b.size);
+		log.info("Board Color ="+b.color);
+		log.info("Board height ="+b.height);
+		log.info("board weight ="+b.weight);
+		log.info("board size ="+b.size);
 		
 		b.write();
 		
@@ -33,9 +35,9 @@ public class TestObj
 		l.processor="I7";
 		l.ram=4;
 		
-		System.out.println("Laptop Brand ="+l.brand);
-		System.out.println("Laptop procesor ="+l.processor);
-		System.out.println("laptop Ram ="+l.ram+" gb");
+		log.info("Laptop Brand ="+l.brand);
+		log.info("Laptop procesor ="+l.processor);
+		log.info("laptop Ram ="+l.ram+" gb");
 		
 		l.on();
 		l.off();

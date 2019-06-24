@@ -1,10 +1,12 @@
 package com.testyantra.javaapp.abstraction;
 
-public abstract class Honda {
+import lombok.extern.java.Log;
 
-	void engine()
-	{
-		System.out.println("ss");
+@Log
+public abstract class Honda {
+	void engine() {
+		log.info("ss");
 	}
+
 	abstract void design();
 }

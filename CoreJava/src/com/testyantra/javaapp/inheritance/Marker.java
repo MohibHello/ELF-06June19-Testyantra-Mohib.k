@@ -1,13 +1,15 @@
 package com.testyantra.javaapp.inheritance;
+import lombok.extern.java.Log;
 
+@Log
 public class Marker extends Pen{
 
 	void color()
 	{
-		System.out.println("coloring");
+		log.info("coloring");
 	}
 	void write()
 	{
-		System.out.println("writing using Marker");
+		log.info("writing using Marker");
 	}
 }

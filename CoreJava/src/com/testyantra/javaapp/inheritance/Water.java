@@ -1,13 +1,15 @@
 package com.testyantra.javaapp.inheritance;
+import lombok.extern.java.Log;
 
+@Log
 public class Water {
 
 	void open()
 	{
-		System.out.println("opening the bottle");
+		log.info("opening the bottle");
 	}
 	void drunk()
 	{
-		System.out.println("using waterbottle to drink");
+		log.info("using waterbottle to drink");
 	}
 }

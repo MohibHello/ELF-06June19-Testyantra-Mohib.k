@@ -1,5 +1,7 @@
-package com.testyantra.javaapp.inheritance;
+log.infocom.testyantra.javaapp.inheritance;
+import lombok.extern.java.Log;
 
+@Log
 public class SonBike extends FatherBike {
 
 	void bike()

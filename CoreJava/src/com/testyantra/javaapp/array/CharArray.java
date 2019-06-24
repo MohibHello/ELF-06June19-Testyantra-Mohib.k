@@ -1,5 +1,8 @@
 package com.testyantra.javaapp.array;
 
+import lombok.extern.java.Log;
+
+@Log
 public class CharArray {
 	public static void main(String[] args) {
 
@@ -11,8 +14,8 @@ public class CharArray {
 		ch[4] = 'e';
 
 		for (int i = 0; i < ch.length; i++) {
-			System.out.println("element no." + i + " " + ch[i]);
+			log.info("element no." + i + " " + ch[i]);
 		}
-		System.out.println(ch.length);
+		log.info("" + ch.length);
 	}
 }

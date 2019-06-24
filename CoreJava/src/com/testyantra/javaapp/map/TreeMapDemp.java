@@ -2,7 +2,9 @@ package com.testyantra.javaapp.map;
 
 import java.util.Map;
 import java.util.TreeMap;
+import lombok.extern.java.Log;
 
+@Log
 public class TreeMapDemp {
 
 	public static void main(String[] args) {
@@ -17,8 +19,8 @@ public class TreeMapDemp {
 			String key = e.getKey();
 			Integer val = e.getValue();
 
-			System.out.println("Key --->" + key);
-			System.out.println("value -->" + val);
+			log.info("Key --->" + key);
+			log.info("value -->" + val);
 
 		}
 	}

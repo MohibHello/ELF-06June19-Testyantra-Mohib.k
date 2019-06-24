@@ -1,15 +1,17 @@
 package com.testyantra.abstraction.javaapp.atmservices;
+import lombok.extern.java.Log;
 
+@Log
 public class SBI implements AtmCard {
 
 	@Override
 	public void validate() {
-		System.out.println("Validating SBI card");
+		log.info("Validating SBI card");
 	}
  
 	@Override
 	public void getinfo() {
-		System.out.println("sending sbi customer info");
+		log.info("sending sbi customer info");
 	}
 
 }

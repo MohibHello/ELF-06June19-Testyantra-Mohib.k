@@ -1,10 +1,12 @@
 package com.testyantra.javaapp.wrapper;
+import lombok.extern.java.Log;
 
+@Log
 public interface Abc {
 
 	String str = "123";
 
 	public static void xyz() {
-		System.out.println("xyz");
+		log.info("xyz");
 	}
 }

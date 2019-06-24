@@ -1,11 +1,13 @@
 package com.testyantra.javaapp.javabean;
+import lombok.extern.java.Log;
 
+@Log
 public class TestB {
 
 	public static void main(String[] args) {
 
 		Boy b = new Boy("rohit", 34);
-		System.out.println(b.getAge());
-		System.out.println(b.getName());
+		log.info(""+b.getAge());
+		log.info(""+b.getName());
 	}
 }

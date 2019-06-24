@@ -1,5 +1,7 @@
 package com.testyantra.abstraction.javaapp.atmservices;
+import lombok.extern.java.Log;
 
+@Log
 public class TestATM {
 public static void main(String[] args) {
 	
@@ -9,9 +11,9 @@ public static void main(String[] args) {
 	SBI s=new SBI();
 	
 	a.val(i);
-	System.out.println("***********hDfc customer**********");
+	log.info("***********hDfc customer**********");
 	a.val(h);
-	System.out.println("***********sbi customer**********");
+	log.info("***********sbi customer**********");
 	a.val(s);
 }
 }

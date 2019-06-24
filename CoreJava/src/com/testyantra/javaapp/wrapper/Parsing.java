@@ -1,5 +1,7 @@
 package com.testyantra.javaapp.wrapper;
+import lombok.extern.java.Log;
 
+@Log
 public class Parsing {
 
 	public static void main(String[] args) {
@@ -10,6 +12,6 @@ public class Parsing {
 		int i = Integer.parseInt(s1);
 		int j = Integer.parseInt(s2);
 
-		System.out.println(i + j);
+		log.info(""+(i + j));
 	}
 }

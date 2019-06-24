@@ -1,9 +1,11 @@
 package com.testyantra.javaapp.inheritance;
+import lombok.extern.java.Log;
 
+@Log
 public class Son extends Father {
 
 	void newLook()
 	{
-		System.out.println("new Look");
+		log.info("new Look");
 	}
 }

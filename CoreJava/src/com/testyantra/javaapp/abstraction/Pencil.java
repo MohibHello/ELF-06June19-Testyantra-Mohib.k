@@ -1,9 +1,12 @@
 package com.testyantra.javaapp.abstraction;
 
+import lombok.extern.java.Log;
+
+@Log
 public abstract class Pencil {
 
 	void draw() {
-		System.out.println("draw");
+		log.info("draw");
 	}
 
 	abstract void write();

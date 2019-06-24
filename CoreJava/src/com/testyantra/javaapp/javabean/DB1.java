@@ -1,10 +1,12 @@
 package com.testyantra.javaapp.javabean;
+import lombok.extern.java.Log;
 
+@Log
 public class DB1 {
 
 	void receive(Person p) {
-		System.out.println("***this is Db1***");
-		System.out.println(p.getAge());
-		System.out.println(p.getName());
+		log.info("***this is Db1***");
+		log.info(p.getAge());
+		log.info(p.getName());
 	}
 }

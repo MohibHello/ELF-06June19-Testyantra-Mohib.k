@@ -5,7 +5,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+import lombok.extern.java.Log;
 
+@Log
 public class HashMapDemo2 {
 	public static void main(String[] args) {
 
@@ -19,8 +21,8 @@ public class HashMapDemo2 {
 			Character key = e.getKey();
 			Double val = e.getValue();
 
-			System.out.println("Key --->" + key);
-			System.out.println("value -->" + val);
+			log.info("Key --->" + key);
+			log.info("value -->" + val);
 
 		}
 
@@ -34,7 +36,7 @@ public class HashMapDemo2 {
 
 		while (ii.hasNext()) {
 			Double double1 = ii.next();
-			System.out.println(double1);
+			log.info(""+double1);
 		}
 
 	}

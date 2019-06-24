@@ -1,8 +1,10 @@
 package com.testyantra.javaapp.casting;
+import lombok.extern.java.Log;
 
+@Log
 public class Bingo extends Chips {
 
 	void byteBingo() {
-		System.out.println("Bingo member");
+		log.info("Bingo member");
 	}
 }

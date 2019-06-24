@@ -1,13 +1,15 @@
 package com.testyantra.javaapp.inheritance;
+import lombok.extern.java.Log;
 
+@Log
 public class LevelOne {
 
 	void crawl()
 	{
-		System.out.println("crawling");
+		log.info("crawling");
 	}
 	void speed()
 	{
-		System.out.println("car speed 0-100kmph");
+		log.info("car speed 0-100kmph");
 	}
 }

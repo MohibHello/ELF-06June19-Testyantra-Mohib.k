@@ -1,13 +1,15 @@
 package com.testyantra.javaapp.inheritance;
+import lombok.extern.java.Log;
 
+@Log
 public class Father {
 
 	void height()
 	{
-		System.out.println("Height");
+		log.info("Height");
 	}
 	void look()
 	{
-		System.out.println("looking");
+		log.info("looking");
 	}
 }

@@ -1,11 +1,13 @@
 package com.testyantra.javaapp.inheritance;
+import lombok.extern.java.Log;
 
+@Log
 public class Pen {
 
 	double cost;
 	void write()
 	{
-		System.out.println("writing using pen");
+		log.info("writing using pen");
 	}
 	
 	

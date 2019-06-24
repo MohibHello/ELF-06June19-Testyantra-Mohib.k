@@ -1,13 +1,15 @@
 package com.testyantra.abstraction.javaapp.atmservices;
+import lombok.extern.java.Log;
 
+@Log
 public class Icici implements AtmCard {
 
 	public void validate() {
-		System.out.println("validating ICICI card");
+		log.info("validating ICICI card");
 	}
 
 	public void getinfo() {
-		System.out.println("sending required info");
+		log.info("sending required info");
 	}
 
 }

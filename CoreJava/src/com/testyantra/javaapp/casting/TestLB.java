@@ -1,5 +1,7 @@
 package com.testyantra.javaapp.casting;
+import lombok.extern.java.Log;
 
+@Log
 public class TestLB {
 
 	public static void main(String[] args) {
@@ -10,7 +12,7 @@ public class TestLB {
 		Chips cc = new Bingo();
 		cc.open();
 
-		System.out.println("*********downcasting********");
+		log.info("*********downcasting********");
 		Lays l = (Lays) c;
 		l.open();
 		l.eat();

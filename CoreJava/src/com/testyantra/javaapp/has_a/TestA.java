@@ -6,7 +6,7 @@ public class TestA {
 
 		College.s.play();
 		College.s.id = 45;
-		System.out.println(College.s.id);
+		log.info(""+College.s.id);
 	}
 
 }

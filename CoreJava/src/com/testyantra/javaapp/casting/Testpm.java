@@ -1,17 +1,19 @@
 package com.testyantra.javaapp.casting;
+import lombok.extern.java.Log;
 
+@Log
 public class Testpm {
 
 	public static void main(String[] args) {
 
 		Pen p = new Marker();
-		System.out.println(p.cost);
+		log.info(""+p.cost);
 
 		p.write();
 
 		Marker m = (Marker) p;
-		System.out.println(m.cost);
-		System.out.println(m.size);
+		log.info(""+m.cost);
+		log.info(""+m.size);
 
 		m.color();
 		m.write();

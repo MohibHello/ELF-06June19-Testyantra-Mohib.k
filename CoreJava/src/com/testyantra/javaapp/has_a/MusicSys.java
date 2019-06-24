@@ -1,15 +1,17 @@
 package com.testyantra.javaapp.has_a;
+import lombok.extern.java.Log;
 
+@Log
 public class MusicSys {
 
 	double station = 93.5;
 	double volume = 5.5;
 
 	void turnOn() {
-		System.out.println("Turning Music On");
+		log.info("Turning Music On");
 	}
 
 	void turnOff() {
-		System.out.println("Turning Music OFF");
+		log.info("Turning Music OFF");
 	}
 }

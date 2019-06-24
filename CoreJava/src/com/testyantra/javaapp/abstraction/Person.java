@@ -1,15 +1,16 @@
 package com.testyantra.javaapp.abstraction;
 
-public class Person implements Animal,Human
-{
+import lombok.extern.java.Log;
+
+@Log
+public class Person implements Animal, Human {
 
 	public void walk() {
-		System.out.println("walking");
+		log.info("walking");
 	}
 
-	public void eat() 
-	{
-	System.out.println("eating");	
+	public void eat() {
+		log.info("eating");
 	}
 
 }

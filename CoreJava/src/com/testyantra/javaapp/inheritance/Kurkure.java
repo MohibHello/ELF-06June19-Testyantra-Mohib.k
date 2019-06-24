@@ -1,10 +1,12 @@
 package com.testyantra.javaapp.inheritance;
+import lombok.extern.java.Log;
 
+@Log
 public class Kurkure extends Chips
 {
 
 	void snacks()
 	{
-		System.out.println("this is kurkure");
+		log.info("this is kurkure");
 	}
 }

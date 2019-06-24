@@ -9,6 +9,6 @@ public class Board {
 	
 	void write()
 	{
-		System.out.println("board for writing");
+		log.info("board for writing");
 	}
 }

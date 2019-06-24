@@ -1,9 +1,11 @@
 package com.testyantra.javaapp.inheritance;
+import lombok.extern.java.Log;
 
+@Log
 public class Animal {
 
 	void eating()
 	{
-		System.out.println("eating food");
+		log.info("eating food");
 	}
 }

@@ -1,9 +1,11 @@
 package com.testyantra.javaapp.inheritance;
+import lombok.extern.java.Log;
 
+@Log
 public class Cow extends Animal {
 
 	void eating()
 	{
-		System.out.println("eating grass");
+		log.info("eating grass");
 	}
 }

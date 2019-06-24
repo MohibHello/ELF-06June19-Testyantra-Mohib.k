@@ -2,6 +2,9 @@ package com.testyantra.javaapp.array;
 
 import java.util.Arrays;
 
+import lombok.extern.java.Log;
+
+@Log
 public class Testclass {
 
 	public static void main(String[] args) {
@@ -41,16 +44,9 @@ public class Testclass {
 		emp[3] = e3;
 
 		Arrays.sort(emp);
-		/*
-		 * for (Employee employee : emp) {
-		 * 
-		 * System.out.println(employee.getName()); System.out.println(employee.getId());
-		 * System.out.println(employee.getSalary());
-		 * System.out.println(employee.getAge());
-		 * System.out.println("----------------"); }
-		 */
+
 		for (Employee employee : emp) {
-			System.out.println(employee.toString());
+			log.info(employee.toString());
 		}
 	}
 }

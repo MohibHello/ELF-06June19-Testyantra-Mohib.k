@@ -1,8 +1,10 @@
 package com.testyantra.javaapp.annotation;
 
-public class TestAP {
+import lombok.extern.java.Log;
 
+@Log
+public class TestAP {
 	void run() {
-		System.out.println("running");
+		log.info("running");
 	}
 }

@@ -1,14 +1,16 @@
 package com.testyantra.javaapp.javabean;
+import lombok.extern.java.Log;
 
+@Log
 public class TestM {
 	public static void main(String[] args) {
 
 		Marker m = Marker.getMarker();
-		System.out.println(m.hashCode());
+		log.info(m.hashCode());
 		Marker t = m;
-		System.out.println(t.hashCode());
+		log.info(t.hashCode());
 		Marker tt = Marker.getMarker();
 
-		System.out.println(tt.hashCode());
+		log.info(tt.hashCode());
 	}
 }

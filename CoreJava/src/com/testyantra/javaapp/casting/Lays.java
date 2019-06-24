@@ -1,8 +1,10 @@
 package com.testyantra.javaapp.casting;
+import lombok.extern.java.Log;
 
+@Log
 public class Lays extends Chips {
 
 	void eat() {
-		System.out.println("Lays member");
+		log.info("Lays member");
 	}
 }

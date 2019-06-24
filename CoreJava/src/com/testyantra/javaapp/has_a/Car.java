@@ -1,15 +1,17 @@
 package com.testyantra.javaapp.has_a;
+import lombok.extern.java.Log;
 
+@Log
 public class Car {
 
 	MusicSys m = new MusicSys();
 
 	void foward() {
-		System.out.println("moving front");
+		log.info("moving front");
 	}
 
 	void reverse() {
-		System.out.println("going back");
+		log.info("going back");
 	}
 
 }

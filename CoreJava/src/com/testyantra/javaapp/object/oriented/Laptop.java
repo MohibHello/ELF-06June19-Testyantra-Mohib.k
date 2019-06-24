@@ -1,5 +1,7 @@
 package com.testyantra.javaapp.object.oriented;
+import lombok.extern.java.Log;
 
+@Log
 public class Laptop 
 {
  String brand;
@@ -8,14 +10,14 @@ public class Laptop
  
  void on()
  {
-	 System.out.println("Laptop turning on");
+	 log.info("Laptop turning on");
  }
  void off()
  {
-	 System.out.println("shutting down");
+	 log.info("shutting down");
  }
  void running()
  {
-	 System.out.println("laptop is running application ");
+	 log.info("laptop is running application ");
  }
 }

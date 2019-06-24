@@ -1,7 +1,9 @@
 package com.testyantra.javaapp.array;
+import lombok.extern.java.Log;
 
+@Log
 import java.util.Arrays;
-
+@Log
 public class ArraySort {
 
 	public static void main(String[] args) {
@@ -13,13 +15,13 @@ public class ArraySort {
 		Arrays.sort(a);
 
 		for (int i = 0; i < a.length; i++) {
-			System.out.println(a[i]);
+			log.info(""+a[i]);
 		}
 
 		Arrays.sort(ar2);
 
 		for (int i = 0; i < ar2.length; i++) {
-			System.out.println(ar2[i]);
+			log.info(""+ar2[i]);
 		}
 
 	}

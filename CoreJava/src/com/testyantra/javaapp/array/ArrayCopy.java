@@ -1,5 +1,8 @@
 package com.testyantra.javaapp.array;
 
+import lombok.extern.java.Log;
+
+@Log
 public class ArrayCopy {
 
 	public static void main(String[] args) {
@@ -18,17 +21,16 @@ public class ArrayCopy {
 			}
 			counter++;
 		}
-
-		System.out.println("Contents of b[] ");
+		log.info("Contents of b[] ");
 		for (int i = 0; i < b.length; i++)
-			System.out.println(b[i] + " ");
+			log.info(b[i] + " ");
 
-		System.out.println("***************");
+		log.info("***************");
 
 		System.arraycopy(a, 2, b, 3, 2);
 
-		System.out.println("Contents of b[] ");
+		log.info("Contents of b[] ");
 		for (int i = 0; i < b.length; i++)
-			System.out.println(b[i] + " ");
+			log.info(b[i] + " ");
 	}
 }

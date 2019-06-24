@@ -1,13 +1,15 @@
 package com.testyantra.javaapp.inheritance;
+import lombok.extern.java.Log;
 
+@Log
 public class Pen1 {
 
 	void open()
 	{
-		System.out.println("opening the pen");
+		log.info("opening the pen");
 	}
 	void write()
 	{
-		System.out.println("writing using pen");
+		log.info("writing using pen");
 	}
 }

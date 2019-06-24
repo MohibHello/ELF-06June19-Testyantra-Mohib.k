@@ -1,13 +1,15 @@
 package com.testyantra.javaapp.inheritance;
+import lombok.extern.java.Log;
 
+@Log
 public class Calculator {
 
 	void add()
 	{
-		System.out.println("add method");
+		log.info("add method");
 	}
 	void sub()
 	{
-		System.out.println("sub method");
+		log.info("sub method");
 	}
 }

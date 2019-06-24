@@ -1,5 +1,8 @@
 package com.testyantra.javaapp.array;
 
+import lombok.extern.java.Log;
+
+@Log
 public class ArrayElesearch {
 
 	private static void check(int[] arr, int toCheckValue) {
@@ -10,11 +13,11 @@ public class ArrayElesearch {
 				break;
 			}
 		}
-		System.out.println("Is " + toCheckValue + " present in the array: ");
-		if (test == true) {
-			System.out.println("element is present");
+		log.info("Is " + toCheckValue + " present in the array: ");
+		if (test) {
+			log.info("element is present");
 		} else {
-			System.out.println("element is not present");
+			log.info("element is not present");
 		}
 	}
 

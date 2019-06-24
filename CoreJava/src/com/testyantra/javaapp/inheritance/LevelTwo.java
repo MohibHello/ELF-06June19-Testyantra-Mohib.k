@@ -1,13 +1,15 @@
 package com.testyantra.javaapp.inheritance;
+import lombok.extern.java.Log;
 
+@Log
 public class LevelTwo extends LevelOne {
 
 	void walk()
 	{
-		System.out.println("walking");
+		log.info("walking");
 	}
 	void speed()
 	{
-		System.out.println("car speed 100-150kmph");
+		log.info("car speed 100-150kmph");
 	}
 }

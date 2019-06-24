@@ -1,8 +1,10 @@
 package com.testyantra.javaapp.casting;
+import lombok.extern.java.Log;
 
+@Log
 public class Chips {
 
 	void open() {
-		System.out.println("Chips member");
+		log.info("Chips member");
 	}
 }

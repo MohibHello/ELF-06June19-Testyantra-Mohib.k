@@ -4,15 +4,15 @@ import java.util.logging.Logger;
 
 public class HDFC implements AtmCard {
 
-	private static final Logger l = Logger.getLogger("atm");
+	private static final Logger log = Logger.getLogger("atm");
 
 	public void validate() {
 
-		System.out.println("validating HDFC card");
+		log.info("validating HDFC card");
 	}
 
 	public void getinfo() {
-		System.out.println("sending Required info of HDfc customer");
+		log.info("sending Required info of HDfc customer");
 	}
 
 }

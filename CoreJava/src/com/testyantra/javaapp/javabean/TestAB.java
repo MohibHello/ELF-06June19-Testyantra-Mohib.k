@@ -1,5 +1,7 @@
 package com.testyantra.javaapp.javabean;
+import lombok.extern.java.Log;
 
+@Log
 public class TestAB {
 	public static void main(String[] args) {
 
@@ -12,7 +14,7 @@ public class TestAB {
 
 		d1.receive(p);
 
-		System.out.println("Alternative");
+		log.info("Alternative");
 
 		d2.receive(p);
 	}
