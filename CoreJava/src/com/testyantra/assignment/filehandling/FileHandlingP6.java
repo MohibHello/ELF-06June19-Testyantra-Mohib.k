@@ -5,6 +5,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 
+import lombok.extern.java.Log;
+
+@Log
 public class FileHandlingP6 {
 
 	public static void main(String[] args) {
@@ -20,10 +23,10 @@ public class FileHandlingP6 {
 
 			for (Employee employee : e1) {
 
-				System.out.println(employee.getName());
-				System.out.println(employee.getDesignation());
-				System.out.println(employee.getAge());
-				System.out.println(employee.getSalary());
+				log.info("" + employee.getName());
+				log.info("" + employee.getDesignation());
+				log.info("" + employee.getAge());
+				log.info("" + employee.getSalary());
 
 			}
 

@@ -5,6 +5,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 
+import lombok.extern.java.Log;
+
+@Log
 public class FileHandlingP5 {
 
 	public static void main(String[] args) {
@@ -16,13 +19,13 @@ public class FileHandlingP5 {
 			Employee ob = (Employee) oin.readObject();
 
 			if (ob instanceof Employee) {
-				System.out.println(((Employee) ob).getAge());
-				System.out.println(((Employee) ob).getName());
-				System.out.println(((Employee) ob).getDesignation());
-				System.out.println(((Employee) ob).getSalary());
+				log.info("" + ((Employee) ob).getAge());
+				log.info("" + ((Employee) ob).getName());
+				log.info("" + ((Employee) ob).getDesignation());
+				log.info("" + ((Employee) ob).getSalary());
 			}
 
-			System.out.println("readed");
+			log.info("readed");
 			oin.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

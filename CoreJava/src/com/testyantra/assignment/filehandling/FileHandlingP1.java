@@ -4,6 +4,9 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import lombok.extern.java.Log;
+
+@Log
 public class FileHandlingP1 {
 
 	public static void main(String[] args) {
