@@ -1,13 +1,16 @@
 package com.testyantra.assignment.objects;
 
+import lombok.extern.java.Log;
+
+@Log
 public class Gun {
 
 	Gun() {
-		System.out.println("Gun with 0 bullets");
+		log.info("Gun with 0 bullets");
 	}
 
 	Gun(int bullets) {
-		System.out.println("Gun with bullets");
+		log.info("Gun with bullets");
 	}
 
 }

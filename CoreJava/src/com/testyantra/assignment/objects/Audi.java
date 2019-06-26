@@ -1,8 +1,11 @@
 package com.testyantra.assignment.objects;
 
+import lombok.extern.java.Log;
+
+@Log
 public class Audi extends LuxuryCar {
 
 	void car() {
-		System.out.println("Audi R8");
+		log.info("Audi R8");
 	}
 }

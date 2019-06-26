@@ -1,13 +1,16 @@
 package com.testyantra.assignment.objects;
 
+import lombok.extern.java.Log;
+
+@Log
 public class Car {
 
 	Car() {
-		System.out.println("No Fuel");
+		log.info("No Fuel");
 
 	}
 
 	Car(double fuel) {
-		System.out.println("Car with initial Fuel");
+		log.info("Car with initial Fuel");
 	}
 }

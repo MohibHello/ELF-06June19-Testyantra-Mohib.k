@@ -1,11 +1,14 @@
 package com.testyantra.assignment.strings;
 
+import lombok.extern.java.Log;
+
+@Log
 public class ReverseString {
 	public static void main(String[] args) {
 
 		String s = "hello";
 		String s2 = reverse(s);
-		System.out.println(s2);
+		log.info(s2);
 
 	}
 

@@ -6,6 +6,9 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+import lombok.extern.java.Log;
+
+@Log
 public class FileHandlingP3 {
 
 	public static void main(String[] args) {
@@ -45,22 +48,22 @@ public class FileHandlingP3 {
 			oout.writeObject(s4);
 			oout.writeObject(s5);
 
-			System.out.println("object written");
+			log.info("object written");
 
 			fin = new FileInputStream("student.txt");
 			oin = new ObjectInputStream(fin);
 
 			Students s = (Students) oin.readObject();
-			System.out.println(s);
+			log.info("" + s);
 			Students ss = (Students) oin.readObject();
-			System.out.println(ss);
+			log.info("" + ss);
 			Students sss = (Students) oin.readObject();
-			System.out.println(sss);
+			log.info("" + sss);
 			Students sf = (Students) oin.readObject();
 			Students sff = (Students) oin.readObject();
 
-			System.out.println(s3);
-			System.out.println(s4);
+			log.info("" + s3);
+			log.info("" + s4);
 
 		} catch (IOException e) {
 			e.printStackTrace();

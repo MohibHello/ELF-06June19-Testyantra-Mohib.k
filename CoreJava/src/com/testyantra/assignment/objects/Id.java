@@ -1,8 +1,11 @@
 package com.testyantra.assignment.objects;
 
+import lombok.extern.java.Log;
+
+@Log
 public class Id extends EmployeeTwo {
 
 	void id() {
-		System.out.println("emp id");
+		log.info("emp id");
 	}
 }

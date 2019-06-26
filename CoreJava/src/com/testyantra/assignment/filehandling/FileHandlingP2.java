@@ -4,6 +4,9 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import lombok.extern.java.Log;
+
+@Log
 public class FileHandlingP2 {
 	public static void main(String[] args) {
 
@@ -19,7 +22,7 @@ public class FileHandlingP2 {
 				fw.write(ch);
 				ch = fr.read();
 			}
-			System.out.println("file content copied and appended");
+			log.info("file content copied and appended");
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {

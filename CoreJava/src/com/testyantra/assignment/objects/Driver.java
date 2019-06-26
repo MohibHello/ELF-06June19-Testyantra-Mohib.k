@@ -1,12 +1,15 @@
 package com.testyantra.assignment.objects;
 
+import lombok.extern.java.Log;
+
+@Log
 public class Driver {
 
 	void receive(LuxuryCar c) {
 		if (c instanceof Benz) {
-			System.out.println("received Benz gone for Drive");
+			log.info("received Benz gone for Drive");
 		} else if (c instanceof Audi) {
-			System.out.println("received Audi gone for Drive");
+			log.info("received Audi gone for Drive");
 		}
 	}
 }

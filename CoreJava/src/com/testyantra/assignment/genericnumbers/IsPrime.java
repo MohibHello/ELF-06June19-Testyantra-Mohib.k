@@ -1,5 +1,8 @@
 package com.testyantra.assignment.genericnumbers;
 
+import lombok.extern.java.Log;
+
+@Log
 public class IsPrime {
 
 	public static int count = 0;
@@ -8,7 +11,7 @@ public class IsPrime {
 
 		int n = 13;
 		boolean res = isPrime(n);
-		System.out.println("result :" + res);
+		log.info("result :" + res);
 	}
 
 	public static boolean isPrime(int n) {

@@ -5,6 +5,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 
+import lombok.extern.java.Log;
+
+@Log
 public class FileHandlingP4 {
 
 	public static void main(String[] args) {
@@ -20,7 +23,7 @@ public class FileHandlingP4 {
 			fout = new FileOutputStream("file.csv");
 			ObjectOutputStream out = new ObjectOutputStream(fout);
 			out.writeObject(j);
-			System.out.println("witten");
+			log.info("witten");
 			out.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
