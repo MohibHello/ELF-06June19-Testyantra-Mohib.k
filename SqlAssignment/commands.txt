@@ -1,0 +1,48 @@
+mysql> select *
+    -> from emp
+    -> where fname like '___%';
+
+mysql> select *
+    -> from emp
+    -> where fname like '___';
+
+mysql> select *
+    -> from emp
+    -> where fname like 'a%' or fname like 'n%';
+
+mysql> select *
+    -> from emp
+    -> where fname like 'a%' or fname like 'n%';
+
+mysql> select *
+    ->
+    -> from emp
+    -> where fname like 'a%' or fname like '%n';
+
+
+mysql> select *
+    -> from emp
+    -> where fname='a%n';
+
+mysql> select fname,lname,max(salary) from emp;
+
+mysql> select fname,lname,min(salary) from emp;
+
+mysql> select avg(salary) as AVG.SAL
+    -> from emp;
+
+mysql> select sum(salary) as SUM_SAL from emp;
+
+mysql> select count(*),sum(salary) from emp where salary>10000;
+
+select e.fname,e.salary,e.deptno from emp e cross join department d;
+
+SELECT * from emp e RIGHT JOIN department d on e.deptno=d.deptno;	
+
+SELECT e.fname, e.salary ,d.location from emp e INNER JOIN department d on e.deptno=d.deptno;
+
+select e.fname,e.salary,e.deptno from emp e cross join department d;
+
+SELECT * from emp e RIGHT JOIN department d on e.deptno=d.deptno;	
+
+SELECT e.fname, e.salary ,d.location from emp e INNER JOIN department d on e.deptno=d.deptno
