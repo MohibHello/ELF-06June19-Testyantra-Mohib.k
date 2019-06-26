@@ -1,8 +1,11 @@
 package com.testyantra.assignment.objects;
 
+import lombok.extern.java.Log;
+
+@Log
 public class Friend {
 
 	void reveive(Gift g) {
-		System.out.println("received gift");
+		log.info("received gift");
 	}
 }

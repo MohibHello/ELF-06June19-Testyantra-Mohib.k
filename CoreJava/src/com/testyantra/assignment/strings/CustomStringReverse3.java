@@ -1,5 +1,8 @@
 package com.testyantra.assignment.strings;
 
+import lombok.extern.java.Log;
+
+@Log
 public class CustomStringReverse3 {
 	public static void main(String[] args) {
 
@@ -21,7 +24,7 @@ public class CustomStringReverse3 {
 				res = res + " " + out;
 			}
 		}
-		System.out.println(res);
+		log.info("" + res);
 	}
 
 	public static void instr(String s1) {
@@ -29,7 +32,7 @@ public class CustomStringReverse3 {
 		String[] str = s1.split(" ");
 		for (int i = str.length - 1; i >= 0; i--) {
 
-			System.out.print(str[i] + " ");
+			log.info(str[i] + " ");
 		}
 
 	}

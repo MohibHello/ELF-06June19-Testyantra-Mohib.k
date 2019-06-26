@@ -1,8 +1,11 @@
 package com.testyantra.assignment.objects;
 
+import lombok.extern.java.Log;
+
+@Log
 public class IceCream {
 
 	void ice() {
-		System.out.println("eating ice cream");
+		log.info("eating ice cream");
 	}
 }

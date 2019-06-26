@@ -1,5 +1,8 @@
 package com.testyantra.assignment.strings;
 
+import lombok.extern.java.Log;
+
+@Log
 public class ProductTest {
 
 	public static void main(String[] args) {
@@ -36,10 +39,10 @@ public class ProductTest {
 
 		for (int i = 0; i < pb.length; i++) {
 			ProductBean p = pb[i];
-			System.out.println("ID : " + p.getId());
-			System.out.println("Type : " + p.getPrice());
-			System.out.println("Quality : " + p.getQuality());
-			System.out.println("Price : " + p.getPrice());
+			log.info("ID : " + p.getId());
+			log.info("Type : " + p.getPrice());
+			log.info("Quality : " + p.getQuality());
+			log.info("Price : " + p.getPrice());
 		}
 
 	}

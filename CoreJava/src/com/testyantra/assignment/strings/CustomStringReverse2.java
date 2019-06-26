@@ -1,5 +1,8 @@
 package com.testyantra.assignment.strings;
 
+import lombok.extern.java.Log;
+
+@Log
 public class CustomStringReverse2 {
 	public static void main(String[] args) {
 
@@ -20,6 +23,6 @@ public class CustomStringReverse2 {
 			}
 			res = res + " " + out;
 		}
-		System.out.println(res);
+		log.info("" + res);
 	}
 }

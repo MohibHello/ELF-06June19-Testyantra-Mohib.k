@@ -1,5 +1,8 @@
 package com.testyantra.assignment.strings;
 
+import lombok.extern.java.Log;
+
+@Log
 public class StudentTest {
 
 	public static void main(String[] args) {
@@ -36,10 +39,10 @@ public class StudentTest {
 
 		for (int i = 0; i < sb.length; i++) {
 			StudentBean s = sb[i];
-			System.out.println("RegNo : " + s.getRegno());
-			System.out.println("Name : " + s.getName());
-			System.out.println("Grade : " + s.getGrade());
-			System.out.println("Marks : " + s.getMarks());
+			log.info("RegNo : " + s.getRegno());
+			log.info("Name : " + s.getName());
+			log.info("Grade : " + s.getGrade());
+			log.info("Marks : " + s.getMarks());
 		}
 	}
 }

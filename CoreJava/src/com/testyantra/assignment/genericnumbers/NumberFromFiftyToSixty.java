@@ -1,9 +1,12 @@
 package com.testyantra.assignment.genericnumbers;
 
+import lombok.extern.java.Log;
+
+@Log
 public class NumberFromFiftyToSixty {
 	static void printNos(int n) {
 		if (n <= 60) {
-			System.out.println(n);
+			log.info("" + n);
 			printNos(n + 1);
 
 		}

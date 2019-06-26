@@ -1,8 +1,11 @@
 package com.testyantra.assignment.objects;
 
+import lombok.extern.java.Log;
+
+@Log
 public class Gift {
 
 	void gift() {
-		System.out.println("watch inside box");
+		log.info("watch inside box");
 	}
 }

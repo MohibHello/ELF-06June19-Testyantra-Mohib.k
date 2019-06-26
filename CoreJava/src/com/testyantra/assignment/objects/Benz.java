@@ -1,8 +1,11 @@
 package com.testyantra.assignment.objects;
 
+import lombok.extern.java.Log;
+
+@Log
 public class Benz extends LuxuryCar {
 
 	void car() {
-		System.out.println("Mercedeces Benz");
+		log.info("Mercedeces Benz");
 	}
 }
