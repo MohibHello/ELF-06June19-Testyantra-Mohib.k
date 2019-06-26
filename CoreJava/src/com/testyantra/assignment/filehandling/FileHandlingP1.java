@@ -20,7 +20,7 @@ public class FileHandlingP1 {
 				fw.write(ch);
 				ch = fr.read();
 			}
-			System.out.println("file content copied");
+			log.info("file content copied");
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
