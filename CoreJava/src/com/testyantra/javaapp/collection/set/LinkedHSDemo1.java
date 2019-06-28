@@ -3,6 +3,9 @@ package com.testyantra.javaapp.collection.set;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 
+import lombok.extern.java.Log;
+
+@Log
 public class LinkedHSDemo1 {
 
 	public static void main(String[] args) {
@@ -15,14 +18,14 @@ public class LinkedHSDemo1 {
 		h.add('E');
 
 		for (Object ob : h) {
-			System.out.println(ob);
+			log.info("" + ob);
 		}
-		System.out.println("--------------");
+		log.info("--------------");
 		Iterator it = h.iterator();
 
 		while (it.hasNext()) {
 			Object object = it.next();
-			System.out.println(object);
+			log.info("" + object);
 
 		}
 	}

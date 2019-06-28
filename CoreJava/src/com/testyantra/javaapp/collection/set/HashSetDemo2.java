@@ -3,6 +3,9 @@ package com.testyantra.javaapp.collection.set;
 import java.util.HashSet;
 import java.util.Iterator;
 
+import lombok.extern.java.Log;
+
+@Log
 public class HashSetDemo2 {
 
 	public static void main(String[] args) {
@@ -15,14 +18,14 @@ public class HashSetDemo2 {
 		h.add(99);
 
 		for (Integer ob : h) {
-			System.out.println(ob);
+			log.info("" + ob);
 		}
-		System.out.println("--------------");
+		log.info("--------------");
 		Iterator<Integer> it = h.iterator();
 
 		while (it.hasNext()) {
 			Object object = it.next();
-			System.out.println(object);
+			log.info("" + object);
 
 		}
 	}

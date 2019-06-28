@@ -3,6 +3,9 @@ package com.testyantra.javaapp.collection.set;
 import java.util.Iterator;
 import java.util.TreeSet;
 
+import lombok.extern.java.Log;
+
+@Log
 public class TreeSetDemo {
 
 	public static void main(String[] args) {
@@ -16,14 +19,14 @@ public class TreeSetDemo {
 //		t.add('E');
 
 		for (Object ob : t) {
-			System.out.println(ob);
+			log.info("" + ob);
 		}
-		System.out.println("--------------");
+		log.info("--------------");
 		Iterator it = t.iterator();
 
 		while (it.hasNext()) {
 			Object object = it.next();
-			System.out.println(object);
+			log.info("" + object);
 
 		}
 	}
