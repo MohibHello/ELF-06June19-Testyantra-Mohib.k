@@ -37,3 +37,26 @@
 19. select max(salary),min(salary) from employee where job_type='salesman';
 
 20. select sum(salary) from employee group by deptno;
+
+
+
+21. SELECT * from employee where ename like '_____' and job_type like '_____';
+
+22. SELECT * from employee where job_type like 'soft%';
+
+23. select max(salary),job_type from employee group by job_type;
+
+24. select count(ename),deptno from employee group by deptno;
+
+25. select min(salary),ename,job_type from employee where ename not like 's%' group by job_type;
+
+26. select e.ename,d.dname from employee e inner join department d on e.deptno=d.deptno where d.dname='java' ;
+
+27. select d.dname from department d inner join employee e on e.deptno=d.deptno where job_type='software developer';
+
+28. select max(salary) from employee where salary <>(select max(salary) from employee );
+
+29. select max(salary) from employee where salary < (select max(salary) from employee where salary<>(select max(salary) from employee));
+
+30. select min(salary) from employee where salary > (select min(salary) from employee where salary>(select min(salary) from employee where salary <>(select min(salary) from employee)));
+
