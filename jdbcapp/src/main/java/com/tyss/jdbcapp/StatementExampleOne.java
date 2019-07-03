@@ -18,16 +18,7 @@ public class StatementExampleOne {
 		try {
 			// 1.load the Driver
 
-			/*
-			 * java.sql.Driver driver = new Driver(); DriverManager.registerDriver(driver);
-			 */
-
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-
-			// 2. get connection via driver
-			// String dburl =
-			// "jdbc:mysql://192.168.43.2:3306/testyantra_db?user=root&password=root";
-			// con = DriverManager.getConnection(dburl);
 
 			String dburl = "jdbc:mysql://localhost:3306/testyantra_db";
 			con = DriverManager.getConnection(dburl, "root", "root");
