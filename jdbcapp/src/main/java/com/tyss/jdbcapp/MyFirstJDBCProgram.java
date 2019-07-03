@@ -1,10 +1,11 @@
 package com.tyss.jdbcapp;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import com.tyss.jdbcapp.connectionpool.ConnectionPool;
 
 import lombok.extern.java.Log;
 
@@ -12,28 +13,13 @@ import lombok.extern.java.Log;
 public class MyFirstJDBCProgram {
 
 	public static void main(String[] args) {
-
+		ConnectionPool pool = null;
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
 		try {
-			// 1.load the Driver
-
-			/*
-			 * java.sql.Driver driver = new Driver(); DriverManager.registerDriver(driver);
-			 */
-
-			Class.forName("com.mysql.jdbc.Driver").newInstance();
-
-			// 2. get connection via driver
-			// String dburl =
-			// "jdbc:mysql://192.168.43.2:3306/testyantra_db?user=root&password=root";
-			// con = DriverManager.getConnection(dburl);
-
-			String dburl = "jdbc:mysql://localhost:3306/testyantra_db";
-			con = DriverManager.getConnection(dburl, "root", "root");
-
-			log.info("" + con.getClass());
+			pool = ConnectionPool.getConnectionPool();
+			con = pool.getConnectionFromPool();
 
 			// 3.issue "sql query via connection.
 			String query = "select * from EMPLOYEE_INFO";
@@ -58,12 +44,13 @@ public class MyFirstJDBCProgram {
 				log.info("MGR_ID			---" + rs.getInt("MGR_ID"));
 			}
 
-		} catch (SQLException | InstantiationException | IllegalAccessException | ClassNotFoundException e) {
+		} catch (Exception e) {
 
 			log.info("" + e);
 
 		} finally {
 			try {
+
 				if (con != null) {
 					con.close();
 				}

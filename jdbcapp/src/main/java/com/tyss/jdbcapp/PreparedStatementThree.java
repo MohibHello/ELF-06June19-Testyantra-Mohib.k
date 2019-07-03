@@ -41,10 +41,8 @@ public class PreparedStatementThree {
 			pstmt.setInt(13, Integer.parseInt(args[12]));
 
 			int res = pstmt.executeUpdate();
-
-			log.info("updated" + rs);
-
 			// 4.process the result returned by sql queries
+			log.info("updated" + rs);
 
 		} catch (SQLException | InstantiationException | IllegalAccessException | ClassNotFoundException e) {
 
