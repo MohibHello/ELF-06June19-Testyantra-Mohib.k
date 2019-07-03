@@ -1,0 +1,62 @@
+create database testyantra_db;
+
+EMPLOYEE_INFO						EMPLOYEE_OTHER_INFO                           EMPLOYEE_ADDRESS_INFO      DEPARTMENT_INFO
+===============    					===================                           =====================      ===============
+									                                                                        
+ID (PK) 		 (INT)          	ID (PK)				    	(INT)            ID (PK)				(INT)    DEPT_NO (PK) (INT)
+NAME			 (VARCHAR)       ISMARRIED  					(BOOLEAN)      ADDRESS_TYPE (PK)	(VARCHAR)  DEPARTMENT_NAME (VARCHAR)
+AGE 			 (INT)            	BLOOD_GROUP  				(CHAR)          ADDRESS1			(VARCHAR) 
+GENDER			 (VARCHAR)       ISCHALLEGED  				(BOOLEAN)      ADDRESS2			(VARCHAR)
+SALARY  		 (LONG)           EMERGENCY_CONTACT_NUMBER  	 (LONG)         LANDMARK			(VARCHAR) 
+PHONE  		  	  (LONG)          EMERGENCY_CONTACT_PERSON  	(VARCHAR)      CITY				(VARCHAR)
+JOINING_DATE	  (DATE)          NATIONALITY  				(VARCHAR)      PIN				(INT) 
+ACCCOUNT_NUMBER   (LONG)          RELIGION  					(VARCHAR)  
+EMAIL  			  (VARCHAR)      FATHER_NAME  				(VARCHAR) 
+DESIGNATION  	 (VARCHAR)       MOTHER_NAME  				(VARCHAR) 
+DOB        		 (DATE)           SPOUSE_NAME  				(VARCHAR)  
+DEPT_NO (PK) 	 (INT)            PASSPORT 					(VARCHAR)
+MGR_ID			(INT)             ADHAR 						(LONG)
+
+EMPLOYEE_EDUCATIONAL_INFO              EMPLOYEE_EXPERIENCE_INFO
+============================           ========================
+ID (PK)			  	(INT)             ID (PK)		(INT)
+EDUCATION_TYPE (PK)	(VARCHAR)        COMPANY_NAME (VARCHAR) 
+DEGREE_TYPE			(VARCHAR)        DESIGNATION (VARCHAR) 
+BRANCH				(VARCHAR)        JOINING_DATE (DATE) 
+COLLEGE_NAME 		(VARCHAR)        LEAVING_DATE (DATE) 
+UNIVERSITY 			(VARCHAR)
+YOP					(VARCHAR)
+PERCENTAGE			(DOUBLE)
+LOCATION			(VARCHAR)
+
+TRAINING_INFO
+================
+COURSE_ID	(PK)	(INT)
+COURSE_NAME		(VARCHAR)
+DURATION		(VARCHAR)
+COURSE_TYPR		(VARCHAR)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
