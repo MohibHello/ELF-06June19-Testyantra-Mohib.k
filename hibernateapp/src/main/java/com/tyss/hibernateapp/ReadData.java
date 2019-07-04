@@ -26,7 +26,7 @@ public class ReadData {
 
 		log.info("" + empinf.getEmergencyContactNumber());
 		log.info("" + empinf.getId());
-
+		log.info("" + empinf.isMarried());
 		session.close();
 	}
 }

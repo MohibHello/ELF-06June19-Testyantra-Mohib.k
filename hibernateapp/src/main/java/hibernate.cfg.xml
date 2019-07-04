@@ -13,9 +13,9 @@
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 
-<!--         <mapping class="com.tyss.hibernateapp.dto.EmployeeInfoBean" /> -->
+        <mapping class="com.tyss.hibernateapp.dto.EmployeeInfoBean" />
 
-	 <mapping class="com.tyss.hibernateapp.dto.EmployeeOtherInfoBean" />
+<!-- 	 <mapping class="com.tyss.hibernateapp.dto.EmployeeOtherInfoBean" /> -->
         
         
         
