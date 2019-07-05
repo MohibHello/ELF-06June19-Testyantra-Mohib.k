@@ -26,13 +26,13 @@ public class SaveDemo {
 		empinf.setName("JAMES");
 		empinf.setAge(35);
 		empinf.setAccountNumber(656435433);
-		empinf.setDeptNo(2);
+		empinf.setDepartmentId(2);
 		empinf.setDesignation(" IT ANALYST");
 		empinf.setDob(dobDate);
 		empinf.setJoiningDate(joiningDate);
 		empinf.setEmail("james111@gmail.com");
 		empinf.setGender("male");
-		empinf.setMgrId(102);
+		empinf.setManagerId(102);
 		empinf.setSalary(25000);
 		empinf.setPhone(855664);
 
