@@ -40,11 +40,11 @@ public class PreparedStatementOne {
 				log.info("SALARY  		    ---" + rs.getInt("SALARY"));
 				log.info("PHONE  		  	---" + rs.getLong("PHONE"));
 				log.info("JOINING_DATE	    ---" + rs.getDate("JOINING_DATE"));
-				log.info("ACCCOUNT_NUMBER   ---" + rs.getInt("ACCCOUNT_NUMBER"));
+				log.info("ACCCOUNT_NUMBER   ---" + rs.getInt("ACCOUNT_NUMBER"));
 				log.info("EMAIL  			---" + rs.getString("EMAIL"));
 				log.info("DESIGNATION  	    ---" + rs.getString("DESIGNATION"));
 				log.info("DOB        		---" + rs.getDate("DOB"));
-				log.info("DEPT_NO (FK)   	---" + rs.getInt("DEPT_NO"));
+				log.info("DEPT_NO (FK)   	---" + rs.getInt("DEPT_ID"));
 				log.info("MGR_ID			---" + rs.getInt("MGR_ID"));
 			}
 

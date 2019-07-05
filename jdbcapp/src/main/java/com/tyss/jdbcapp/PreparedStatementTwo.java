@@ -24,10 +24,9 @@ public class PreparedStatementTwo {
 			con = DriverManager.getConnection(dburl, "root", "root");
 
 			// 3.issue "sql query via connection.
-			String query = "select * from EMPLOYEE_INFO " + " where ID=? and" + " MGR_ID=?";
+			String query = "select * from EMPLOYEE_INFO " + " where ID=?";
 			pstmt = con.prepareStatement(query);
 			pstmt.setInt(1, Integer.parseInt(args[0]));
-			pstmt.setInt(2, Integer.parseInt(args[1]));
 			rs = pstmt.executeQuery();
 
 			// 4.process the result returned by sql queries
@@ -41,11 +40,11 @@ public class PreparedStatementTwo {
 				log.info("SALARY  		    ---" + rs.getInt("SALARY"));
 				log.info("PHONE  		  	---" + rs.getLong("PHONE"));
 				log.info("JOINING_DATE	    ---" + rs.getDate("JOINING_DATE"));
-				log.info("ACCCOUNT_NUMBER   ---" + rs.getInt("ACCCOUNT_NUMBER"));
+				log.info("ACCCOUNT_NUMBER   ---" + rs.getInt("ACCOUNT_NUMBER"));
 				log.info("EMAIL  			---" + rs.getString("EMAIL"));
 				log.info("DESIGNATION  	    ---" + rs.getString("DESIGNATION"));
 				log.info("DOB        		---" + rs.getDate("DOB"));
-				log.info("DEPT_NO (FK)   	---" + rs.getInt("DEPT_NO"));
+				log.info("DEPT_NO (FK)   	---" + rs.getInt("DEPT_ID"));
 				log.info("MGR_ID			---" + rs.getInt("MGR_ID"));
 			}
 
