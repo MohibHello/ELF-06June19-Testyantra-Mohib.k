@@ -12,7 +12,7 @@ public class EmployeeDAOFactory {
 		if (dbInstancetype.equals("jdbc")) {
 			dao = new EmployeeDAOJDBCImpl();
 		} else if (dbInstancetype.equals("hibernate")) {
-			dao = new EmployeeDAOHibernateImpl();
+			dao = new EmployeeDAOHibernateImpl2();
 		}
 		return dao;
 	}// End of get
