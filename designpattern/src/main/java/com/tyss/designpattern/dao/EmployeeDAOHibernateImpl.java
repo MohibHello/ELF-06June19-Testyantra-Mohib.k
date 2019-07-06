@@ -1,5 +1,6 @@
 package com.tyss.designpattern.dao;
 
+import java.io.File;
 import java.util.ArrayList;
 
 import org.hibernate.Session;
@@ -25,10 +26,14 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO {
 
 	@Override
 	public EmployeeInfoBean getEmployeeInfo(int id) {
+		// 1. load the conf file
 		Configuration cfg = new Configuration();
-		cfg.configure("hibernate.cfg.xml");
-
+		// cfg.configure();
+		// cfg.configure("myHibernateConfigFile.xml");
+		cfg.configure(new File("D:\\myHibernateConfigFile.xml"));
+		// 2.build sessionFactory
 		SessionFactory factory = cfg.buildSessionFactory();
+		// 3.open session
 		Session session = factory.openSession();
 
 		EmployeeInfoBean bean = session.get(EmployeeInfoBean.class, id);
