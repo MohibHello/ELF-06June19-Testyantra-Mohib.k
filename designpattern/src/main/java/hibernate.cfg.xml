@@ -13,11 +13,6 @@
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 
-        <mapping class="com.tyss.beans.EmployeeInfoBean" />
-
-        
-        
-        
-        
+         <mapping class="com.tyss.beans.EmployeeInfoBean" />
     </session-factory>
 </hibernate-configuration>
