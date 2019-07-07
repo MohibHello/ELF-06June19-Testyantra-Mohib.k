@@ -130,4 +130,24 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO {
 		}
 
 	}// end of getEmployeeInfo
+
+	@Override
+	public boolean createEmployeeInfo(EmployeeInfoBean bean) {
+		return false;
+	}
+
+	@Override
+	public boolean updateEmployeeInfo(EmployeeInfoBean bean) {
+		return false;
+	}
+
+	@Override
+	public boolean deleteEmployeeInfo(int id) {
+		return false;
+	}
+
+	@Override
+	public boolean deleteEmployeeInfo(String id) {
+		return false;
+	}
 }

@@ -11,4 +11,12 @@ public interface EmployeeDAO {
 
 	EmployeeInfoBean getEmployeeInfo(int id);
 
-}
+	boolean createEmployeeInfo(EmployeeInfoBean bean);
+
+	boolean updateEmployeeInfo(EmployeeInfoBean bean);
+
+	boolean deleteEmployeeInfo(int id);
+
+	boolean deleteEmployeeInfo(String id);
+
+}// End of class
