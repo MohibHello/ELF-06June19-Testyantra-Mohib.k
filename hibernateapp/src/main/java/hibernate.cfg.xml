@@ -14,12 +14,12 @@
         <property name="hibernate.format_sql">true</property>
 <!--         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property> -->
 
-        <mapping class="com.tyss.hibernateapp.dto.EmployeeInfoBean" />
-
-<!-- 	 <mapping class="com.tyss.hibernateapp.dto.EmployeeOtherInfoBean" /> -->
-        
-        
-        
-        
+       <!--  <mapping class="com.tyss.hibernateapp.dto.EmployeeInfoBean" /> -->
+       
+	<mapping class="com.tyss.hibernateapp.dto.EmployeeTest"/>
+	
+	
+	 <mapping class="com.tyss.hibernateapp.dto.EmployeeInfoBean" />
+            
     </session-factory>
 </hibernate-configuration>

@@ -1,8 +1,7 @@
 package com.tyss.designpattern;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.List;
 
 import com.tyss.beans.EmployeeInfoBean;
 import com.tyss.designpattern.dao.EmployeeDAO;
@@ -18,35 +17,31 @@ public class DesignPatternTest {
 
 //		EmployeeDAOJDBCImpl dao = new EmployeeDAOJDBCImpl();
 
-		EmployeeInfoBean bean = new EmployeeInfoBean();
+//		EmployeeInfoBean bean = new EmployeeInfoBean();
 
 //		EmployeeInfoBean bean2 = dao.getEmployeeInfo("105");
 //		printInfo(bean);
+
+		List<EmployeeInfoBean> beans = dao.getAllEmployeeInfo();
+		for (EmployeeInfoBean bean : beans) {
+			printInfo(bean);
+		}
+
 		/*
-		 * ArrayList<EmployeeInfoBean> beans = dao.getAllEmployeeInfo(); for
-		 * (EmployeeInfoBean Bean : beans) { printInfo(bean); }
+		 * EmployeeInfoBean empinf = new EmployeeInfoBean(); SimpleDateFormat format =
+		 * new SimpleDateFormat("yyyy-mm-dd"); Date joiningDate =
+		 * format.parse("2002-04-23"); Date dobDate = format.parse("1993-04-12");
+		 * empinf.setId(120); empinf.setName("JAMESS"); empinf.setAge(25);
+		 * empinf.setAccountNumber(656435433); empinf.setDepartmentId(2);
+		 * empinf.setDesignation(" IT ANALYST"); empinf.setDob(dobDate);
+		 * empinf.setJoiningDate(joiningDate); empinf.setEmail("james111@gmail.com");
+		 * empinf.setGender("male"); empinf.setManagerId(122); empinf.setSalary(25000);
+		 * empinf.setPhone(855664);
+		 * 
+		 * dao.deleteEmployeeInfo(0);
 		 */
-		EmployeeInfoBean empinf = new EmployeeInfoBean();
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-mm-dd");
-		Date joiningDate = format.parse("2002-04-23");
-		Date dobDate = format.parse("1993-04-12");
-		empinf.setId(120);
-		empinf.setName("JAMESS");
-		empinf.setAge(25);
-		empinf.setAccountNumber(656435433);
-		empinf.setDepartmentId(2);
-		empinf.setDesignation(" IT ANALYST");
-		empinf.setDob(dobDate);
-		empinf.setJoiningDate(joiningDate);
-		empinf.setEmail("james111@gmail.com");
-		empinf.setGender("male");
-		empinf.setManagerId(122);
-		empinf.setSalary(25000);
-		empinf.setPhone(855664);
 
-		dao.deleteEmployeeInfo(0);
-
-		log.info(" Created the employee ? : " + dao.deleteEmployeeInfo(0));
+		// log.info(" Created the employee ? : " + dao.deleteEmployeeInfo(0));
 	}
 
 	private static void printInfo(EmployeeInfoBean bean1) {

@@ -1,11 +1,11 @@
 package com.tyss.designpattern.dao;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import com.tyss.beans.EmployeeInfoBean;
 
 public interface EmployeeDAO {
-	ArrayList<EmployeeInfoBean> getAllEmployeeInfo();
+	List<EmployeeInfoBean> getAllEmployeeInfo();
 
 	EmployeeInfoBean getEmployeeInfo(String id);
 
