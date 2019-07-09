@@ -1,8 +1,6 @@
 package com.tyss.hibernate.cache;
 
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 
 import lombok.extern.java.Log;
 
@@ -17,18 +15,13 @@ public class HibernateCacheTest2 {
 	}// End of main
 
 	private static NewEmployeeInfoBean getEmployeeData(int id) {
-		Configuration config = new Configuration();
-		config.configure("com/tyss/hibernate/cache/hibernate.cache.cfg.xml");
-		config.addAnnotatedClass(NewEmployeeInfoBean.class);
 
-		SessionFactory factory = config.buildSessionFactory();
+		NewEmployeeInfoBean bean;
 
-		Session session = factory.openSession();
+		try (Session session = HibernateCacheUtil.openSession();) {
 
-		NewEmployeeInfoBean bean = session.get(NewEmployeeInfoBean.class, 101);
-
-		session.close();
-
+			bean = session.get(NewEmployeeInfoBean.class, id);
+		}
 		return bean;
 	}
 
