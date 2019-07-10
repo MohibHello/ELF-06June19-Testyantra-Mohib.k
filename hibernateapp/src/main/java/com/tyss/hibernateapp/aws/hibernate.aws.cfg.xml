@@ -16,10 +16,10 @@
 
        <!--  <mapping class="com.tyss.hibernateapp.dto.EmployeeInfoBean" /> -->
        
-	<mapping class="com.tyss.hibernateapp.dto.EmployeeTest"/>
+<!-- 	<mapping class="com.tyss.hibernateapp.dto.EmployeeTest"/> -->
 	
 	
-	 <mapping class="com.tyss.hibernateapp.dto.EmployeeInfoBean" />
+	 <mapping class="com.tyss.hibernateapp.aws.EmployeeInfoBean" />
             
     </session-factory>
 </hibernate-configuration>

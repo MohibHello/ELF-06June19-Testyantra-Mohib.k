@@ -16,14 +16,18 @@ public class MyFirstServlet extends HttpServlet {
 
 		String currentDateTime = new Date().toString();
 
+		String fnameValue = req.getParameter("fname");
+		String lnameValue = req.getParameter("lname");
+
 		String htmlResponse = "<!DOCTYPE html>" + "<html>" + "<head>" + "<meta charset=\"ISO-8859-1\">"
 				+ "<title>MY First HTML</title>" + "</head>" + "<body>" + "	<h1>"
 				+ "	Current date and Time is : <br />" + "	<span style=\"color:red\">" + currentDateTime + "</span>"
-				+ "	</h1>" + "</body>" + "</html>";
+				+ "<br><br>" + "First Name :" + fnameValue + "<br><br>" + "Last Name :" + lnameValue + "	</h1>"
+				+ "</body>" + "</html>";
 
 		// Send the Above HTML Response to the Browser
-		resp.setContentType("text/html");
-		resp.setHeader("Refresh", "1");
+		resp.setContentType("html/text");
+		// resp.setHeader("Refresh", "1");
 		PrintWriter out = resp.getWriter();
 		out.print(htmlResponse);
 
