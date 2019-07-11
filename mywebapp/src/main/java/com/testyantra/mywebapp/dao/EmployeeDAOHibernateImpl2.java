@@ -35,11 +35,8 @@ public class EmployeeDAOHibernateImpl2 implements EmployeeDAO {
 	public EmployeeInfoBean getEmployeeInfo(int id) {
 
 		Session session = HibernateUtil.openSession();
-
 		EmployeeInfoBean bean = session.get(EmployeeInfoBean.class, id);
-
 		session.close();
-
 		return bean;
 	}
 

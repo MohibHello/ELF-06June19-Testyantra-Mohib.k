@@ -16,6 +16,14 @@ public class MyFirstServlet extends HttpServlet {
 
 		String currentDateTime = new Date().toString();
 
+		String httpMethod = req.getMethod();
+		String protocol = req.getProtocol();
+		StringBuffer requestUrl = req.getRequestURL();
+
+		System.out.println("Http Method ==>" + httpMethod);
+		System.out.println("protocol====>" + protocol);
+		System.out.println("URL ==>" + requestUrl);
+
 		String fnameValue = req.getParameter("fname");
 		String lnameValue = req.getParameter("lname");
 
@@ -26,7 +34,7 @@ public class MyFirstServlet extends HttpServlet {
 				+ "</body>" + "</html>";
 
 		// Send the Above HTML Response to the Browser
-		resp.setContentType("html/text");
+		resp.setContentType("text/html");
 		// resp.setHeader("Refresh", "1");
 		PrintWriter out = resp.getWriter();
 		out.print(htmlResponse);
