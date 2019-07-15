@@ -3,14 +3,25 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
-  
-  <servlet>
-  <servlet-name>MyFirstServlet</servlet-name>
-  <servlet-class>com.testyantra.mywebapp.servlet.MyFirstServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  <servlet-name>MyFirstServlet</servlet-name>
-  <url-pattern>/curDate</url-pattern>
-  </servlet-mapping>
+	<display-name>Archetype Created Web Application</display-name>
+
+	<context-param>
+		<param-name>movie</param-name>
+		<param-value>sholay</param-value>
+	</context-param>
+
+
+	<servlet>
+		<servlet-name>MyFirstServlet</servlet-name>
+		<servlet-class>com.tyss.mywebapp.servlet.MyFirstServlet</servlet-class>
+		<init-param>
+			<param-name>actor</param-name>
+			<param-value>gabbar</param-value>
+		</init-param>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>MyFirstServlet</servlet-name>
+		<url-pattern>/curDate</url-pattern>
+	</servlet-mapping>
 </web-app>
