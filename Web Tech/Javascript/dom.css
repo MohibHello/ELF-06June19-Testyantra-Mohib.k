@@ -1,0 +1,26 @@
+.demo {
+    color: red;
+}
+
+#name{
+    color: greenyellow;
+}
+
+#age{
+
+    font-size: 30px;
+}
+
+.button {
+    color: blue;    
+    border-radius: 5%;
+}
+
+.button1 {
+    font-size: 25px;
+}
+
+.blue{
+    color: aqua;
+    font-family: 'Courier New', Courier, monospace;
+}
