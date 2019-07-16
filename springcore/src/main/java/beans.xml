@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="messageBean"
+		class="com.tyss.springcore.beans.MessageBean">
+		<property name="message" value="Welcome to spring"></property>
+	</bean>
+
+	<!-- <bean id="Emp1" class="com.tyss.springcore.beans.EmployeeBean" scope="prototype" 
+		init-method="afterPropertiesSet" destroy-method="destroy"> -->
+	<!-- </bean> -->
+
+	<bean id="employee1"
+		class="com.tyss.springcore.beans.EmployeeBean" autowire="byType">
+		<property name="ename" value="Amith"></property>
+		<property name="eid" value="88"></property>
+		<!-- <property name="dept" ref="departmentBean"></property> -->
+	</bean>
+
+	<bean id="departmentBean1"
+		class="com.tyss.springcore.beans.DepartmentBean">
+		<property name="deptName" value="Tester"></property>
+		<property name="deptId" value="901"></property>
+	</bean>
+
+	<bean id="departmentBean2"
+		class="com.tyss.springcore.beans.DepartmentBean" primary="true">
+		<property name="deptName" value="hr"></property>
+		<property name="deptId" value="941"></property>
+	</bean>
+	<bean id="departmentBean3"
+		class="com.tyss.springcore.beans.DepartmentBean"
+		autowire-candidate="false">
+		<property name="deptName" value="it"></property>
+		<property name="deptId" value="911"></property>
+	</bean>
+
+</beans>
