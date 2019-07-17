@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<script src="./pass.js"></script>
+
+    <title>Form Pass</title>
+</head>
+<body>
+    <form class="form-horizontal">
+        <fieldset>
+        
+        
+        <!-- change col-sm-N to reflect how you would like your column spacing (http://getbootstrap.com/css/#forms-control-sizes) -->
+        
+        
+        <!-- Form Name -->
+        <legend style="text-align: center;">Show Password </legend>
+        
+        <!-- Appended checkbox http://getbootstrap.com/components/#input-groups-checkboxes-radios -->
+        <div class="form-group">
+          <label class="control-label col-sm-2 col-sm-offset-2" for="passInput">Password</label>
+          <div class="col-sm-4 ">
+            <div class="input-group" id="pass">
+              <input id="passInput" name="passInput" type="password" class="form-control" placeholder="Enter Password" aria-label="">
+              <label class="input-group-addon checkbox-custom" data-initialize="checkbox">
+                <input class="form-check-input position-static" type="checkbox" id="blankCheckbox"  onclick="myFunction()" aria-label="...">
+
+            
+
+
+
+              </label>
+              
+            </div>
+            
+          </div>
+        </div>
+        
+        </fieldset>
+        </form>
+</body>
+</html>
