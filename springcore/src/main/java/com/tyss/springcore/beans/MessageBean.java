@@ -1,9 +1,15 @@
 package com.tyss.springcore.beans;
 
-import lombok.Data;
-
-@Data
 public class MessageBean {
 
-	private String message;
+	public String message;
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 }

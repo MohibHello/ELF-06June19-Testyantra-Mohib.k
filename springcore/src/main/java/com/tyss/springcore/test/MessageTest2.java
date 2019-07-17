@@ -1,4 +1,4 @@
-package com.tyss.springcore.program;
+package com.tyss.springcore.test;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -8,7 +8,7 @@ import com.tyss.springcore.beans.MessageBean;
 import lombok.extern.java.Log;
 
 @Log
-public class MessageTest {
+public class MessageTest2 {
 
 	public static void main(String[] args) {
 

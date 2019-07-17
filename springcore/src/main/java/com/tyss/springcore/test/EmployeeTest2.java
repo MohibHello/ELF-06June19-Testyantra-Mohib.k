@@ -1,6 +1,7 @@
-package com.tyss.springcore.program;
+package com.tyss.springcore.test;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.tyss.springcore.beans.EmployeeBean;
@@ -8,7 +9,7 @@ import com.tyss.springcore.beans.EmployeeBean;
 import lombok.extern.java.Log;
 
 @Log
-public class EmployeeTest {
+public class EmployeeTest2 {
 
 	public static void main(String[] args) {
 
@@ -34,7 +35,6 @@ public class EmployeeTest {
 //		log.info("employee name2 : " + Emp2.getEname());
 //		log.info("employee id2 : " + Emp2.getEid());
 
-//		((AbstractApplicationContext) applicationContext).registerShutdownHook();
-
+		((AbstractApplicationContext) applicationContext).registerShutdownHook();
 	}
 }
