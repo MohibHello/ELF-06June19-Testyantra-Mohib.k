@@ -3,6 +3,7 @@ package com.tyss.mywebapp.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,7 +40,7 @@ public class ServletSearch extends HttpServlet {
 		} else {
 			out.print("<html>");
 			out.print("<body>");
-			out.print("<h1><span style=\"color:green\">Employee Found !!!</span></h1>");
+			out.print("<h1><span style=\"color:green\">EmployeeFound !!!</span></h1>");
 			out.print("<h3><br>");
 			out.print("<br> ID 		        ---" + bean.getId());
 			out.print("<br> NAME			    ---" + bean.getName());
@@ -57,6 +58,42 @@ public class ServletSearch extends HttpServlet {
 			out.print("</h3>");
 			out.print("<body>");
 			out.print("<html>");
+
+		}
+
+		// get the object from
+		ServletContext ctx = getServletContext();
+		EmployeeInfoBean empInfo = (EmployeeInfoBean) ctx.getAttribute("employeeInfo");
+
+		if (empInfo == null) {
+			out.print("<html>");
+			out.print("<body>");
+			out.print("<h1><span style=\"color:red\">EmployeeInfoBean not Found !!!</span></h1>");
+			out.print("<br>");
+			out.print("<body>");
+			out.print("<html>");
+		} else {
+			out.print("<html>");
+			out.print("<body>");
+			out.print("<h1><span style=\"color:green\">EmployeeInfoBean Found !!!</span></h1>");
+			out.print("<h3><br>");
+			out.print("<br> ID 		        ---" + empInfo.getId());
+			out.print("<br> NAME			    ---" + empInfo.getName());
+			out.print("<br> AGE 			    ---" + empInfo.getAge());
+			out.print("<br> GENDER			---" + bean.getGender());
+			out.print("<br> SALARY  		    ---" + bean.getSalary());
+			out.print("<br> PHONE  		  	---" + bean.getPhone());
+			out.print("<br> JOINING_DATE	    ---" + bean.getJoiningDate());
+			out.print("<br> ACCCOUNT_NUMBER   ---" + bean.getAccountNumber());
+			out.print("<br> EMAIL  			---" + empInfo.getEmail());
+			out.print("<br> DESIGNATION    ---" + bean.getDesignation());
+			out.print("<br> DOB        		---" + bean.getDob());
+			out.print("<br> DEPT_NO (FK)   	---" + empInfo.getDepartmentId());
+			out.print("<br> MGR_ID			---" + bean.getManagerId());
+			out.print("</h3>");
+			out.print("<body>");
+			out.print("<html>");
+
 		}
 	}
 }

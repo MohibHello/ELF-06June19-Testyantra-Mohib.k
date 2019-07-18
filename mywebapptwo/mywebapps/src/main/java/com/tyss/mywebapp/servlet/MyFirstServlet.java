@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.testyantra.beans.EmployeeInfoBean;
+
 public class MyFirstServlet extends HttpServlet {
 
 	@Override
@@ -47,6 +49,41 @@ public class MyFirstServlet extends HttpServlet {
 		PrintWriter out = resp.getWriter();
 		out.print(htmlResponse);
 
+		// get the object from
+		// EmployeeInfoBean empInfo = (EmployeeInfoBean)
+		// req.getAttribute("employeeInfo");
+		EmployeeInfoBean empInfo = (EmployeeInfoBean) ctx.getAttribute("employeeInfo");
+
+		if (empInfo == null) {
+			out.print("<html>");
+			out.print("<body>");
+			out.print("<h1><span style=\"color:red\">EmployeeInfoBean not Found !!!</span></h1>");
+			out.print("<br>");
+			out.print("<body>");
+			out.print("<html>");
+		} else {
+			out.print("<html>");
+			out.print("<body>");
+			out.print("<h1><span style=\"color:green\">EmployeeInfoBean Found !!!</span></h1>");
+			out.print("<h3><br>");
+			out.print("<br> ID 		        ---" + empInfo.getId());
+			out.print("<br> NAME			    ---" + empInfo.getName());
+			out.print("<br> AGE 			    ---" + empInfo.getAge());
+			// out.print("<br> GENDER ---" + bean.getGender());
+			// out.print("<br> SALARY ---" + bean.getSalary());
+			// out.print("<br> PHONE ---" + bean.getPhone());
+			// out.print("<br> JOINING_DATE ---" + bean.getJoiningDate());
+			// out.print("<br> ACCCOUNT_NUMBER ---" + bean.getAccountNumber());
+			out.print("<br> EMAIL  			---" + empInfo.getEmail());
+			// out.print("<br> DESIGNATION ---" + bean.getDesignation());
+			// out.print("<br> DOB ---" + bean.getDob());
+			out.print("<br> DEPT_NO (FK)   	---" + empInfo.getDepartmentId());
+			// out.print("<br> MGR_ID ---" + bean.getManagerId());
+			out.print("</h3>");
+			out.print("<body>");
+			out.print("<html>");
+
+		}
 	}// End of doGet ()
 
 }

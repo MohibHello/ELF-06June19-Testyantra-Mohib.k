@@ -4,6 +4,9 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import com.tyss.hibernateapp.onetoone.EmployeeInfoBean;
+import com.tyss.hibernateapp.onetoone.EmployeeOtherInfoBean;
+
 public class HibernateUtil {
 
 	private static SessionFactory sessionFactory;
@@ -19,7 +22,8 @@ public class HibernateUtil {
 	}
 
 	public static SessionFactory buildSessionFactory() {
-		return new Configuration().configure().buildSessionFactory();
+		return new Configuration().configure().addAnnotatedClass(EmployeeInfoBean.class)
+				.addAnnotatedClass(EmployeeOtherInfoBean.class).buildSessionFactory();
 	}
 
 	public static Session openSession() {
