@@ -22,12 +22,15 @@ public class SearchEmpServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		gString idValue = req.getParameter("search");
+		String idValue = req.getParameter("search");
 
 		EmployeeDAO dao = EmployeeDAOFactory.getInstance();
 		List<EmployeeInfoBean> bean = dao.getEmployeeListInfo(idValue);
+
 		HttpSession session = req.getSession(false);
+
 		PrintWriter out = resp.getWriter();
+
 		if (session == null) {
 			// invalid session;generate login page with error Info
 			out.print("<h1><span style='color:red'>Invalid Request!!!!</span></h1>");
@@ -62,7 +65,7 @@ public class SearchEmpServlet extends HttpServlet {
 			out.print("  <div class='col-md-12'>");
 			out.print("    <div class='search input-group' data-initialize='search' role='search' id='search'>");
 			out.print(
-					"    <input type='text' class='form-control' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-default'>");
+					"    <input type='text' class='form-control' aria-label='Sizing example input' name='search' aria-describedby='inputGroup-sizing-default'>");
 			out.print("    <span class='input-group-btn'>");
 			out.print("     <button class='btn btn-default' type='submit'>");
 			out.print("     <span class='glyphicon glyphicon-search'></span>");
@@ -104,7 +107,7 @@ public class SearchEmpServlet extends HttpServlet {
 			out.print("  <script>");
 			out.print("  function logout() {");
 			out.print("   alert('logging out');");
-			out.print("    window.location.href='./emplogin.html'; }");
+			out.print("    window.location.href='./logout'; }");
 
 			out.print("  </script>");
 			out.print("  </html>");

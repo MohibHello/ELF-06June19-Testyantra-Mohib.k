@@ -1,4 +1,4 @@
-package com.tyss.mywebapp.servlet;
+package com.tyss.emp.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -11,24 +11,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/logout")
-public class LogOutServlet extends HttpServlet {
+@WebServlet("/logingpage")
+public class LoginPageServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+		PrintWriter out = resp.getWriter();
 		HttpSession session = req.getSession(false);
 
-		if (session != null) {
-			session.invalidate();
-		}
-		RequestDispatcher dispatcher = null;
-		resp.setContentType("text/html");
+		if (session == null) {
 
-		PrintWriter out = resp.getWriter();
-		out.print(
-				"<h1><span style='color:red;text-align:center;margin:0 auto;'>Thanks for visting our site</span></h1>");
-		dispatcher = req.getRequestDispatcher("emplogin.html");
-		dispatcher.include(req, resp);
+			out.print("<h1>invalid session </h1>");
+
+			RequestDispatcher dispatcher = req.getRequestDispatcher("login.html");
+			dispatcher.include(req, resp);
+
+		} else {
+			RequestDispatcher dispatcher = req.getRequestDispatcher("/login");
+			dispatcher.forward(req, resp);
+		}
+
 	}
 }

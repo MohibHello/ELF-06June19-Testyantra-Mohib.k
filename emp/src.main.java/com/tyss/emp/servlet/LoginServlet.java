@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,6 +22,14 @@ public class LoginServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+		Cookie dummyCookie = new Cookie("dummyCookie", "checkCookieEnabled");
+		resp.addCookie(dummyCookie);
+
+		if (req.getCookies() == null) {
+			req.getRequestDispatcher("cookiesdisabled.html").include(req, resp);
+			return;
+		}
+
 		String idValue = req.getParameter("empid");
 		String password = req.getParameter("password1");
 
@@ -30,11 +39,15 @@ public class LoginServlet extends HttpServlet {
 
 		// Send the Response to browser
 		PrintWriter out = resp.getWriter();
-
+		String url;
 		if (bean.getPassword().equals(password) && bean.getId() == Integer.parseInt(idValue)) {
 
 			// Valid Credential ;create a Session
-			HttpSession session = req.getSession(true);
+			HttpSession session = req.getSession();
+			session.setAttribute("data", bean);
+			url = "./login";
+
+			RequestDispatcher dispatcher = req.getRequestDispatcher(url);
 
 			out.print(" <!DOCTYPE html>");
 			out.print(" <html lang='en'>");
@@ -76,7 +89,8 @@ public class LoginServlet extends HttpServlet {
 			out.print("  </div>");
 			out.print("</form>");
 			out.print("  <div class='col-md-1' style='margin-top:10px; '>");
-			out.print("  <button type='button' class='btn btn-success btn-inline' id='btn' onclick='logout()'>");
+			out.print(
+					"<a href='./logo' > <button type='button' class='btn btn-success btn-inline' id='btn' onclick='logout()'></a>");
 			out.print(" logout");
 			out.print(" </button>");
 			out.print(" </div>");
@@ -107,7 +121,7 @@ public class LoginServlet extends HttpServlet {
 			out.print("  <script>");
 			out.print("  function logout() {");
 			out.print("   alert('logging out');");
-			out.print("    window.location.href='./emplogin.html'; }");
+			out.print("    window.location.href='./logout'; }");
 			out.print("  </script>");
 			out.print("  </html>");
 
