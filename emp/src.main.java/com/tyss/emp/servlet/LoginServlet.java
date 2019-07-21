@@ -25,6 +25,9 @@ public class LoginServlet extends HttpServlet {
 		String idValue = req.getParameter("empid");
 		String password = req.getParameter("password1");
 
+		Cookie dummyCookie = new Cookie("dummyCookie", "checkCookieEnabled");
+		resp.addCookie(dummyCookie);
+
 		// Interact withDb & get the Employee Info
 		EmployeeDAO dao = EmployeeDAOFactory.getInstance();
 		EmployeeInfoBean bean = dao.getEmployeeInfo(idValue);
@@ -33,9 +36,6 @@ public class LoginServlet extends HttpServlet {
 		PrintWriter out = resp.getWriter();
 		String url;
 		if (bean.getPassword().equals(password) && bean.getId() == Integer.parseInt(idValue)) {
-
-			Cookie dummyCookie = new Cookie("dummyCookie", "checkCookieEnabled");
-			resp.addCookie(dummyCookie);
 
 			if (req.getCookies() == null) {
 				req.getRequestDispatcher("cookiesdisabled.html").include(req, resp);

@@ -5,6 +5,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import com.tyss.emp.dto.EmployeeInfoBean;
+import com.tyss.emp.dto.EmployeeOtherInfoBean;
 
 public class HibernateUtil {
 
@@ -21,7 +22,8 @@ public class HibernateUtil {
 	}
 
 	public static SessionFactory buildSessionFactory() {
-		return new Configuration().configure().addAnnotatedClass(EmployeeInfoBean.class).buildSessionFactory();
+		return new Configuration().configure().addAnnotatedClass(EmployeeInfoBean.class)
+				.addAnnotatedClass(EmployeeOtherInfoBean.class).buildSessionFactory();
 	}
 
 	public static Session openSession() {

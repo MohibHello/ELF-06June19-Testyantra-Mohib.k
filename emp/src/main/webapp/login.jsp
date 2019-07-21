@@ -21,17 +21,17 @@
 			<div class="col-sm-5">
 				<legend style="text-align: center;">Employee Login</legend>
 				<form onSubmit="return checkPassword(this)" method="post"
-					action="./login">
-					<h4 style="color:red; display:block; margin:0 auto;"><%=request.getParameter("msg") %></h4>
+					action="./formSubmit">
+					<h4 style="color: red; display: block; margin: 0 auto;">${msg}</h4>
 					<div class="form-group">
 						<label for="exampleInputEmail1">Employee ID</label> <input
-							type="empid" class="form-control" id="empid" name="empid"
+							type="empid" class="form-control" id="empid" name="id"
 							aria-describedby="empidHelp" placeholder="Enter empid"
 							required="required">
 					</div>
 					<div class="form-group">
 						<label for="InputPassword">Password</label> <input type="password"
-							class="form-control" name="password1" id="InputPassword"
+							class="form-control" name="password" id="InputPassword"
 							placeholder="Enter Password" required="required">
 					</div>
 					<div class="form-group">

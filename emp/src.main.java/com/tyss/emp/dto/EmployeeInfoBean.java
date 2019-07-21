@@ -3,9 +3,12 @@ package com.tyss.emp.dto;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -43,5 +46,9 @@ public class EmployeeInfoBean implements Serializable {
 	private int managerId;
 	@Column(name = "password")
 	private String password;
+
+	@OneToOne(cascade = CascadeType.ALL)
+	@PrimaryKeyJoinColumn
+	private EmployeeOtherInfoBean empOtherinfo;
 
 }
