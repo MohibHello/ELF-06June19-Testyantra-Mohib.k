@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>To Do List</title>
+  <link rel="stylesheet" href="todo.css">
+</head>
+
+<body>
+  <div id="head" class="header">
+    <h2>My To Do List</h2>
+    <div id="popi">
+      <input type="text" id="Input" placeholder="Title....">
+      <span onclick="item()" class="btn">Add</span>  <!-- to dynamically add list to it-->
+    </div>
+  </div>
+  <ul id="list">                               <!--default todo list when open the page-->
+    <li>I</li>
+    <li>Completed</li>
+    <li>The</li>
+    <li>Task</li>
+    <li class="checked">Default</li>   <!-- checked todolist by setting class="checked" and calling js on it-->
+  </ul>
+
+</body>
+<script src="todo.js"></script>
+
+</html>

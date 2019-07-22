@@ -1,0 +1,36 @@
+body {
+    background: linear-gradient(to right,#A80058,red);
+}
+#calc-contain{
+    position: relative;
+    width: 250px;
+    height: 300px;
+    border: 2px outset black;
+    margin: 230px auto;
+    padding: 50px 20px 20px 20px;
+    background: linear-gradient(red,blue,#A80058);
+  }
+  input[type=button] {
+    background: #A80058;
+    width: 15%;
+    font-size: 20px;
+    font-weight: 100;
+    border-radius: 5px;
+    margin-left: 13px;
+    margin-top: 10px; 
+    margin-bottom:13px; 
+  }
+  input[type=button]:hover {
+    background-color: #A80058;
+    color: white;
+  }
+  input[type = text] {
+    position: relative;
+    display: block;
+    border-radius: 10px;
+    width: 80%;
+    margin: 5px auto;
+    font-size: 20px;
+    padding: 10px;
+    
+  }

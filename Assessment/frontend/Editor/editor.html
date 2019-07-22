@@ -1,0 +1,35 @@
+<html>
+<link rel="stylesheet" href="editor.css">
+<head>
+    <title>HTML Editor</title>
+</head>
+<body>
+    <textarea id="in" rows="20" cols="40" noresize="noresize">  <!-- textarea where you type your html code-->
+
+    &lt;html&gt;                          <!-- &lt means '<' and &gt means '>' -->
+    &lt;title&gt;&lt;/title&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt; 
+    
+    &lt;/body&gt;
+    &lt;/html&gt;
+    
+    </textarea><br>
+
+    <!---------button to get output------->
+
+    <button onclick="process()"><i>RUN</i></button>  
+
+    <!----------output------------------->
+
+    <p id="output">your output will be displayed here</p> 
+
+    <!-------------script ------------->
+
+    <script>
+        function process() { document.getElementById("output").innerHTML = document.getElementById("in").inneHTML = document.getElementById("in").value; }
+    </script>
+</body>
+
+</html>
