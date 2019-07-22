@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="messageBean"
+		class="com.tyss.springcore.beans.MessageBean">
+		<property name="message" value="Welcome to spring"></property>
+	</bean>
+
+	<bean id="Course" class="com.tyss.springcore.properties.Course">
+		<property name="courseId" value="${courseId}"></property>
+		<property name="courseName" value="${courseName}"></property>
+		<property name="faculty" value="${faculty}"></property>
+	</bean>
+
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+  <property name="locations" value="message.properties" ></property>
+</bean>
+
+</beans>
