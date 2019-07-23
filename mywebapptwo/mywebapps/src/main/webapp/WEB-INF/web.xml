@@ -9,8 +9,12 @@
 		<param-name>movie</param-name>
 		<param-value>sholay</param-value>
 	</context-param>
-
-
+	
+	<servlet>
+	<servlet-name>myJSP</servlet-name>
+	<jsp-file>/MyFirstJsp.jsp</jsp-file>
+	</servlet>
+	
 	<servlet>
 		<servlet-name>MyFirstServlet</servlet-name>
 		<servlet-class>com.tyss.mywebapp.servlet.MyFirstServlet</servlet-class>
@@ -33,6 +37,13 @@
 	<servlet-mapping>
 		<servlet-name>IncludeServlet</servlet-name>
 		<url-pattern>/includeServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	<servlet-mapping>
+	<servlet-name>myJSP</servlet-name>
+	<url-pattern>/currDateJSP</url-pattern>
 	</servlet-mapping>
   
 </web-app>
