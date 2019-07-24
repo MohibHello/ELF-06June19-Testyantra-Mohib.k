@@ -21,10 +21,8 @@ public class LoginPageServlet extends HttpServlet {
 		HttpSession session = req.getSession(false);
 
 		if (session == null) {
-
 			out.print("<h1>invalid session </h1>");
-
-			RequestDispatcher dispatcher = req.getRequestDispatcher("login.html");
+			RequestDispatcher dispatcher = req.getRequestDispatcher("emplogin.html");
 			dispatcher.include(req, resp);
 
 		} else {

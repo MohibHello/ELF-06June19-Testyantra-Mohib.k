@@ -1,10 +1,9 @@
 package com.tyss.warehouse.testapp;
 
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.tyss.warehouse.bean.ItemBean;
 
@@ -12,10 +11,9 @@ public class AddItem {
 
 	public static void main(String[] args) {
 
-		ApplicationContext context = new AnnotationConfigApplicationContext(HibernateConfig.class);
-		SessionFactory factory = context.getBean(SessionFactory.class);
+		ApplicationContext context = new ClassPathXmlApplicationContext("ApplicationContext.xml");
 
-		Session session = factory.openSession();
+		Session session = context.getBean("hibernateUtil", HibernateUtil.class).getSession();
 
 		ItemBean itemBean = new ItemBean();
 		itemBean.setItemId(101);

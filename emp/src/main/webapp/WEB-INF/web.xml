@@ -5,9 +5,22 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
   
+  
+  
+  <servlet>
+  <servlet-name>loginfail</servlet-name>
+  <jsp-file>/login.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>loginfail</servlet-name>
+  	<url-pattern>/loginfail</url-pattern>
+  </servlet-mapping>
+  
+  
   <session-config>
   <!-- time in min -->
-  <session-timeout>5</session-timeout>
+  <session-timeout>1234</session-timeout>
   </session-config>
   
 </web-app>
