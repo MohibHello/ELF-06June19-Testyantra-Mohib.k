@@ -1,82 +1,160 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Employee Management Portal</title>
+<!--     <link rel="stylesheet" href="../loginstyle.css"> -->
+
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
+<style>
+body, html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background: #60a3bc !important;
+}
+
+.user_card {
+	height: 400px;
+	width: 350px;
+	margin-top: auto;
+	margin-bottom: auto;
+	background: #f39c12;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+	-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+	-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+	border-radius: 5px;
+}
+
+.brand_logo_container {
+	position: absolute;
+	height: 170px;
+	width: 170px;
+	top: -75px;
+	border-radius: 50%;
+	background: #60a3bc;
+	padding: 10px;
+	text-align: center;
+}
+
+.brand_logo {
+	height: 150px;
+	width: 150px;
+	border-radius: 50%;
+	border: 2px solid white;
+}
+
+.form_container {
+	margin-top: 100px;
+}
+
+.login_btn {
+	width: 100%;
+	background: #c0392b !important;
+	color: white !important;
+}
+
+.login_btn:focus {
+	box-shadow: none !important;
+	outline: 0px !important;
+}
+
+.login_container {
+	padding: 0 2rem;
+}
+
+.input-group-text {
+	background: #c0392b !important;
+	color: white !important;
+	border: 0 !important;
+	border-radius: 0.25rem 0 0 0.25rem !important;
+}
+
+.input_user, .input_pass:focus {
+	box-shadow: none !important;
+	outline: 0px !important;
+}
+
+.custom-checkbox .custom-control-input:checked ~.custom-control-label::before
+	{
+	background-color: #c0392b !important;
+}
+</style>
 </head>
-<body style="background: cornflowerblue">
 
-
-	<div class="container "
-		style="margin: 5% 20% 0 15%; border-radius: 100px; background: #D3D3D3;">
-		<div class="row justify-content-md-center">
-			<div class="col-sm-5">
-				<legend style="text-align: center;">Employee Login</legend>
-				<form onSubmit="return checkPassword(this)" method="post"
-					action="./login">
-					<h4 style="color: red; display: block; margin: 0 auto;"><%=request.getParameter("msg")%></h4>
-					<div class="form-group">
-						<label for="exampleInputEmail1">Employee ID</label> <input
-							type="empid" class="form-control" id="empid" name="empid"
-							aria-describedby="empidHelp" placeholder="Enter empid"
-							required="required">
+<body>
+	<div class="container h-100">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
+				<div class="d-flex justify-content-center">
+					<div class="brand_logo_container">
+						<img
+							src="https://cdn.pixabay.com/photo/2017/02/23/13/05/profile-2092113_960_720.png"
+							class="brand_logo" alt="Logo">
 					</div>
-					<div class="form-group">
-						<label for="InputPassword">Password</label> <input type="password"
-							class="form-control" name="password1" id="InputPassword"
-							placeholder="Enter Password" required="required">
-					</div>
-					<div class="form-group">
-						<label for="confirmPassword">Confirm Password</label> <input
-							type="password" class="form-control" name="password2"
-							id="confirmPassword" placeholder="Confirm Password"
-							required="required">
-					</div>
-					<div class="text-center col-sm-12">
-						<button type="submit" class="btn btn-primary">
-							<small>Login</small>
-						</button>
-					</div>
-
-
-				</form>
-				<div class="text-center col-sm-12"
-					style="margin-top: 10px; margin-bottom: 10px;">
-					<a href="Employee Information.html"
-						style="text-align: center; margin: 10px;" class="btn btn-primary"
-						type="button"><small>Create Account</small></a> <a
-						href="forgotpassword.html" class="btn btn-primary"
-						style="text-align: center; margin: 10px;" type="button"><small>Forgot
-							password</small></a>
 				</div>
-
+				<div class="d-flex justify-content-center form_container">
+					<form method="post" action="./validate">
+						<small style="color:blue;"><center>${msg}</center></small>
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text" name="id" class="form-control input_user"
+								value="" placeholder="username">
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password" name="password"
+								class="form-control input_pass" value="" placeholder="password">
+						</div>
+						<div class="form-group">
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" class="custom-control-input"
+									id="customControlInline"> <label
+									class="custom-control-label" for="customControlInline">Remember
+									me</label>
+							</div>
+						</div>
+				</div>
+				<div class="d-flex justify-content-center mt-3 login_container">
+					<button type="submit" name="button" class="btn login_btn">Login</button>
+				</div>
+				</form>
+				<div class="mt-4">
+					<div class="d-flex justify-content-center links">
+						Don't have an account? <a href="./create" class="ml-2">Sign Up</a>
+					</div>
+					<div class="d-flex justify-content-center links">
+						<a href="#">Forgot your password?</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-
-
 </body>
-
-<script>
-	// Function to check Whether both passwords 
-	// is same or not. 
-	function checkPassword(form) {
-		password1 = form.password1.value;
-		password2 = form.password2.value;
-
-		if (password1 != password2) {
-			alert("\nPassword did not match: Please try again...")
-			return false;
-		}
-	}
-</script>
-
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+	crossorigin="anonymous"></script>
 </html>
