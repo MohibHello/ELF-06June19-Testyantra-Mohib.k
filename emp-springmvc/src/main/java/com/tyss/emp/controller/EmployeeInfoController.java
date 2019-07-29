@@ -55,7 +55,7 @@ public class EmployeeInfoController {
 			return "login";
 		} else {
 			String msg = "reg fail try again";
-			map.addAttribute(msg, msg);
+			map.addAttribute("msg", msg);
 			return "createemp";
 		}
 	}
