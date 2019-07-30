@@ -26,7 +26,7 @@
                 <legend class="h3" style="text-align: center;">Employee
                     Information</legend>
                   <br>
-                  <form action="./insdata" method="post">
+                  <form action="insdata" method="post">
                 
                     <div class="container-fluid">
                 
