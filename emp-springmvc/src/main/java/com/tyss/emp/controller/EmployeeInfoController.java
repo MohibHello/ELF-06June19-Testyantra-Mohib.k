@@ -1,8 +1,14 @@
 package com.tyss.emp.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -13,6 +19,13 @@ import com.tyss.emp.dto.EmployeeInfoBean;
 @Controller
 @RequestMapping("/emp")
 public class EmployeeInfoController {
+
+	@InitBinder
+	public void initBinder(WebDataBinder binder) {
+
+		CustomDateEditor editor = new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd"), true);
+		binder.registerCustomEditor(Date.class, editor);
+	}// End of initBinder()
 
 	@GetMapping("/getForm")
 	public String getForm() {
@@ -43,10 +56,8 @@ public class EmployeeInfoController {
 	@PostMapping("/insdata")
 	public String create(EmployeeInfoBean bean, ModelMap map) {
 
-		System.out.println("working");
 		EmployeeDAO dao = EmployeeDAOFactory.getInstance();
 		map.addAttribute("bean1", bean);
-		System.out.println("working2");
 		boolean bean1 = dao.createEmployeeInfo(bean);
 
 		if (bean1) {

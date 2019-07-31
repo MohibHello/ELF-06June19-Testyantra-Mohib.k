@@ -22,17 +22,19 @@ public class CriteriaRestrictions {
 		Session session = factory.openSession();
 
 		Criteria criteria = session.createCriteria(EmployeeInfoBean.class);
-		Criterion cr = Restrictions.gt("salary", Integer.parseInt("20000"));
+		Criterion cr = Restrictions.gt("salary", Integer.parseInt("1000"));
 		Criterion cr2 = Restrictions.le("salary", Integer.parseInt("50000"));
-		criteria.add(cr2);
+		// criteria.add(cr2);
 		criteria.add(cr);
 		// EmployeeInfoBean emp = (EmployeeInfoBean) criteria.list();
 
 		List<EmployeeInfoBean> emp = criteria.list();
 
 		for (EmployeeInfoBean employeeInfoBean : emp) {
+			log.info("working?");
 			log.info("" + employeeInfoBean);
 		}
+		log.info("w");
 
 	}
 }

@@ -22,7 +22,8 @@
 	<header>
 		<div class='row' style='background: gray;'>
 			<div class='col-sm-1' style='margin-top: 10px;'>
-				<a href="/loginmvc"> <img class='rounded' alt='Bootstrap Image Preview'
+				<a href="/loginmvc"> <img class='rounded'
+					alt='Bootstrap Image Preview'
 					style='height: 60px; width: 80px; margin-bottom: 10px;'
 					src='https://cdn.pixabay.com/photo/2017/02/23/13/05/profile-2092113_960_720.png' /></a>
 			</div>
@@ -159,7 +160,8 @@
 
 
 	<footer
-		style='background: gray; margin-top: 20px; width: 100%; height: 30px;'>
+		style='background: gray;position: absolute; right: 0; bottom: 0; left: 0; padding: 1rem; text-align: center;'>
+		&copy;copyright at HomePage
 	</footer>
 </body>
 

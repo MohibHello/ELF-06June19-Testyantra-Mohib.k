@@ -35,6 +35,7 @@ public class EmployeeInfoBean implements Serializable {
 	private String email;
 	@Column(name = "designation")
 	private String designation;
+	@Date
 	@Column(name = "dob")
 	private Date dob;
 	@Column(name = "dept_id")
