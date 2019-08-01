@@ -3,6 +3,7 @@ package com.tyss.emp.dao;
 import java.util.List;
 
 import com.tyss.emp.dto.EmployeeInfoBean;
+import com.tyss.emp.dto.EmployeeOtherInfoBean;
 
 public interface EmployeeDAO {
 	List<EmployeeInfoBean> getAllEmployeeInfo();
@@ -10,6 +11,10 @@ public interface EmployeeDAO {
 	List<EmployeeInfoBean> getEmployeeListInfo(String id);
 
 	List<EmployeeInfoBean> getEmployeeListInfo(int id);
+
+	EmployeeOtherInfoBean getEmployeeOtherInfo(int id);
+
+	EmployeeOtherInfoBean getEmployeeOtherInfo(String id);
 
 	EmployeeInfoBean getEmployeeInfo(int id);
 

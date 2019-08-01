@@ -1,3 +1,4 @@
+<%@ page session="false" %>
 <!DOCTYPE html>
 <html>
 
@@ -105,7 +106,9 @@ body, html {
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-					<form method="post" action="./validate">
+				
+					<form method="post" action="./authernticate">
+					
 						<small style="color:blue;"><center>${msg}</center></small>
 						<div class="input-group mb-3">
 							<div class="input-group-append">

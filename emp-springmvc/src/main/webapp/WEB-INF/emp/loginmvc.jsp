@@ -34,14 +34,17 @@
 					<div class='col-md-12'>
 						<div class='search input-group' data-initialize='search'
 							role='search' id='search'>
-							<input type='text' class='form-control'
+							<form action="./validate2/searchEmp">
+							<input type='text' name="search" class='form-control'
 								aria-label='Sizing example input'
 								aria-describedby='inputGroup-sizing-default'> <span
 								class='input-group-btn'>
-								<button class='btn btn-default' type='button'>
+								<button class='btn btn-default' type='submit'>
 									<span class='glyphicon glyphicon-search'></span> <span
 										class='sr-only'>Search</span>
 								</button>
+								<!-- <input hidden type="text" name="url" value="search"> -->
+								</form>
 							</span>
 						</div>
 					</div>
@@ -50,8 +53,9 @@
 			<div class='col-md-1' style='margin-top: 10px;'>
 
 				<button type='button' style="width: 80px; height: 60px;"
-					class='btn btn-success btn-inline' id='btn' onclick='logout()'>
-					logout</button>
+					class='btn btn-success btn-inline' id='btn'>
+					<a href="./logout">logout</a>
+				</button>
 			</div>
 		</div>
 	</header>
@@ -156,13 +160,99 @@
 				</div>
 			</div>
 		</div>
+		<div class="accordion" id="accordionExample">
+			<div class="card">
+				<div class="card-header" id="headingOne">
+					<h2 class="mb-0">
+						<button class="btn btn-link" type="button" data-toggle="collapse"
+							data-target="#collapseOne" aria-expanded="true"
+							aria-controls="collapseOne">
+							<h4 style="width: 1300px; margin: 0 auto;">Employee Detail</h4>
+						</button>
+					</h2>
+				</div>
+
+				<div id="collapseOne" class="collapse show"
+					aria-labelledby="headingOne" data-parent="#accordionExample">
+					<div class="card-body">
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Employee</th>
+									<th scope="col">Details</th>
+								</tr>
+							</thead>
+							<tbody style="font: 56px;">
+								<table class="table">
+									<thead>
+										<tr>
+											<th scope="col">#</th>
+											<th scope="col">EmployeeOther</th>
+											<th scope="col">Details</th>
+										</tr>
+									</thead>
+									<tbody style="font: 56px;">
+										<tr scope="row">
+											<th>PAN</th>
+											<td>${otherInfoBean.pan}</td>
+										</tr>
+										<tr scope="row">
+											<th>ADHAR</th>
+											<td>${ otherInfoBean.adhar}</td>
+										</tr>
+										<tr scope="row">
+											<th>Passport Number</th>
+											<td>${ otherInfoBean.passport}</td>
+										</tr>
+										<tr scope="row">
+											<th>Emergency Contact Name</th>
+											<td>${ otherInfoBean.emergencyContactPerson}</td>
+										</tr>
+										<tr scope="row">
+											<th>Emergency Contact Number</th>
+											<td>${ otherInfoBean.emergencyContactNumber}</td>
+										</tr>
+										<%-- <tr scope="row">
+											<th>Physically Challenged</th>
+											<td>${ otherInfoBean.ischallenged}</td>
+										</tr>
+										<tr scope="row">
+											<th>Married</th>
+											<td>${ otherInfoBean.isMarried}</td>
+										</tr>
+ --%>										<tr scope="row">
+											<th>Spouse Name</th>
+											<td>${ otherInfoBean.spouseName}</td>
+										</tr>
+										<tr scope="row">
+											<th>Father Name</th>
+											<td>${ otherInfoBean.fatherName}</td>
+										</tr>
+										<tr scope="row">
+											<th>Mother Name</th>
+											<td>${ otherInfoBean.motherName}</td>
+										</tr>
+										<tr scope="row">
+											<th>Nationality</th>
+											<td>${ otherInfoBean.nationality}</td>
+										</tr>
+										<tr scope="row">
+											<th>Relegion</th>
+											<td>${ otherInfoBean.religion}</td>
+										</tr>
+									</tbody>
+								</table>
+								</div>
+								</div>
+								</div>
+								</div>
 	</section>
 
 
 	<footer
-		style='background: gray;position: absolute; right: 0; bottom: 0; left: 0; padding: 1rem; text-align: center;'>
-		&copy;copyright at HomePage
-	</footer>
+		style='background: gray; text-align: center;'>
+		&copy;copyright at HomePage </footer>
 </body>
 
 
@@ -175,9 +265,9 @@
 	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
 	crossorigin="anonymous"></script>
 <script>
-    function logout() {
-        window.location.href = 'getForm?msg=loggedout Successful';
-    }  
+	function logout() {
+		window.location.href = 'getForm?msg=loggedout Successful';
+	}
 </script>
 
 <script

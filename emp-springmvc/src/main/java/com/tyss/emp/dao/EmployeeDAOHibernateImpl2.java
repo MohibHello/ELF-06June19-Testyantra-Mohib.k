@@ -8,6 +8,7 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import com.tyss.emp.dto.EmployeeInfoBean;
+import com.tyss.emp.dto.EmployeeOtherInfoBean;
 import com.tyss.emp.util.HibernateUtil;
 
 import lombok.extern.java.Log;
@@ -95,5 +96,19 @@ public class EmployeeDAOHibernateImpl2 implements EmployeeDAO {
 
 		return employeeInfoBeans;
 
+	}
+
+	@Override
+	public EmployeeOtherInfoBean getEmployeeOtherInfo(int id) {
+		EmployeeOtherInfoBean bean = null;
+		try (Session session = HibernateUtil.openSession();) {
+			bean = session.get(EmployeeOtherInfoBean.class, id);
+		}
+		return bean;
+	}
+
+	@Override
+	public EmployeeOtherInfoBean getEmployeeOtherInfo(String id) {
+		return getEmployeeOtherInfo(Integer.parseInt(id));
 	}
 }

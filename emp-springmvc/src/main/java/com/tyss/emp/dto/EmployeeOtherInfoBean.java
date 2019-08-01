@@ -53,6 +53,9 @@ public class EmployeeOtherInfoBean implements Serializable {
 	@Column(name = "adhar")
 	private long adhar;
 
+	@Column(name = "pan")
+	private String pan;
+
 	public int getId() {
 		return id;
 	}
