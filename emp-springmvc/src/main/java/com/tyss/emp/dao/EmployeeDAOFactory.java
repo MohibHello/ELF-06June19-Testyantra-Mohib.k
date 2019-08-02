@@ -2,12 +2,9 @@ package com.tyss.emp.dao;
 
 public class EmployeeDAOFactory {
 
-	private static String dbInstancetype = "hibernate";
-
 	private EmployeeDAOFactory() {
 	}
-
-	public static EmployeeDAO getInstance() {
+	public static EmployeeDAO getInstance(String dbInstancetype) {
 		EmployeeDAO dao = null;
 		if (dbInstancetype.equals("jdbc")) {
 			dao = null;
@@ -15,5 +12,5 @@ public class EmployeeDAOFactory {
 			dao = new EmployeeDAOHibernateImpl2();
 		}
 		return dao;
-	}// End of get
+	}  // End of get
 }

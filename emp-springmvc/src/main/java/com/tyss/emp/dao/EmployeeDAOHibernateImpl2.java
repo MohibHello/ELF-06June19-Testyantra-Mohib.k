@@ -3,9 +3,9 @@ package com.tyss.emp.dao;
 import java.util.List;
 
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.tyss.emp.dto.EmployeeInfoBean;
 import com.tyss.emp.dto.EmployeeOtherInfoBean;
@@ -16,8 +16,12 @@ import lombok.extern.java.Log;
 @Log
 public class EmployeeDAOHibernateImpl2 implements EmployeeDAO {
 
+	@Autowired
+	private HibernateUtil hibernateUtil;
+	
+	
 	public List<EmployeeInfoBean> getAllEmployeeInfo() {
-		Session session = HibernateUtil.openSession();
+		Session session = hibernateUtil.openSession();
 		String hql = "from EmployeeInfoBean";
 		Query query = session.createQuery(hql);
 		List<EmployeeInfoBean> employeeInfoBeans = query.list();
@@ -29,7 +33,7 @@ public class EmployeeDAOHibernateImpl2 implements EmployeeDAO {
 	}
 
 	public EmployeeInfoBean getEmployeeInfo(int id) {
-		Session session = HibernateUtil.openSession();
+		Session session = hibernateUtil.openSession();
 		EmployeeInfoBean bean = session.get(EmployeeInfoBean.class, id);
 		session.close();
 		if (bean.getId() == id) {
@@ -52,7 +56,7 @@ public class EmployeeDAOHibernateImpl2 implements EmployeeDAO {
 		try {
 			EmployeeInfoBean bean = new EmployeeInfoBean();
 			bean.setId(id);
-			Session session = HibernateUtil.openSession();
+			Session session = hibernateUtil.openSession();
 			txn = session.beginTransaction();
 			session.delete(bean);
 			txn.commit();
@@ -71,7 +75,7 @@ public class EmployeeDAOHibernateImpl2 implements EmployeeDAO {
 	private boolean saveOrUpdate(EmployeeInfoBean bean) {
 		Transaction txn = null;
 		try {
-			Session session = HibernateUtil.openSession();
+			Session session = hibernateUtil.openSession();
 			txn = session.beginTransaction();
 			session.saveOrUpdate(bean);
 			txn.commit();
@@ -89,8 +93,7 @@ public class EmployeeDAOHibernateImpl2 implements EmployeeDAO {
 
 	public List<EmployeeInfoBean> getEmployeeListInfo(int id) {
 		String hql = "from EmployeeInfoBean where str(id) like " + "'" + id + "%" + "'";
-		SessionFactory factory = HibernateUtil.getSessionFactory();
-		Session session = factory.openSession();
+		Session session = hibernateUtil.openSession();
 		Query query = session.createQuery(hql);
 		List<EmployeeInfoBean> employeeInfoBeans = query.list();
 
@@ -101,7 +104,7 @@ public class EmployeeDAOHibernateImpl2 implements EmployeeDAO {
 	@Override
 	public EmployeeOtherInfoBean getEmployeeOtherInfo(int id) {
 		EmployeeOtherInfoBean bean = null;
-		try (Session session = HibernateUtil.openSession();) {
+		try (Session session = hibernateUtil.openSession();) {
 			bean = session.get(EmployeeOtherInfoBean.class, id);
 		}
 		return bean;

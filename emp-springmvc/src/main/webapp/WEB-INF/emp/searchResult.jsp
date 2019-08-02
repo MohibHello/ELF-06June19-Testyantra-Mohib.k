@@ -17,7 +17,7 @@
 <!-- Optional theme -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-<title>Homepage</title>
+<title>search</title>
 </head>
 
 <body class='container-fluid'>

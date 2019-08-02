@@ -1,4 +1,4 @@
-<%@ page session="false" %>
+<%@ page session="false"%>
 <!DOCTYPE html>
 <html>
 
@@ -106,16 +106,16 @@ body, html {
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-				
-					<form method="post" action="./authernticate">
-					
-						<small style="color:blue;"><center>${msg}</center></small>
+
+					<form method="post" action="./authenticate">
+
+						<small style="color: blue;"><center>${msg}</center></small>
 						<div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
 							<input type="text" name="id" class="form-control input_user"
-								value="" placeholder="username">
+								value="" placeholder="id">
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">

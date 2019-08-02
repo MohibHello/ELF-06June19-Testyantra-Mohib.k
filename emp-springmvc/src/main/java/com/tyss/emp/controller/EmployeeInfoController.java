@@ -23,9 +23,9 @@ import com.tyss.emp.dao.EmployeeDAO;
 import com.tyss.emp.dao.EmployeeDAOFactory;
 import com.tyss.emp.dto.EmployeeInfoBean;
 import com.tyss.emp.dto.EmployeeOtherInfoBean;
-
+import static com.tyss.emp.common.EMPCommons.*; 
 @Controller
-@PropertySource("classpath:msg.properties")
+@PropertySource(PROP_PATH)
 @RequestMapping("/emp")
 public class EmployeeInfoController {
 
@@ -36,15 +36,16 @@ public class EmployeeInfoController {
 		binder.registerCustomEditor(Date.class, editor);
 	}// End of initBinder()
 
-	@GetMapping("/getForm")
+	@GetMapping("/loginPage")
 	public String getForm() {
-		return "login";
+		return VIEW_LOGINPAGE;
 	}// End of getForm()
 
 	@PostMapping("/authernticate")
 	public String login(EmployeeInfoBean bean, ModelMap modelMap, HttpServletRequest req) {
 
-		EmployeeDAO dao = EmployeeDAOFactory.getInstance();
+		String dbInstancetype = "hibernate";
+		EmployeeDAO dao = EmployeeDAOFactory.getInstance(dbInstancetype);
 		EmployeeInfoBean bean2 = dao.getEmployeeInfo(bean.getId());
 		EmployeeOtherInfoBean otherInfoBean = dao.getEmployeeOtherInfo(bean.getId());
 
@@ -56,7 +57,7 @@ public class EmployeeInfoController {
 		} else {
 			String msg = "Invalid password or User";
 			modelMap.addAttribute("msg", msg);
-			return "login";
+			return VIEW_LOGINPAGE;
 		}
 	}// End of submitForm2()
 
@@ -67,15 +68,15 @@ public class EmployeeInfoController {
 
 	@PostMapping("/insdata")
 	public String create(EmployeeInfoBean bean, ModelMap map) {
-
-		EmployeeDAO dao = EmployeeDAOFactory.getInstance();
+		String dbInstancetype = "hibernate";
+		EmployeeDAO dao = EmployeeDAOFactory.getInstance(dbInstancetype);
 		map.addAttribute("bean1", bean);
 		boolean bean1 = dao.createEmployeeInfo(bean);
 
 		if (bean1) {
 			String msg = "account created login";
 			map.addAttribute("msg", msg);
-			return "login";
+			return "loginPage";
 		} else {
 			String msg = "reg fail try again";
 			map.addAttribute("msg", msg);
@@ -87,7 +88,7 @@ public class EmployeeInfoController {
 	public String logout(HttpSession session, ModelMap modelMap) {
 		session.invalidate();
 		modelMap.addAttribute("msg", "Successfully loggedout");
-		return "login";
+		return "loginPage";
 	}// end of logout()
 
 	@GetMapping("searchEmp")
@@ -100,7 +101,7 @@ public class EmployeeInfoController {
 			@Value("${msg}") String msg) {
 		if (req.getSession(false) == null) {
 			modelMap.addAttribute("msg", msg);
-			return "login";
+			return "loginPage";
 		}
 		return "forward:/emp/" + url;
 	}// end of validation()
@@ -111,7 +112,7 @@ public class EmployeeInfoController {
 
 		if (req.getSession(false) == null) {
 			modelMap.addAttribute("msg", msg);
-			return "login";
+			return "loginPage";
 		}
 		String idv = req.getParameter("search");
 		modelMap.addAttribute("idv", idv);
