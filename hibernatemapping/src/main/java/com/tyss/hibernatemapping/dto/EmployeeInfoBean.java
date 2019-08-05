@@ -6,6 +6,8 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -40,8 +42,9 @@ public class EmployeeInfoBean implements Serializable {
 	private Date dob;
 	@Column(name = "dept_id")
 	private int departmentId;
-	@Column(name = "mgr_id")
-	private int managerId;
-	
+
+	@ManyToOne
+	@JoinColumn(name = "mgr_id", referencedColumnName = "id")
+	private EmployeeInfoBean managerId;
 
 }

@@ -33,7 +33,7 @@ public class MappingApp {
 		bean.setJoiningDate(joiningDate);
 		bean.setEmail("naruto111@gmail.com");
 		bean.setGender("male");
-		bean.setManagerId(106);
+		// bean.setManagerId(106);
 		bean.setSalary(34000);
 		bean.setPhone(9875535);
 

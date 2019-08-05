@@ -18,6 +18,7 @@
         <mapping class="com.tyss.hibernatemapping.dto.EmployeeAddressInfoBean" /> 
         <mapping class="com.tyss.hibernatemapping.dto.EmployeeEducationalInfoBean" /> 
         <mapping class="com.tyss.hibernatemapping.dto.EmployeeExperienceInfoBean" />
+        <mapping class="com.tyss.hibernatemapping.dto.EmployeeTrainingBean" />
         
     </session-factory>
 </hibernate-configuration>
