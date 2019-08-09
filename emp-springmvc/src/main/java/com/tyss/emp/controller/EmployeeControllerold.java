@@ -1,13 +1,12 @@
 package com.tyss.emp.controller;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-@Controller
-@RequestMapping("/employee")
+//@Controller
+//@RequestMapping("/employee")
 public class EmployeeControllerold {
 
 	// length typing for get method

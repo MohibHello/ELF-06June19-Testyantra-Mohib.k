@@ -18,8 +18,7 @@ public class EmployeeDAOHibernateImpl2 implements EmployeeDAO {
 
 	@Autowired
 	private HibernateUtil hibernateUtil;
-	
-	
+
 	public List<EmployeeInfoBean> getAllEmployeeInfo() {
 		Session session = hibernateUtil.openSession();
 		String hql = "from EmployeeInfoBean";
@@ -75,6 +74,7 @@ public class EmployeeDAOHibernateImpl2 implements EmployeeDAO {
 	private boolean saveOrUpdate(EmployeeInfoBean bean) {
 		Transaction txn = null;
 		try {
+			System.out.println("something added" + bean.toString());
 			Session session = hibernateUtil.openSession();
 			txn = session.beginTransaction();
 			session.saveOrUpdate(bean);

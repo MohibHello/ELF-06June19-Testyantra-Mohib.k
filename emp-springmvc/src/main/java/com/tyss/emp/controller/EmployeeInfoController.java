@@ -1,5 +1,8 @@
 package com.tyss.emp.controller;
 
+import static com.tyss.emp.common.EMPCommons.PROP_PATH;
+import static com.tyss.emp.common.EMPCommons.VIEW_LOGINPAGE;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -23,7 +26,7 @@ import com.tyss.emp.dao.EmployeeDAO;
 import com.tyss.emp.dao.EmployeeDAOFactory;
 import com.tyss.emp.dto.EmployeeInfoBean;
 import com.tyss.emp.dto.EmployeeOtherInfoBean;
-import static com.tyss.emp.common.EMPCommons.*; 
+
 @Controller
 @PropertySource(PROP_PATH)
 @RequestMapping("/emp")
@@ -63,7 +66,7 @@ public class EmployeeInfoController {
 
 	@GetMapping("/create")
 	public String getSubmitForm() {
-		return "createemp";
+		return "homePage";
 	}// end of getSubmitForm()
 
 	@PostMapping("/insdata")

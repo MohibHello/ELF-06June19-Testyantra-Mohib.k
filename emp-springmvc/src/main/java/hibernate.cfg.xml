@@ -5,20 +5,22 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/testyantra_db</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/testyantra_db2</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">root</property>
         <property name="hibernate.connection.pool_size">1</property>
         <property name="hibernate.current_session_context_class">thread</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
+          <property name="hibernate.hbm2ddl.auto">update</property>
 
-       <!--  <mapping class="com.tyss.hibernateapp.dto.EmployeeInfoBean" /> -->
-       
-<!-- 	<mapping class="com.tyss.hibernateapp.dto.EmployeeTest"/> -->
-	
-	
-<!-- 	 <mapping class="com.tyss.hibernateapp.dto.EmployeeInfoBean" /> -->
-            
+        <mapping class="com.tyss.emp.dto.EmployeeInfoBean" />
+        <mapping class="com.tyss.emp.dto.DepartmentInfoBean" />
+        <mapping class="com.tyss.emp.dto.EmployeeAddressInfoBean" />
+        <mapping class="com.tyss.emp.dto.EmployeeEducationalInfoBean" />
+        <mapping class="com.tyss.emp.dto.EmployeeExperienceInfoBean"/>
+        <mapping class="com.tyss.emp.dto.EmployeeOtherInfoBean"/>
+        <mapping class="com.tyss.emp.dto.TrainingInfoBean" />
+        
     </session-factory>
 </hibernate-configuration>

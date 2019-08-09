@@ -20,11 +20,11 @@ import com.tyss.emp.dto.EmployeeInfoBean;
 @Controller
 @RequestMapping("/employee")
 public class EmployeeController {
-	
+
 	@Autowired
 	@Qualifier("hibernate")
 	EmployeeDAO dao;
-	
+
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
 
@@ -32,12 +32,11 @@ public class EmployeeController {
 		binder.registerCustomEditor(Date.class, editor);
 	}// End of initBinder()
 
-
 	@GetMapping("/search")
 	public String search(int id, ModelMap map) {
-		List<EmployeeInfoBean> bean=dao.getEmployeeListInfo(id);
+		List<EmployeeInfoBean> bean = dao.getEmployeeListInfo(id);
 		map.addAttribute("bean", bean);
 		return "searchResult";
 	}
-	
+
 }

@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.tyss.emp.dto.UserBean;
+import com.tyss.emp.dto.EmployeeInfoBean;
 
 @Controller
 @RequestMapping("/session")
@@ -17,8 +17,8 @@ public class SessionController {
 	}// End of login()
 
 	@PostMapping("/login")
-	public String authenticate(UserBean userBean) {
-		if (userBean.getUserId() == 101) {
+	public String authenticate(EmployeeInfoBean userBean) {
+		if (userBean.getId() == 101) {
 
 		}
 		return null;

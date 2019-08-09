@@ -2,16 +2,15 @@ package com.tyss.emp.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.tyss.emp.dto.UserBean;
+import com.tyss.emp.dto.EmployeeInfoBean;
 
-@Controller
-@RequestMapping("/forms")
+//@Controller
+//@RequestMapping("/forms")
 public class FormController {
 
 	@RequestMapping("/getForm")
@@ -40,7 +39,7 @@ public class FormController {
 	}// End of submitForm2()
 
 	@PostMapping("/formSubmit3")
-	public String submitForm3(UserBean bean, ModelMap map) {
+	public String submitForm3(EmployeeInfoBean bean, ModelMap map) {
 		map.addAttribute("userBean", bean);
 		return "formdataBeanDisplay";
 	}// End of submitForm3()
@@ -66,7 +65,7 @@ public class FormController {
 	}
 
 	@PostMapping("/formSubmit6")
-	public String submitForm6(UserBean bean, ModelMap map) {
+	public String submitForm6(EmployeeInfoBean bean, ModelMap map) {
 		map.addAttribute("userBean", bean);
 		return "formdataBeanDisplayEL";
 	}// End of submitForm3()
