@@ -2,27 +2,24 @@ package com.tyss.hibernatemapping.dto;
 
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 import lombok.Data;
+
 @Data
 @Entity
 @Table(name = "employee_other_info")
 public class EmployeeOtherInfoBean implements Serializable {
+	@Id
+	@OneToOne
+	@JoinColumn(name = "id")
+	private EmployeeInfoBean infoBean;
 
-	/*
-	 * @Id
-	 * 
-	 * @Column(name = "id") private int id;
-	 */
-	
 	@Column(name = "ismarried")
 	private boolean isMarried;
 
@@ -58,9 +55,5 @@ public class EmployeeOtherInfoBean implements Serializable {
 
 	@Column(name = "adhar")
 	private long adhar;
-	@Id
-	@OneToOne
-	@JoinColumn(name = "id")
-	 private EmployeeInfoBean infoBean;
 
 }

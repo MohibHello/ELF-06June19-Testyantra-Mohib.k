@@ -10,6 +10,7 @@ import javax.persistence.Table;
 
 import lombok.Data;
 
+@SuppressWarnings("serial")
 @Data
 @Entity
 @Table(name = "employee_experience_info")
