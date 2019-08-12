@@ -1,4 +1,4 @@
-package com.covalense.empspringrest.dao;
+package com.tyss.empspringrest.dao;
 
 public class EmployeeDAOFactoryOld {
 

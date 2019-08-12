@@ -1,4 +1,4 @@
-package com.covalense.empspringrest.dao;
+package com.tyss.empspringrest.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,12 +9,12 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.covalense.empspringrest.dto.EmployeeInfoBean;
-import com.covalense.empspringrest.dto.EmployeeOtherInfoBean;
+import com.tyss.empspringrest.dto.EmployeeInfoBean;
+import com.tyss.empspringrest.dto.EmployeeOtherInfoBean;
 
 public class EmployeeDAOJDBCImpl implements EmployeeDAO {
 	public ArrayList<EmployeeInfoBean> getAllEmployeeInfo() {
-		String dbUrl = "jdbc:mysql://localhost:3306/covalense_db";
+		String dbUrl = "jdbc:mysql://localhost:3306/tyss_db";
 		String query = "select * from employee_info";
 		try (Connection con = DriverManager.getConnection(dbUrl, "root", "root");
 				Statement stmt = con.createStatement();
@@ -54,7 +54,7 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO {
 		try {
 
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			String dbUrl = "jdbc:mysql://localhost:3306/covalense_db";
+			String dbUrl = "jdbc:mysql://localhost:3306/tyss_db";
 			con = DriverManager.getConnection(dbUrl, "root", "root");
 			String query = "select * from employee_info " + "where id=? ";
 			pstmt = con.prepareStatement(query);

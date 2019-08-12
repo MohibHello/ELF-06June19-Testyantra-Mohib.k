@@ -1,4 +1,4 @@
-package com.covalense.empspringrest.dto;
+package com.tyss.empspringrest.dto;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

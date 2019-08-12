@@ -5,7 +5,7 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/covalense_db2</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/testyantra_db</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">root</property>
         <property name="hibernate.connection.pool_size">1</property>
@@ -16,19 +16,19 @@
 
        
           	<mapping
-			class="com.covalense.empspringrest.dto.EmployeeInfoBean" />
+			class="com.tyss.empspringrest.dto.EmployeeInfoBean" />
 		<mapping
-			class="com.covalense.empspringrest.dto.EmployeeOtherInfoBean" />
+			class="com.tyss.empspringrest.dto.EmployeeOtherInfoBean" />
 		<mapping
-			class="com.covalense.empspringrest.dto.EmployeeAddressInfoBean" />
+			class="com.tyss.empspringrest.dto.EmployeeAddressInfoBean" />
 		<mapping
-			class="com.covalense.empspringrest.dto.EmployeeEducationalInfoBean" />
+			class="com.tyss.empspringrest.dto.EmployeeEducationalInfoBean" />
 		<mapping
-			class="com.covalense.empspringrest.dto.EmployeeExperienceInfoBean" />
+			class="com.tyss.empspringrest.dto.EmployeeExperienceInfoBean" />
 		<mapping
-			class="com.covalense.empspringrest.dto.TrainingInfoBean" />
+			class="com.tyss.empspringrest.dto.TrainingInfoBean" />
 			<mapping
-			class="com.covalense.empspringrest.dto.DepartmentInfoBean" />
+			class="com.tyss.empspringrest.dto.DepartmentInfoBean" />
         
     </session-factory>
 </hibernate-configuration>

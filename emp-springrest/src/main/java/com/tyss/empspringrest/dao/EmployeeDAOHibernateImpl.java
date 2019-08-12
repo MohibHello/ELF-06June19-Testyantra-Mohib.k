@@ -1,4 +1,4 @@
-package com.covalense.empspringrest.dao;
+package com.tyss.empspringrest.dao;
 
 import java.util.List;
 
@@ -7,9 +7,9 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.covalense.empspringrest.dto.EmployeeInfoBean;
-import com.covalense.empspringrest.dto.EmployeeOtherInfoBean;
-import com.covalense.empspringrest.util.HibernateUtil;
+import com.tyss.empspringrest.dto.EmployeeInfoBean;
+import com.tyss.empspringrest.dto.EmployeeOtherInfoBean;
+import com.tyss.empspringrest.util.HibernateUtil;
 
 public class EmployeeDAOHibernateImpl implements EmployeeDAO {
 

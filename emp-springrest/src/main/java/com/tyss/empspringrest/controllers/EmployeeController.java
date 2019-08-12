@@ -1,4 +1,4 @@
-package com.covalense.empspringrest.controllers;
+package com.tyss.empspringrest.controllers;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -19,8 +19,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.covalense.empspringrest.dao.EmployeeDAO;
-import com.covalense.empspringrest.dto.EmployeeInfoBean;
+import com.tyss.empspringrest.dao.EmployeeDAO;
+import com.tyss.empspringrest.dto.EmployeeInfoBean;
 
 @Controller
 @RequestMapping("/employee")

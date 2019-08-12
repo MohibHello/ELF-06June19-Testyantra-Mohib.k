@@ -1,4 +1,4 @@
-package com.covalense.empspringrest.util;
+package com.tyss.empspringrest.util;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

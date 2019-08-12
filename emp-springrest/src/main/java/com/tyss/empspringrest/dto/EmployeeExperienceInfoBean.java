@@ -1,4 +1,4 @@
-package com.covalense.empspringrest.dto;
+package com.tyss.empspringrest.dto;
 
 import java.io.Serializable;
 import java.util.Date;

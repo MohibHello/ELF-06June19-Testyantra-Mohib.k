@@ -1,9 +1,9 @@
-package com.covalense.empspringrest.dao;
+package com.tyss.empspringrest.dao;
 
 import java.util.List;
 
-import com.covalense.empspringrest.dto.EmployeeInfoBean;
-import com.covalense.empspringrest.dto.EmployeeOtherInfoBean;
+import com.tyss.empspringrest.dto.EmployeeInfoBean;
+import com.tyss.empspringrest.dto.EmployeeOtherInfoBean;
 
 public interface EmployeeDAO {
 	EmployeeInfoBean getEmployeeInfo(String id);

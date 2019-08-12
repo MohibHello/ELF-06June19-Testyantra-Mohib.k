@@ -1,4 +1,4 @@
-package com.covalense.empspringrest.dao;
+package com.tyss.empspringrest.dao;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
