@@ -361,8 +361,10 @@
 								<label for="fathername">Father Name</label>
 							</div>
 							<div>
-								<input  type="text" name="fatherName" value="<%=infoBean.getEmployeeOtherInfoBean().getFatherName()%>" class="form-control"
-									 id="fathername" placeholder="Enter Father Name">
+								<input type="text" name="fatherName"
+									value="<%=infoBean.getEmployeeOtherInfoBean().getFatherName()%>"
+									class="form-control" id="fathername"
+									placeholder="Enter Father Name">
 							</div>
 						</div>
 					</div>
@@ -374,7 +376,7 @@
 										for(EmployeeAddressInfoBean addressInfoBean :addressInfoBeans) {
 											int i=0;
 			%>
-			
+
 			<div class="card">
 				<div class="card-header" id="headingThree">
 					<h2 class="mb-0">
@@ -389,8 +391,9 @@
 					<div class="card-body">
 						<div class="row">
 							<div class="col-md-4">
-								<label for="city">City</label> <input type="text" value="<%=addressInfoBean.getCity()%>"
-									class="form-control" name="addressInfoBeanList[<%=i%>].city"
+								<label for="city">City</label> <input type="text"
+									value="<%=addressInfoBean.getCity()%>" class="form-control"
+									name="addressInfoBeanList[<%=i%>].city"
 									placeholder="enter City">
 							</div>
 						</div>
@@ -398,7 +401,7 @@
 						<div class="row">
 							<div class="col-md-4 col-md-offset-2">
 								<label for="addressType">adress Type</label> <select
-								value="<%=addressInfoBean.getAddressPKBean().getAddressType()%>"
+									value="<%=addressInfoBean.getAddressPKBean().getAddressType()%>"
 									name="addressInfoBeanList[<%=i%>].addressPKBean.addressType"
 									class="form-control">
 									<option selected>--select one--</option>
@@ -408,8 +411,8 @@
 							</div>
 							<div class="col-md-4">
 								<label for="State">State</label> <input type="text"
-								value="<%=addressInfoBean.getState()%>"
-									class="form-control" name="addressInfoBeanList[<%=i%>].State"
+									value="<%=addressInfoBean.getState()%>" class="form-control"
+									name="addressInfoBeanList[<%=i%>].State"
 									placeholder="Enter State">
 							</div>
 						</div>
@@ -417,14 +420,14 @@
 						<div class="row">
 							<div class="col-md-4 col-md-offset-2">
 								<label for="addr1">Address1</label> <input type="text"
-								value="<%=addressInfoBean.getAddress1()%>"
-									class="form-control" name="addressInfoBeanList[<%=i%>].address1"
+									value="<%=addressInfoBean.getAddress1()%>" class="form-control"
+									name="addressInfoBeanList[<%=i%>].address1"
 									placeholder="Enter Address 1">
 							</div>
 							<div class="col-md-4">
 								<label for="country">Country</label> <input type="text"
-								value="<%=addressInfoBean.getCountry()%>"
-									class="form-control" name="addressInfoBeanList[<%=i%>].country"
+									value="<%=addressInfoBean.getCountry()%>" class="form-control"
+									name="addressInfoBeanList[<%=i%>].country"
 									placeholder="Enter Country">
 							</div>
 						</div>
@@ -432,15 +435,16 @@
 						<div class="row">
 							<div class="col-md-4 col-md-offset-2">
 								<label for="address2">Address 2</label> <input type="text"
-								value="<%=addressInfoBean.getAddress2() %>"
-									class="form-control" name="addressInfoBeanList[<%=i%>].address2"
+									value="<%=addressInfoBean.getAddress2() %>"
+									class="form-control"
+									name="addressInfoBeanList[<%=i%>].address2"
 									placeholder="Enter Address 2">
 							</div>
 
 							<div class="col-md-4">
 								<label for="pincode">Pincode</label> <input type="number"
-								value="<%=addressInfoBean.getPincode()%>"
-									class="form-control" name="addressInfoBeanList[<%=i%>].pincode"
+									value="<%=addressInfoBean.getPincode()%>" class="form-control"
+									name="addressInfoBeanList[<%=i%>].pincode"
 									placeholder="Enter Pincode">
 							</div>
 						</div>
@@ -452,7 +456,7 @@
 								</div>
 								<div>
 									<input type="text" class="form-control"
-									value="<%=addressInfoBean.getLandmark()%>"
+										value="<%=addressInfoBean.getLandmark()%>"
 										name="addressInfoBeanList[<%=i%>].landmark"
 										placeholder="Enter landmark">
 								</div>
@@ -464,7 +468,7 @@
 			<% i++;
 			
 										} %>
-	<!-- 		<div class="card">
+			<!-- 		<div class="card">
 				<div class="card-header" id="headingFour">
 					<h2 class="mb-0">
 						<button class="btn btn-link collapsed" type="button"
@@ -544,14 +548,14 @@
 					</div>
 				</div>
 			</div> -->
-			
+
 			<%
 			List<EmployeeEducationalInfoBean> EduInfoBeans = infoBean.getAddressInfoBeanList(); 
 											int j=0;
 										for(EmployeeEducationalInfoBean  empEduInfo:EduInfoBeans) {
 									
 										%>
-			
+
 			<div class="card">
 				<div class="card-header" id="headingFive">
 					<h2 class="mb-0">
@@ -592,8 +596,7 @@
 								<div class="col-sm-4">
 									<div class="input-group">
 										<span class="input-group-addon">Degree Type</span> <input
-											id="degreeType"
-											value="<%=empEduInfo.getDegreeType()%>"
+											id="degreeType" value="<%=empEduInfo.getDegreeType()%>"
 											name="employeeEducationalInfoBean[<%=j%>].degreeType"
 											class="form-control" placeholder="Enter Degree Type"
 											type="text">
@@ -622,8 +625,7 @@
 								<div class="col-sm-4">
 									<div class="input-group">
 										<span class="input-group-addon">College Name</span> <input
-											id="college"
-												value="<%=empEduInfo.getCollegeName()%>"
+											id="college" value="<%=empEduInfo.getCollegeName()%>"
 											name="employeeEducationalInfoBean[<%=j%>].collegeName"
 											class="form-control" placeholder="Enter College Name"
 											type="text">
@@ -638,8 +640,7 @@
 								<div class="col-sm-4">
 									<div class="input-group">
 										<span class="input-group-addon">University</span> <input
-											id="university"
-											value="<%=empEduInfo.getUniversity()%>"
+											id="university" value="<%=empEduInfo.getUniversity()%>"
 											name="employeeEducationalInfoBean[<%=j%>].university"
 											class="form-control" placeholder="Enter University Name"
 											type="text">
@@ -655,9 +656,8 @@
 									<div class="input-group">
 										<span class="input-group-addon">Year of Passout</span> <input
 											id="yop" name="employeeEducationalInfoBean[<%=j%>].yop"
-											value="<%=empEduInfo.getYop()%>"
-											class="form-control" placeholder="Enter Year of Passout"
-											type="text">
+											value="<%=empEduInfo.getYop()%>" class="form-control"
+											placeholder="Enter Year of Passout" type="text">
 									</div>
 
 								</div>
@@ -669,8 +669,7 @@
 								<div class="col-sm-4">
 									<div class="input-group">
 										<span class="input-group-addon">Percentage</span> <input
-											id="percentage"
-											value="<%=empEduInfo.getPercentage()%>"
+											id="percentage" value="<%=empEduInfo.getPercentage()%>"
 											name="employeeEducationalInfoBean[<%=j%>].percentage"
 											class="form-control" placeholder="Enter Percentage"
 											type="number">
@@ -685,8 +684,8 @@
 								<div class="col-sm-4">
 									<div class="input-group">
 										<span class="input-group-addon">Location</span> <input
-										value="<%=empEduInfo.getLocation()%>"
-											id="location" name="employeeEducationalInfoBean[<%=j%>].location"
+											value="<%=empEduInfo.getLocation()%>" id="location"
+											name="employeeEducationalInfoBean[<%=j%>].location"
 											class="form-control" placeholder="Enter Location" type="text">
 									</div>
 
@@ -835,14 +834,14 @@
 					</div>
 				</div>
 			</div> -->
-			
+
 			<%
 			List<EmployeeExperienceInfoBean> ExpInfoBeans = infoBean.getEmployeeExperienceInfoBean();  
 											int k=0;
 										for(EmployeeExperienceInfoBean  empExpInfo:ExpInfoBeans) {
 									
 										%>
-			
+
 			<div class="card">
 				<div class="card-header" id="headingSeven">
 					<h2 class="mb-0">
@@ -881,7 +880,7 @@
 									<div class="input-group">
 										<span id="companyPrepend" class="input-group-addon">Desingnation</span>
 										<input id="desingnation"
-										value="<%=empExpInfo.getDesignation()%>"
+											value="<%=empExpInfo.getDesignation()%>"
 											name="employeeExperienceInfoBean[<%=k%>].desingnation"
 											class="form-control" placeholder="Enter Desingnation"
 											type="text">
@@ -928,8 +927,8 @@
 					</div>
 				</div>
 			</div>
-			
-			
+
+
 			<%
 				k++;
 										} %>
