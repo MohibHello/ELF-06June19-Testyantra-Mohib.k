@@ -34,7 +34,8 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO {
 	private boolean saveOrUpdate(EmployeeInfoBean bean) {
 
 		Transaction txn = null;
-		try (Session session = hibernateUtil.openSession();) {
+		Session session = hibernateUtil.openSession();
+		try {
 			txn = session.beginTransaction();
 			session.saveOrUpdate(bean);
 			txn.commit();
