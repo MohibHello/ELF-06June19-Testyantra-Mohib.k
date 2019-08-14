@@ -7,6 +7,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
@@ -14,8 +15,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
 
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
@@ -29,7 +28,7 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 //@XmlRootElement(name = "employee-info-bean")
 @JsonRootName(value = "employee-info-bean")
-@XmlAccessorType(XmlAccessType.FIELD)
+//@XmlAccessorType(XmlAccessType.FIELD)
 @Table(name = "employee_info")
 @Entity
 public class EmployeeInfoBean implements Serializable {
@@ -59,46 +58,35 @@ public class EmployeeInfoBean implements Serializable {
 	private List<EmployeeExperienceInfoBean> employeeExperienceInfoBean;
 
 	// @XmlElement(name = "training-info")
+
 	@JsonProperty(value = "training-info")
 	@LazyCollection(LazyCollectionOption.FALSE)
 	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "employeeInfoBeans")
 	private List<TrainingInfoBean> trainingInfoBean;
 
-	@JsonProperty(value = "training-info")
 	@Id
-	@Column(name = "ID")
+	@Column(name = "id")
 	private Integer id;
-	@JsonProperty(value = "name")
 	@Column(name = "name")
 	private String name;
-	@JsonProperty(value = "age")
 	@Column(name = "age")
 	private Integer age;
-	@JsonProperty(value = "gender")
 	@Column(name = "gender")
 	private String gender;
-	@JsonProperty(value = "salary")
 	@Column(name = "salary")
 	private Double salary;
-	@JsonProperty(value = "phone")
 	@Column(name = "phone")
 	private Integer phone;
-	@JsonProperty(value = "joiningDate")
 	@Column(name = "joining_date")
 	private Date joiningDate;
-	@JsonProperty(value = "Account_Number")
 	@Column(name = "Account_Number")
 	private Integer accountNumber;
-	@JsonProperty(value = "Email")
 	@Column(name = "Email")
 	private String email;
-	@JsonProperty(value = "Designation")
 	@Column(name = "Designation")
 	private String designation;
-	@JsonProperty(value = "DOB")
 	@Column(name = "DOB")
 	private Date dob;
-	@JsonProperty(value = "password")
 	@Column(name = "password")
 	private String password;
 
@@ -106,7 +94,7 @@ public class EmployeeInfoBean implements Serializable {
 	@JoinColumn(name = "DEPT_ID")
 	private DepartmentInfoBean departmentInfoBean;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "MNGR_ID", referencedColumnName = "id")
 	private EmployeeInfoBean mngId;
 
@@ -260,6 +248,17 @@ public class EmployeeInfoBean implements Serializable {
 
 	public void setMngId(EmployeeInfoBean mngId) {
 		this.mngId = mngId;
+	}
+
+	@Override
+	public String toString() {
+		return "EmployeeInfoBean [otherInfo=" + otherInfo + ", addressInfoBeanList=" + addressInfoBeanList
+				+ ", employeeEducationalInfoBean=" + employeeEducationalInfoBean + ", employeeExperienceInfoBean="
+				+ employeeExperienceInfoBean + ", trainingInfoBean=" + trainingInfoBean + ", id=" + id + ", name="
+				+ name + ", age=" + age + ", gender=" + gender + ", salary=" + salary + ", phone=" + phone
+				+ ", joiningDate=" + joiningDate + ", accountNumber=" + accountNumber + ", email=" + email
+				+ ", designation=" + designation + ", dob=" + dob + ", password=" + password + ", departmentInfoBean="
+				+ departmentInfoBean + ", mngId=" + mngId + "]";
 	}
 
 }
