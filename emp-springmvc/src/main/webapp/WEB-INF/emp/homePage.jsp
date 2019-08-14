@@ -1,6 +1,12 @@
+<%@page import="org.springframework.web.servlet.support.ServletUriComponentsBuilder"%>
 <%@page import="com.tyss.emp.dao.*"%>
 <%@page import="com.tyss.emp.dto.*"%>
+
+<%
+	String baseURL =ServletUriComponentsBuilder.fromCurrentContextPath().build().toUriString();
+%>
 <!DOCTYPE html>
+
 <html lang='en'>
 
 <head>
@@ -33,7 +39,7 @@
 					<div class='col-md-12'>
 						<div class='search input-group' data-initialize='search'
 							role='search' id='search'>
-							<form action="../validator/validate/employee/search">
+							<form action="<%=baseURL%>/validator/validate/employee/search">
 								<input type='text' name="search" class='form-control'
 									aria-label='Sizing example input'
 									aria-describedby='inputGroup-sizing-default'> <span
