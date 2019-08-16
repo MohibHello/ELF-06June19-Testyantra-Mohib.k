@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
@@ -29,6 +30,7 @@ import com.tyss.empspringrest.dto.EmployeeExperienceInfoBean;
 import com.tyss.empspringrest.dto.EmployeeInfoBean;
 import com.tyss.empspringrest.dto.EmployeeOtherInfoBean;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/employee")
 public class EmployeeController {
