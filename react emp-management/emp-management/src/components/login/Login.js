@@ -60,49 +60,52 @@ export class Login extends Component {
     }
     render() {
         return (
-            <div className="container">
-              <div className="row">
-                <div className="col-md-6 offset-3 card">
-                  <div className="card-body">
-                    <h4 className="text-center border-bottom">Login</h4>
-                    <br />
-                    <form className="form-horizontal" onSubmit={this.postLoginData} /*action="./authenticate"*/ method="POST">
-                      <div className="col-auto">
-                        <label className="sr-only" htmlFor="id">Id</label>
-                        <div className="input-group mb-2">
-                          <div className="input-group-prepend" >
-                            <div className="input-group-text">ID</div>
-                          </div>
-                          <input id="id" onChange={(event)=>{this.setState({id:event.target.value})}} value={this.state.id} type="number" className="form-control" name="id" placeholder="Enter Employee ID" />
-                        </div>
-                      </div>
-                      <span id="email-error" style={{display: 'none'}} className="text-danger small" />
-                      <div className="col-auto">
-                        <label className="sr-only" htmlFor="password">Password</label>
-                        <div className="input-group mb-2">
-                          <div className="input-group-prepend">
-                            <div className="input-group-text">Password</div>
-                          </div>
-                          <input id ="password" onChange={(event)=>{this.setState({password:event.target.value})}} value={this.state.password} type="password" className="form-control" name="password" placeholder="Enter Password" />
-                        </div>
-                      </div>
-                      <br />
-                      <div className=" row">
-                        <button type="reset" className="offset-1 col-md-5 btn btn-outline-dark" style={{borderRadius: '3px 0 0 3px', borderRight: 0}}>Reset</button>
-                        <button type="submit" className="col-md-5 btn btn-outline-info" style={{borderRadius: '0 3px 3px 0'}}>Login</button>
-                      </div>
-                      <br />
-                      <div className=" row">
-                        <Link to="/createEmployee" className="offset-1 col-md-5 btn btn-outline-danger" style={{borderRadius: '3px 0 0 3px', borderRight: 0}}>Create
-                          Account</Link> <a href="forgotpassword.html" className="col-md-5 btn btn-outline-danger" style={{borderRadius: '0 3px 3px 0'}}>Forgot Password</a>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
+<div className="login-purple-pink p-3 shadow-lg rounded">
+        <div className="pt-3">
+          <h2 className="text-white ">Employee Login</h2>
+        </div>
+        <form className="mt-5" onSubmit={this.postLoginData}>
+          <div className="form-group">
+            <input id="id" type="number" name="id"  onChange={(event)=>{this.setState({id:event.target.value})}} value={this.state.id}  className="form-control form-control-sm bg-light" placeholder="Enter id" />
+          </div>
+          <div className="form-group">
+            <input id="password" onChange={(event)=>{this.setState({password:event.target.value})}} value={this.state.password}  type="password" name="password" className="form-control form-control-sm bg-light" placeholder="Enter Password" />
+          </div>
+          <div className="mt-5">
+            <button className="btn btn-sm btn-light col">
+              Login
+            </button>
+          </div>
+          <div className="text-center mt-2">
+            <a href="#" className="text-warning">Forgot Password?</a>
+          </div>
+          <div className="mt-5">
+            <p className="text-white text-center">
+              Don't have an account?
+              <Link to="/createEmployee" className="text-warning">Click here to register</Link>
+            </p>
+          </div>
+        </form>
+      </div>
           );
     }
 }
 
 export default Login
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
