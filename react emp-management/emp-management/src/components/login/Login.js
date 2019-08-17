@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Axios from 'axios'
+import './Login.css'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 export class Login extends Component {
     constructor(props){
@@ -32,8 +33,12 @@ export class Login extends Component {
                 console.log(response.data.statusCode)
                 if(response.statusCode===401){
                     this.setState({errorMessage:response.data.message});
+                    element.classList.remove("hide");
+                    element.classList.add("show")
                 } else{
-                      
+                      let employeeData=response.data.beans[0];
+                      localStorage.setItem("bean",JSON.stringify(employeeData));
+                      this.props.history.push('/homePage');
                 }
             }).catch((error)=>{
                 console.log('Error',error);
