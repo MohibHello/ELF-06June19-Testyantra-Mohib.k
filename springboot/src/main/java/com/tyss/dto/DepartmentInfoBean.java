@@ -9,6 +9,10 @@ import javax.persistence.Table;
 @SuppressWarnings("serial")
 @Table(name = "department_info")
 public class DepartmentInfoBean {
+	
+	
+	
+	
 	@Id
 	@Column(name = "DEPT_ID")
 	private int deptId;

@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -15,11 +16,25 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 //@XmlAccessorType(XmlAccessType.FIELD)
 @Entity
 public class EmployeeOtherInfoBean implements Serializable {
+	
+	//@JsonIgnore
+	@Id
+	@Column(name="other_id")
+	@GeneratedValue
+	private int otherInfoId;
+	
+	public int getOtherInfoId() {
+		return otherInfoId;
+	}
+
+	public void setOtherInfoId(int otherInfoId) {
+		this.otherInfoId = otherInfoId;
+	}
 
 	@JsonIgnore
 	// @XmlTransient
 	@JoinColumn(name = "id")
-	@Id
+	//@Id
 	@OneToOne
 	EmployeeInfoBean infoBean;
 
