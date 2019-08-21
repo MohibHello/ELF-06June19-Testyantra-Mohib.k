@@ -25,13 +25,17 @@ export class Login extends Component {
     const loginData = { id, password };
 
     if (this.validateLogin(loginData)) {
-      //Call the API using Axios and Validate the Employee Login
-      Axios.post('http://localhost/emp-springrest/login/auth', null, {
+      //Call the API using Axios and Validate the Login
+      Axios.post('http://localhost/getUser', null, {
         params: {
           id: this.state.id,
           password: this.state.password
         }
       }).then((response) => {
+        let employeeData = response.data.beans[0];
+        localStorage.setItem("bean", JSON.stringify(employeeData));
+        this.props.history.push('/AdminHomePage');
+
         if (response.data.statusCode == 401) {
           console.log("40111");
           this.setState({ errorMessage: response.data.message });
@@ -39,10 +43,10 @@ export class Login extends Component {
           element.classList.remove("hide");
           element.classList.add("show");
         } else {
-          //Redirect the Application to Employee Home page
+          //Redirect the Application to Home page
           let employeeData = response.data.beans[0];
           localStorage.setItem("bean", JSON.stringify(employeeData));
-          this.props.history.push('/HomePage');
+          this.props.history.push('/AdminHomePage');
 
         }
       }).catch((error) => {
@@ -92,15 +96,28 @@ export class Login extends Component {
             <div className="form-group">
               <input id="password" onChange={(event) => { this.setState({ password: event.target.value }) }} value={this.state.password} type="password" name="password" className="form-control form-control-sm bg-light" placeholder="Enter Password" />
             </div>
+            <div className="input-group mt-3">
+                          <div className="input-group-prepend">
+                            <label className="input-group-text" htmlFor="inputGroupSelect01">User Type</label>
+                          </div>
+                          <select className="custom-select" id="userType" name="userType">
+                            <option selected>Choose...</option>
+                            <option value="admin">Admin</option>
+                            <option value="librarian">Librarian</option>
+                            <option value="student">Student</option>
+                          </select>
+                        </div>
+
             <div className="mt-5">
-              <button className="btn btn-sm btn-light col">
+              <button type="submit" className="btn btn-sm btn-light col">
                 Login
             </button>
             </div>
+            </form>
             <div className="text-center mt-2">
-              <a href="#" className="text-warning">Forgot Password?</a>
+              <Link to="/AddUser" className="text-warning">Forgot Password?</Link>
             </div>
-          </form>
+         
         </div>
       </div>
     );

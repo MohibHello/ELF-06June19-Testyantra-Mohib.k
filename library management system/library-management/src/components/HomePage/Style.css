@@ -1,0 +1,8 @@
+.top{
+    background-image: url("https://cdn.pixabay.com/photo/2015/09/09/20/22/book-933088_960_720.jpg"); /* The image used */
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 750px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
