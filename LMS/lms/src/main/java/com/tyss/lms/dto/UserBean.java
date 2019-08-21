@@ -9,24 +9,29 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
 import lombok.Data;
 
 @SuppressWarnings("serial")
 @JsonRootName(value = "user-bean")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "userId")
 @Table(name = "user")
 @Entity
 @Data
 public class UserBean implements Serializable {
 	
-	
-	
-	
+
 	@Id
 	@GeneratedValue
-	@Column(name = "id")
-	private Integer id;
+	@JsonProperty(value ="userId")
+	@Column(name = "user_id")
+	private Integer userId;
 	@Column(name ="name")
 	private String name;
 	@Column(name ="password")

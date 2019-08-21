@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -18,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.tyss.lms.dto.Response;
 import com.tyss.lms.dto.UserBean;
 
-//@CrossOrigin("http://localhost:3000")
+@CrossOrigin("http://localhost:3000")
 @EntityScan(basePackages = "com.tyss.lms")
 @RestController
 public class UserController {
@@ -34,6 +35,7 @@ public class UserController {
 		//if (req.getSession(false) != null) {
 			if (repository.existsById(id)) {
 				UserBean bean = repository.findById(id).get();
+				
 				response.setStatusCode(201);
 				response.setMessage("Success");
 				response.setDescription("User data found successfully");
@@ -56,7 +58,7 @@ public class UserController {
 	public Response createUser(@RequestBody UserBean bean) {
 		
 		Response response = new Response();
-		if (!repository.existsById(bean.getId())) {
+		if (!repository.existsById(bean.getUserId())) {
 			repository.save(bean);
 			response.setStatusCode(201);
 			response.setMessage("Success");
@@ -76,7 +78,7 @@ public class UserController {
 		
 		UserBean infoBean = repository.findById(id).get();
 		
-		if (repository.existsById(infoBean.getId())) {
+		if (repository.existsById(infoBean.getUserId())) {
 			response.setStatusCode(201);
 			response.setMessage("Success");
 			response.setDescription("User data deleted successfully");
@@ -95,7 +97,7 @@ public class UserController {
 	public Response updateUser(@RequestBody UserBean infoBean, HttpServletRequest req) {
 
 		Response response = new Response();
-		if (repository.existsById(infoBean.getId())) {
+		if (repository.existsById(infoBean.getUserId())) {
 			
 			repository.save(infoBean);
 			response.setStatusCode(201);

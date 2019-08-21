@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +19,7 @@ import com.tyss.lms.dto.BooksBean;
 import com.tyss.lms.dto.Response;
 
 
-//@CrossOrigin("http://localhost:3000")
+@CrossOrigin("http://localhost:3000")
 @EntityScan(basePackages = "com.tyss.lms")
 @RestController
 public class BookController {
@@ -27,7 +28,7 @@ public class BookController {
 
 	@GetMapping(path = "/getBook", 
 			produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
-	public Response getBook(@RequestParam int id, HttpServletRequest req) {
+	public Response getBook(@RequestParam("userId") int id, HttpServletRequest req) {
 		
 		Response response = new Response();
 		//if (req.getSession(false) != null) {

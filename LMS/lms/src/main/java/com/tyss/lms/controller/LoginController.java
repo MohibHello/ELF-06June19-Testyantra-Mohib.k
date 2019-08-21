@@ -12,20 +12,21 @@ import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tyss.lms.dto.Response;
 import com.tyss.lms.dto.UserBean;
 
+@CrossOrigin("http://localhost:3000")
 @RestController
-@EntityScan(basePackages = "com.tyss")
-//@CrossOrigin(origins="http://localhost:3000")
+@EntityScan(basePackages = "com.tyss.lms")
 public class LoginController {
 	@Autowired
 	UserRepository repository;
 
-	@PostMapping(value = "/loginPage", produces = MediaType.APPLICATION_JSON_VALUE)
-	public Response submitForm(int id, String password, HttpServletRequest request) {
+	@PostMapping(path = "/auth", produces = MediaType.APPLICATION_JSON_VALUE)
+	public Response submitForm(@RequestParam("userId") int id,@RequestParam String password, HttpServletRequest request) {
 		
 		UserBean bean = repository.findById(id).get();
 		Response response = new Response();
@@ -38,7 +39,7 @@ public class LoginController {
 			request.getSession().setAttribute("bean", bean);
 
 		} else {
-			response.setStatusCode(200);
+			response.setStatusCode(401);
 			response.setMessage("Failed");
 			response.setDescription("Login Failed");
 		}
