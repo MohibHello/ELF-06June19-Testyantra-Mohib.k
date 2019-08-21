@@ -8,71 +8,60 @@ export class Login extends Component {
     super(props);
 
     this.state = {
-      id: '',
+      userId: '',
       password: '',
       errorMessage: ''
     }
 
     this.postLoginData = this.postLoginData.bind(this);
   }
-  logoutApp() {
-
-  }
+  
   postLoginData(event) {
     event.preventDefault();
     //let accountData = this.state;
-    const { id, password } = this.state;
-    const loginData = { id, password };
+    const {userId,password} = this.state;
+    const loginData = {userId,password};
 
-    if (this.validateLogin(loginData)) {
-      //Call the API using Axios and Validate the Login
-      Axios.post('http://localhost/getUser', null, {
-        params: {
-          id: this.state.id,
-          password: this.state.password
-        }
-      }).then((response) => {
-        let employeeData = response.data.beans[0];
-        localStorage.setItem("bean", JSON.stringify(employeeData));
-        this.props.history.push('/AdminHomePage');
-
-        if (response.data.statusCode == 401) {
-          console.log("40111");
-          this.setState({ errorMessage: response.data.message });
-          var element = document.getElementById("errorMsg");
-          element.classList.remove("hide");
-          element.classList.add("show");
-        } else {
-          //Redirect the Application to Home page
-          let employeeData = response.data.beans[0];
-          localStorage.setItem("bean", JSON.stringify(employeeData));
-          this.props.history.push('/AdminHomePage');
-
-        }
-      }).catch((error) => {
-        console.log('Error', error);
-      });
+    if(this.validateLogin(loginData)){
+        //Call the API using Axios and Validate the user Login
+        Axios.post('http://localhost/auth',null,{
+            params:{
+              userId:this.state.userId,
+                password:this.state.password
+            }
+        }).then((response)=>{
+            console.log(response.data);
+            console.log(response.data.statusCode)
+            this.props.history.push('/AdminHomePage');
+            if(response.statusCode==401){
+                this.setState({errorMessage:response.data.message});
+                this.props.history.push('/');
+            } else{
+              
+                            }
+        }).catch((error)=>{
+            console.log('Error',error);
+        });
     }
-  }
+}
 
-  validateLogin(loginData) {
+validateLogin(loginData){
     let validationSuccess = false;
 
-    if (loginData.id.trim() === "" || loginData.id.trim() === null) {
-      alert('Please enter Employee Id');
-      document.getElementById("id").focus();
-      return validationSuccess;
-    } else if (loginData.password.trim() === "" || loginData.password.trim() === null) {
-      alert('Please enter Password');
-      document.getElementById("password").focus();
-      return validationSuccess;
-    } else {
-      validationSuccess = true;
+    if(loginData.userId==="" || loginData.userI===null){
+        alert('Please enter User Id');
+        document.getElementById("userId").focus();
+        return validationSuccess;
+    } else if(loginData.password.trim()==="" || loginData.password.trim()===null){
+        alert('Please enter Password');
+        document.getElementById("password").focus();
+        return validationSuccess;
+    } else{
+        validationSuccess = true;
     }
 
     return validationSuccess;
-  }
-
+}
   openCreateEmployee(event) {
     event.preventDefault();
     this.props.history.push('/createEmployee');
@@ -91,10 +80,10 @@ export class Login extends Component {
           </div>
           <form className="mt-5" onSubmit={this.postLoginData}>
             <div className="form-group">
-              <input id="id" type="number" name="id" onChange={(event) => { this.setState({ id: event.target.value }) }} value={this.state.id} className="form-control form-control-sm bg-light" placeholder="Enter id" />
+              <input  type="text" onChange={(event)=>{this.setState({userId:event.target.value})}} value={this.state.userId} class="form-control" placeholder="User ID" />
             </div>
             <div className="form-group">
-              <input id="password" onChange={(event) => { this.setState({ password: event.target.value }) }} value={this.state.password} type="password" name="password" className="form-control form-control-sm bg-light" placeholder="Enter Password" />
+              <input type="password" onChange={(event)=>{this.setState({password:event.target.value})}} value={this.state.password} class="form-control" placeholder="Enter Password"/>
             </div>
             <div className="input-group mt-3">
                           <div className="input-group-prepend">
