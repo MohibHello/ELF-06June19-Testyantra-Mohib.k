@@ -2,6 +2,46 @@ import React, { Component } from 'react'
 import './AddUser.css'
 
 export class AddUser extends Component {
+
+  constructor(props){
+    super(props)
+    this.state={
+        userId : '',
+        userType : '',
+        userName : '',
+        password : '',
+        phoneNum : '',
+        email : '',
+        
+    }
+    this.postAddData = this.postAddData.bind(this);
+}
+openUser(event){
+    this.props.history.push('/Navbar');
+    this.props.history.push('/AddUser');
+    this.props.history.push('/DeleteUser');
+    this.props.history.push('/UpdateUser');
+}
+logoutApp(event) {
+   event.preventDefault();
+           this.props.history.push('/'); // redirect to home page
+       }
+postAddData(event) {
+        event.preventDefault();
+        let accountData = this.state;
+        console.log("Account data",accountData);
+            //Call the API using Axios and Validate the Employee Login
+            Axios.post('http://localhost:/addUser',accountData).then((response)=>{
+
+                console.log(response.data);
+                console.log(response.data.statusCode)
+                this.props.history.push('/Navbar');
+                
+            }).catch((error)=>{
+                console.log('Error',error);
+            });
+        }
+
     render() {
         return (
             <div className="top">
