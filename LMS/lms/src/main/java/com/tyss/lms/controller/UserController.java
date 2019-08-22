@@ -54,7 +54,7 @@ public class UserController {
 		 * response.setDescription("plz login first"); return response; }
 		 */
 	}
-	@PostMapping(path = "/createUser", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(path = "/addUser", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public Response createUser(@RequestBody UserBean bean) {
 		
 		Response response = new Response();
@@ -73,7 +73,7 @@ public class UserController {
 	
 	@DeleteMapping(path = "/deleteUser", produces = { MediaType.APPLICATION_JSON_VALUE,
 			MediaType.APPLICATION_XML_VALUE })
-	public Response deleteUser(@RequestParam int id, HttpServletRequest req) {
+	public Response deleteUser(@RequestParam("userId") int id, HttpServletRequest req) {
 		Response response = new Response();
 		
 		UserBean infoBean = repository.findById(id).get();

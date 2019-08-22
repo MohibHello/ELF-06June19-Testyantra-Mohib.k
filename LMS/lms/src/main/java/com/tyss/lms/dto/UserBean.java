@@ -33,17 +33,17 @@ public class UserBean implements Serializable {
 	@Column(name = "user_id")
 	private Integer userId;
 	@Column(name ="name")
-	private String name;
+	private String userName;
 	@Column(name ="password")
 	private String password;
 	@Column(name = "user_type")
 	private String userType;
 	@Column(name = "address")
 	private String address;
-	@Column(name = "phoneNumber")
-	private long phoneNumber;
+	@Column(name = "phone_no")
+	private long phoneNum;
 	@Column(name = "email")
 	private String email;
-	@Column(name = "validty")
-	private Date validty;
+	@Column(name = "card_validity")
+	private Date cardValidity;
 }

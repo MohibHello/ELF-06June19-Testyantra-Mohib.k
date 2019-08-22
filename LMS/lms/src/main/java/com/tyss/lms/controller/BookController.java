@@ -28,7 +28,7 @@ public class BookController {
 
 	@GetMapping(path = "/getBook", 
 			produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
-	public Response getBook(@RequestParam("userId") int id, HttpServletRequest req) {
+	public Response getBook(@RequestParam("bookId") int id, HttpServletRequest req) {
 		
 		Response response = new Response();
 		//if (req.getSession(false) != null) {
@@ -56,7 +56,7 @@ public class BookController {
 	public Response addBook(@RequestBody BooksBean bean) {
 		
 		Response response = new Response();
-		if (!repository.existsById(bean.getId())) {
+		if (!repository.existsById(bean.getBookId())) {
 			repository.save(bean);
 			response.setStatusCode(201);
 			response.setMessage("Success");
@@ -69,14 +69,14 @@ public class BookController {
 		return response;
 	}
 	
-	@DeleteMapping(path = "/removeBook", produces = { MediaType.APPLICATION_JSON_VALUE,
+	@DeleteMapping(path = "/deleteBook", produces = { MediaType.APPLICATION_JSON_VALUE,
 			MediaType.APPLICATION_XML_VALUE })
-	public Response removeBook(@RequestParam int id, HttpServletRequest req) {
+	public Response removeBook(@RequestParam("bookId") int id, HttpServletRequest req) {
 		Response response = new Response();
 		
 		BooksBean infoBean = repository.findById(id).get();
 		
-		if (repository.existsById(infoBean.getId())) {
+		if (repository.existsById(infoBean.getBookId())) {
 			response.setStatusCode(201);
 			response.setMessage("Success");
 			response.setDescription("Book data deleted successfully");

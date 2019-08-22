@@ -20,8 +20,8 @@ import lombok.Data;
 public class BooksBean implements Serializable {
 
 	@Id
-	@Column(name = "id")	
-	private Integer id;
+	@Column(name = "book_id")	
+	private Integer bookId;
 	@Column(name = "book_title")
 	private String bookTitle;
 	@Column(name = "book_author")
