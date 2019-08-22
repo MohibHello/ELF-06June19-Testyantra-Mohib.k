@@ -27,7 +27,7 @@ export class LibrarianHomePage extends Component {
               <Link className="nav-link" to="/Book">Add Book</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="#">Remove Book</Link>
+              <Link className="nav-link" to="/DeleteBook">Remove Book</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/BookRequest">Allocate Book</Link>

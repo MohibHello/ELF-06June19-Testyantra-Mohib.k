@@ -10,6 +10,7 @@ export class Login extends Component {
     this.state = {
       userId: '',
       password: '',
+      userType:'',
       errorMessage: ''
     }
 
@@ -19,26 +20,33 @@ export class Login extends Component {
   postLoginData(event) {
     event.preventDefault();
     //let accountData = this.state;
-    const {userId,password} = this.state;
-    const loginData = {userId,password};
+    const {userId,password,userType} = this.state;
+    const loginData = {userId,password,userType};
 
     if(this.validateLogin(loginData)){
         //Call the API using Axios and Validate the user Login
         Axios.post('http://localhost/auth',null,{
             params:{
               userId:this.state.userId,
-                password:this.state.password
+                password:this.state.password,
+                userType:this.state.userType
             }
         }).then((response)=>{
             console.log(response.data);
-            console.log(response.data.statusCode)
+           // console.log(response.data.statusCode)
+
+          if(loginData.userType=="Admin") {
+
             this.props.history.push('/AdminHomePage');
-            if(response.statusCode==401){
-                this.setState({errorMessage:response.data.message});
-                this.props.history.push('/');
-            } else{
-              
-                            }
+          }
+          else if(loginData.userType=="Librarian") {
+            this.props.history.push('/LibrarianHomePage');
+          }
+          else if(loginData.userType=="Student") {
+            this.props.history.push('/StudentHomePage');
+          } else {
+            this.props.history.push('/');
+          }
         }).catch((error)=>{
             console.log('Error',error);
         });
@@ -48,7 +56,7 @@ export class Login extends Component {
 validateLogin(loginData){
     let validationSuccess = false;
 
-    if(loginData.userId==="" || loginData.userI===null){
+    if(loginData.userId==="" || loginData.userId===null){
         alert('Please enter User Id');
         document.getElementById("userId").focus();
         return validationSuccess;
@@ -62,10 +70,6 @@ validateLogin(loginData){
 
     return validationSuccess;
 }
-  openCreateEmployee(event) {
-    event.preventDefault();
-    this.props.history.push('/createEmployee');
-  }
 
   render() {
     const { navigation } = this.props;
@@ -89,11 +93,11 @@ validateLogin(loginData){
                           <div className="input-group-prepend">
                             <label className="input-group-text" htmlFor="inputGroupSelect01">User Type</label>
                           </div>
-                          <select className="custom-select" id="userType" name="userType">
+                          <select className="custom-select" id="userType" name="userType" onChange={(event)=>{this.setState({userType:event.target.value})}} value={this.state.userType}>
                             <option selected>Choose...</option>
-                            <option value="admin">Admin</option>
-                            <option value="librarian">Librarian</option>
-                            <option value="student">Student</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Librarian">Librarian</option>
+                            <option value="Student">Student</option>
                           </select>
                         </div>
 

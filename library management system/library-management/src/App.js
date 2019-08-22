@@ -21,10 +21,10 @@ function App() {
     <Route  path='/BookLoan' component={BookLoan} />
     <Route  path='/BookRequest' component={BookRequest} />
     <Route  path='/AdminHomePage' component={AdminHomePage} />
-    <Route exact path='/LibrarianHomePage' component={LibrarianHomePage} />
-    <Route exact path='/StudentHomePage' component={StudentHomePage} />
-    <Route exact path='/DeleteBook' component={DeleteBook} />
-    <Route exact path='/DeleteUser' component={DeleteUser} />
+    <Route  path='/LibrarianHomePage' component={LibrarianHomePage} />
+    <Route  path='/StudentHomePage' component={StudentHomePage} />
+    <Route  path='/DeleteBook' component={DeleteBook} />
+    <Route  path='/DeleteUser' component={DeleteUser} />
     </Router>
   );
 }
