@@ -19,10 +19,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.tyss.lms.dto.Response;
 import com.tyss.lms.dto.UserBean;
 
-@CrossOrigin("http://localhost:3000")
+//@CrossOrigin(origins = "http://localhost:3000", allowCredentials	= "true")
 @EntityScan(basePackages = "com.tyss.lms")
 @RestController
-public class UserController {
+public class AdminController {
 
 	@Autowired
 	UserRepository repository;
@@ -58,6 +58,7 @@ public class UserController {
 	public Response createUser(@RequestBody UserBean bean) {
 		
 		Response response = new Response();
+		//if (req.getSession(false) != null) {
 		if (!repository.existsById(bean.getUserId())) {
 			repository.save(bean);
 			response.setStatusCode(201);
@@ -91,6 +92,10 @@ public class UserController {
 
 		return response;
 
+		/*
+		 * } else { response.setStatusCode(501); response.setMessage("Failure");
+		 * response.setDescription("plz login first"); return response; }
+		 */
 	}
 	
 	@PatchMapping(path = "/updateUser", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -109,14 +114,11 @@ public class UserController {
 			response.setDescription("User id already exists");
 		}
 		return response;
+		
+		/*
+		 * } else { response.setStatusCode(501); response.setMessage("Failure");
+		 * response.setDescription("plz login first"); return response; }
+		 */
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 
 }

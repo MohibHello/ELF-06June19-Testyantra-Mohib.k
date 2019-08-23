@@ -15,16 +15,19 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.tyss.lms.dto.BookAllocateBean;
+import com.tyss.lms.dto.BookRequestBean;
 import com.tyss.lms.dto.BooksBean;
 import com.tyss.lms.dto.Response;
 
 
-@CrossOrigin("http://localhost:3000")
+//@CrossOrigin(origins = "http://localhost:3000", allowCredentials	= "true")
 @EntityScan(basePackages = "com.tyss.lms")
 @RestController
 public class BookController {
 	@Autowired
 	BookRepository repository;
+
 
 	@GetMapping(path = "/getBook", 
 			produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
@@ -90,6 +93,7 @@ public class BookController {
 		return response;
 
 	}
+	
 	
 	
 }

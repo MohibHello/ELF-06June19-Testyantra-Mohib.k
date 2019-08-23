@@ -1,8 +1,10 @@
 package com.tyss.lms.dto;
 
-import java.util.Date;
+
+import java.io.Serializable;
 
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -15,9 +17,9 @@ import lombok.Data;
 @JsonRootName(value = "book-request-bean")
 @Table(name = "book request")
 @Entity
-@Data
-public class BookRequest {
-
+@Data 
+public class BookRequestBean implements Serializable {
+	
 	
 	@Id
 	@Column(name = "user_id")
@@ -25,5 +27,5 @@ public class BookRequest {
 	@Column(name = "book_id")
 	Integer bookId;
 	@Column(name = "request_sanction")
-	Boolean requestSanction;
+	boolean requestSanction;
 }

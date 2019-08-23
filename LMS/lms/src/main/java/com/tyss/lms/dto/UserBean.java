@@ -28,7 +28,6 @@ public class UserBean implements Serializable {
 	
 
 	@Id
-	@GeneratedValue
 	@JsonProperty(value ="userId")
 	@Column(name = "user_id")
 	private Integer userId;
