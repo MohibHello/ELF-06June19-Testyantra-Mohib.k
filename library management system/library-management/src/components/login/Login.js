@@ -29,24 +29,26 @@ export class Login extends Component {
             params:{
               userId:this.state.userId,
                 password:this.state.password,
-                userType:this.state.userType
+                userType:this.state.userType,
+                msg:localStorage.getItem('msg')
             }
         }).then((response)=>{
-            console.log(response.data);
-           // console.log(response.data.statusCode)
-
-          if(loginData.userType=="Admin") {
-
-            this.props.history.push('/AdminHomePage');
-          }
-          else if(loginData.userType=="Librarian") {
-            this.props.history.push('/LibrarianHomePage');
-          }
-          else if(loginData.userType=="Student") {
-            this.props.history.push('/StudentHomePage');
-          } else {
-            this.props.history.push('/');
-          }
+          
+          console.log('Response Object', response.data);
+              console.log(response.data.beans[0].userType);
+              if (response.data.beans[0].userType == 'admin') {
+                  this.props.history.push('/AdminHomePage');
+                  localStorage.setItem("bean", JSON.stringify(response.data.beans[0]));
+              } else if (response.data.beans[0].userType == 'librarian') {
+                  this.props.history.push('/LibrarianHomePage');
+                  localStorage.setItem("bean", JSON.stringify(response.data.beans[0]));
+              } else if (response.data.beans[0].userType == 'normal user') {
+                  this.props.history.push('/NormalUserHomePage');
+                  localStorage.setItem("bean", JSON.stringify(response.data.beans[0]));
+              }else {
+                  this.props.history.push('/');
+                  localStorage.setItem('msg',response.data.description);
+              }
         }).catch((error)=>{
             console.log('Error',error);
         });
@@ -97,7 +99,7 @@ validateLogin(loginData){
                             <option selected>Choose...</option>
                             <option value="Admin">Admin</option>
                             <option value="Librarian">Librarian</option>
-                            <option value="Student">Student</option>
+                            <option value="normal user">Normal User</option>
                           </select>
                         </div>
 

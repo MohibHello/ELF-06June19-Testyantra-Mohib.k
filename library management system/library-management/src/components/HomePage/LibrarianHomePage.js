@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import './Style.css'
 
 export class LibrarianHomePage extends Component {
 
@@ -12,7 +13,7 @@ export class LibrarianHomePage extends Component {
 
     render() {
         return (
-            <div>
+            <div className="head">
                   <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <Link className="navbar-brand" to="/LibrarianHomePage">Librarian</Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

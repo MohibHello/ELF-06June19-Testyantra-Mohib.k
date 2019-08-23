@@ -8,7 +8,7 @@ import BookLoan from './components/Forms/BookLoan';
 import BookRequest from './components/Forms/BookRequest';
 import AdminHomePage from './components/HomePage/AdminHomePage';
 import LibrarianHomePage from './components/HomePage/LibrarianHomePage';
-import StudentHomePage from './components/HomePage/StudentHomePage';
+import NormalUserHomePage from './components/HomePage/NormalUserHomePage';
 import DeleteBook from './components/Forms/DeleteBook';
 import DeleteUser from './components/Forms/DeleteUser';
 
@@ -22,7 +22,7 @@ function App() {
     <Route  path='/BookRequest' component={BookRequest} />
     <Route  path='/AdminHomePage' component={AdminHomePage} />
     <Route  path='/LibrarianHomePage' component={LibrarianHomePage} />
-    <Route  path='/StudentHomePage' component={StudentHomePage} />
+    <Route  path='/NormalUserHomePage' component={NormalUserHomePage} />
     <Route  path='/DeleteBook' component={DeleteBook} />
     <Route  path='/DeleteUser' component={DeleteUser} />
     </Router>

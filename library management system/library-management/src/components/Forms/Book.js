@@ -20,11 +20,12 @@ export class Book extends Component {
     event.preventDefault();
     this.props.history.push('/'); // redirect to home page
   }
+
   postAddData(event) {
     event.preventDefault();
     let bookData = this.state;
     console.log("Book data", bookData);
-    //Call the API using Axios and Validate the Employee Login
+    //Call the API using Axios and Validate
     Axios.post('http://localhost:/addBook', bookData).then((response) => {
 
       console.log(response.data);

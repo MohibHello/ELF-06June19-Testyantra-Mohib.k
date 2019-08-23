@@ -10,7 +10,7 @@ export class BookLoan extends Component {
             <div className="col-md-6">
               <div className="card">
                 <h5 className="card-header ">
-                  <legend className="mx-auto " style={{width: '130px', color: 'aliceblue'}}>Book Loan </legend>
+                  <legend className="mx-auto " style={{width: '130px', color: 'aliceblue'}}>Book Allocate </legend>
                 </h5>
                 <div className="card-body">
                   <p className="card-text">
