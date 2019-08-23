@@ -6,9 +6,9 @@ export class AdminHomePage extends Component {
 
   openUser(event) {
     event.preventDefault();
+    this.props.history.push('/UpdateUser');
     this.props.history.push('/AddUser');
     this.props.history.push('/DeleteUser');
-    this.props.history.push('/ViewUser');
   }
 
 
@@ -25,13 +25,13 @@ export class AdminHomePage extends Component {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <Link className="nav-link" to="#">Home <span className="sr-only">(current)</span></Link>
+              <Link className="nav-link" to="/AdminHomePage">Home </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/AddUser">Add User</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/AddUser">Update User</Link>
+              <Link className="nav-link" to="/UpdateUser">Update User</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/DeleteUser">Delete User</Link>

@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.tyss.lms.dto.Response;
 import com.tyss.lms.dto.UserBean;
 
-//@CrossOrigin(origins = "http://localhost:3000", allowCredentials	= "true")
+@CrossOrigin(origins = "http://localhost:3000")
 @EntityScan(basePackages = "com.tyss.lms")
 @RestController
 public class AdminController {
@@ -27,38 +27,38 @@ public class AdminController {
 	@Autowired
 	UserRepository repository;
 
-	@GetMapping(path = "/getUser", 
-			produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
-	public Response getUser(@RequestParam int id,@RequestParam String password, HttpServletRequest req) {
-		
-		Response response = new Response();
-		//if (req.getSession(false) != null) {
-			if (repository.existsById(id)) {
-				UserBean bean = repository.findById(id).get();
-				
-				response.setStatusCode(201);
-				response.setMessage("Success");
-				response.setDescription("User data found successfully");
-				response.setBeans(Arrays.asList(bean));
-				
-				return response;
-			} else {
-				response.setStatusCode(401);
-				response.setMessage("Failure");
-				response.setDescription("User data not found");
-			
+	@GetMapping(path = "/getUser", produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
+	public Response getUser(@RequestParam int id, @RequestParam String password, HttpServletRequest req) {
 
-			return response;}
+		Response response = new Response();
+		// if (req.getSession(false) != null) {
+		if (repository.existsById(id)) {
+			UserBean bean = repository.findById(id).get();
+
+			response.setStatusCode(201);
+			response.setMessage("Success");
+			response.setDescription("User data found successfully");
+			response.setBeans(Arrays.asList(bean));
+
+			return response;
+		} else {
+			response.setStatusCode(401);
+			response.setMessage("Failure");
+			response.setDescription("User data not found");
+
+			return response;
+		}
 		/*
 		 * } else { response.setStatusCode(501); response.setMessage("Failure");
 		 * response.setDescription("plz login first"); return response; }
 		 */
 	}
+
 	@PostMapping(path = "/addUser", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public Response createUser(@RequestBody UserBean bean) {
-		
+
 		Response response = new Response();
-		//if (req.getSession(false) != null) {
+		// if (req.getSession(false) != null) {
 		if (!repository.existsById(bean.getUserId())) {
 			repository.save(bean);
 			response.setStatusCode(201);
@@ -71,14 +71,14 @@ public class AdminController {
 		}
 		return response;
 	}
-	
+
 	@DeleteMapping(path = "/deleteUser", produces = { MediaType.APPLICATION_JSON_VALUE,
 			MediaType.APPLICATION_XML_VALUE })
 	public Response deleteUser(@RequestParam("userId") int id, HttpServletRequest req) {
 		Response response = new Response();
-		
+		// if (req.getSession(false) != null) {
 		UserBean infoBean = repository.findById(id).get();
-		
+
 		if (repository.existsById(infoBean.getUserId())) {
 			response.setStatusCode(201);
 			response.setMessage("Success");
@@ -97,13 +97,13 @@ public class AdminController {
 		 * response.setDescription("plz login first"); return response; }
 		 */
 	}
-	
-	@PatchMapping(path = "/updateUser", produces = MediaType.APPLICATION_JSON_VALUE)
+
+	@PatchMapping(path = "/updateUserData", produces = MediaType.APPLICATION_JSON_VALUE)
 	public Response updateUser(@RequestBody UserBean infoBean, HttpServletRequest req) {
 
 		Response response = new Response();
 		if (repository.existsById(infoBean.getUserId())) {
-			
+
 			repository.save(infoBean);
 			response.setStatusCode(201);
 			response.setMessage("Successful");
@@ -111,10 +111,10 @@ public class AdminController {
 		} else {
 			response.setStatusCode(401);
 			response.setMessage("Failure");
-			response.setDescription("User id already exists");
+			response.setDescription("User id in db already exists");
 		}
 		return response;
-		
+
 		/*
 		 * } else { response.setStatusCode(501); response.setMessage("Failure");
 		 * response.setDescription("plz login first"); return response; }

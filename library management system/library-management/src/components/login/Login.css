@@ -1,16 +1,15 @@
 .login-purple-pink {
     background: linear-gradient(145deg, #3F51B5, #E91E63);
     margin:auto;
-    width: 25%;
+    width: 26%;
+    border: 5px outset 	#1a66ff;
+    border-radius: 15px 50px;
   
 }
 .a{
     padding:150px; 
-    background: #3F51B5;
+    background: linear-gradient(to left, #3F51B5, #E91E63);
     height: 750px;
     background-size:cover;
     
-
-
-
 }

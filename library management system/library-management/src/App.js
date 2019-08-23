@@ -11,6 +11,7 @@ import LibrarianHomePage from './components/HomePage/LibrarianHomePage';
 import NormalUserHomePage from './components/HomePage/NormalUserHomePage';
 import DeleteBook from './components/Forms/DeleteBook';
 import DeleteUser from './components/Forms/DeleteUser';
+import UpdateUser from './components/Forms/UpdateUser';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
     <Route  path='/NormalUserHomePage' component={NormalUserHomePage} />
     <Route  path='/DeleteBook' component={DeleteBook} />
     <Route  path='/DeleteUser' component={DeleteUser} />
+    <Route  path='/UpdateUser' component={UpdateUser} />
     </Router>
   );
 }

@@ -13,7 +13,7 @@ export class LibrarianHomePage extends Component {
 
     render() {
         return (
-            <div className="head">
+            <div className="head"> 
                   <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <Link className="navbar-brand" to="/LibrarianHomePage">Librarian</Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@ export class LibrarianHomePage extends Component {
               <Link className="nav-link" to="/DeleteBook">Remove Book</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/BookRequest">Allocate Book</Link>
+              <Link className="nav-link" to="/BookLoan">Allocate Book</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="#">De-Allocate Book</Link>

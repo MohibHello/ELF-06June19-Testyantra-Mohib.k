@@ -21,7 +21,7 @@ import com.tyss.lms.dto.BooksBean;
 import com.tyss.lms.dto.Response;
 
 
-//@CrossOrigin(origins = "http://localhost:3000", allowCredentials	= "true")
+@CrossOrigin(origins = "http://localhost:3000")
 @EntityScan(basePackages = "com.tyss.lms")
 @RestController
 public class BookController {

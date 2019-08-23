@@ -11,7 +11,8 @@ export class Login extends Component {
       userId: '',
       password: '',
       userType:'',
-      errorMessage: ''
+      errorMessage: '',
+      msg:localStorage.getItem('msg')
     }
 
     this.postLoginData = this.postLoginData.bind(this);
@@ -36,23 +37,27 @@ export class Login extends Component {
           
           console.log('Response Object', response.data);
               console.log(response.data.beans[0].userType);
+
               if (response.data.beans[0].userType == 'admin') {
                   this.props.history.push('/AdminHomePage');
                   localStorage.setItem("bean", JSON.stringify(response.data.beans[0]));
               } else if (response.data.beans[0].userType == 'librarian') {
                   this.props.history.push('/LibrarianHomePage');
                   localStorage.setItem("bean", JSON.stringify(response.data.beans[0]));
-              } else if (response.data.beans[0].userType == 'normal user') {
+              } else if (response.data.beans[0].userType == 'normalUser') {
                   this.props.history.push('/NormalUserHomePage');
                   localStorage.setItem("bean", JSON.stringify(response.data.beans[0]));
               }else {
                   this.props.history.push('/');
-                  localStorage.setItem('msg',response.data.description);
+                  localStorage.setItem('msg',response.data.message);
               }
         }).catch((error)=>{
             console.log('Error',error);
         });
     }
+}
+componentDidMount() {
+  localStorage.removeItem('msg');
 }
 
 validateLogin(loginData){
@@ -80,10 +85,11 @@ validateLogin(loginData){
       const message = navigation.getParam('message');
     } return (
       <div  className="a">
-        <div className="login-purple-pink p-3 shadow-lg rounded">
+        <div className="login-purple-pink p-3 shadow-lg">
           <div className="pt-3">
-            <h2 className="text-white ">User Login</h2>
+            <h3 className=" mx-auto text-white " style={{ width: '150px', color: 'aliceblue' }}>User Login</h3>
           </div>
+          <div>{this.state.msg}</div>
           <form className="mt-5" onSubmit={this.postLoginData}>
             <div className="form-group">
               <input  type="text" onChange={(event)=>{this.setState({userId:event.target.value})}} value={this.state.userId} class="form-control" placeholder="User ID" />
@@ -99,14 +105,12 @@ validateLogin(loginData){
                             <option selected>Choose...</option>
                             <option value="Admin">Admin</option>
                             <option value="Librarian">Librarian</option>
-                            <option value="normal user">Normal User</option>
+                            <option value="normalUser">Normal User</option>
                           </select>
                         </div>
 
             <div className="mt-5">
-              <button type="submit" className="btn btn-sm btn-light col">
-                Login
-            </button>
+            <button type="submit" class="btn  btn-sm btn-outline-success col"  style={{ marginBottom:10 }}>Login</button>
             </div>
             </form>
             <div className="text-center mt-2">

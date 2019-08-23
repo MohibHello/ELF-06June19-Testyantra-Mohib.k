@@ -35,7 +35,7 @@ public class BookAllocateBean implements Serializable{
 	@Column(name="issue_date")
 	private Date issueDate;
 	@Column(name="return_date")
-	private String returnDate;
+	private Integer returnDate;
 	@Column(name="status")
 	private String status;
 }

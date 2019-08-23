@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Axios from 'axios'
-import './AddUser.css'
+import './UpdateUser.css'
 
-export class AddUser extends Component {
+export class UpdateUser extends Component {
 
   constructor(props) {
     super(props)
@@ -18,11 +18,11 @@ export class AddUser extends Component {
       address: ''
 
     }
-    this.postAddData = this.postAddData.bind(this);
+    this.postUpdateData = this.postUpdateData.bind(this);
   }
   openUser(event) {
     this.props.history.push('/AdminHomePage');
-    this.props.history.push('/AddUser');
+    this.props.history.push('/UpdateUser');
     this.props.history.push('/DeleteUser');
     this.props.history.push('/UpdateUser');
   }
@@ -30,12 +30,12 @@ export class AddUser extends Component {
     event.preventDefault();
     this.props.history.push('/'); // redirect to home page
   }
-  postAddData(event) {
+  postUpdateData(event) {
     event.preventDefault();
     let accountData = this.state;
     console.log("Account data", accountData);
-    //Call the API using Axios and Validate the Employee Login
-    Axios.post('http://localhost:/addUser', accountData).then((response) => {
+    //Call the API using Axios and Validate
+    Axios.patch('http://localhost:/UpdateUserData', accountData).then((response) => {
 
       console.log(response.data);
       console.log(response.data.statusCode)
@@ -87,18 +87,18 @@ export class AddUser extends Component {
           </nav>
         </div>
 
-        <div className="adduser">
+        <div className="top">
           <div className="container" style={{ marginLeft: '500px' }}>
             <div className="row">
               <div className="col-md-6">
-                <div className="card">
+                <div className="card3">
                   <h5 className="card-header ">
-                    <legend className="mx-auto " style={{ width: '200px', color: 'aliceblue' }}>User Registration </legend>
+                    <legend className="mx-auto " style={{ width: '200px', color: 'aliceblue' }}>User Updation </legend>
                   </h5>
                   <div className="card-body">
                     <p className="card-text">
                     </p>
-                    <form onSubmit={this.postAddData}>
+                    <form onSubmit={this.postUpdateData}>
                       <div className="input-group mb-3">
                         <div className="input-group-prepend">
                           <span className="input-group-text" id="basic-addon1">ID</span>
@@ -173,4 +173,4 @@ export class AddUser extends Component {
   }
 }
 
-export default AddUser
+export default UpdateUser

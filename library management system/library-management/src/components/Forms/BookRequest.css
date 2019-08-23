@@ -1,7 +1,7 @@
 
 
-.top{
-    background-image: url("https://cdn.pixabay.com/photo/2015/07/22/21/44/book-856151_960_720.jpg"); /* The image used */
+.booktop{
+    background-image: url("https://cdn.pixabay.com/photo/2016/03/09/15/29/books-1246674_960_720.jpg"); /* The image used */
     background-color: #cccccc; /* Used if the image is unavailable */
     height: 740px; /* You must set a specified height */
     background-position: center; /* Center the image */
@@ -9,9 +9,9 @@
     background-size: cover; /* Resize the background image to cover the entire container */
   
 }
-.card {
+#bcard3 {
     margin-top: 120px; 
-    background: linear-gradient(to left,black,darkslategray);
+    background: linear-gradient(to left,black,rebeccapurple);
      opacity: 0.8;
      border-radius: 20px;
 }

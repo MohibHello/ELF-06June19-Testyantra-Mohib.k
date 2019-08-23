@@ -1,5 +1,5 @@
 
-.top{
+.bookhead{
     background-image: url("https://cdn.pixabay.com/photo/2015/11/19/21/11/knowledge-1052011_960_720.jpg"); /* The image used */
     background-color: #cccccc; /* Used if the image is unavailable */
     height: 750px; /* You must set a specified height */
@@ -8,9 +8,15 @@
     background-size: cover; /* Resize the background image to cover the entire container */
   
 }
-.card {
+#bcard1 {
     margin-top: 120px; 
-    background: linear-gradient(to right,black,darkslategray);
+    background: linear-gradient(to right,black,darkslateblue);
+     opacity: 0.8;
+     border-radius: 20px;
+}
+#del {
+    margin-top: 120px; 
+    background: linear-gradient(to right,black,indigo);
      opacity: 0.8;
      border-radius: 20px;
 }
