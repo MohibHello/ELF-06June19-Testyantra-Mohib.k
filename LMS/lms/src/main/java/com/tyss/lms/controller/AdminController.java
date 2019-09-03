@@ -53,6 +53,27 @@ public class AdminController {
 		 * response.setDescription("plz login first"); return response; }
 		 */
 	}
+	 @GetMapping(path ="/getUserByName",produces = MediaType.APPLICATION_JSON_VALUE)
+	 public Response getUserByName(@RequestParam("name")String name) {
+	 Response response=new Response();
+	   if(repository.existsByUserName(name)) {
+		   response.setStatusCode(201);
+			response.setMessage("Success");
+			response.setDescription("User data found successfully");
+	    response.setBeans(Arrays.asList(repository.findByUserName(name)));
+	    return response;
+	   }
+	   else {
+		   response.setStatusCode(401);
+			response.setMessage("Failure");
+			response.setDescription("User data not found");
+
+	 return response;
+	 }
+	 }
+
+	
+	
 
 	@PostMapping(path = "/addUser", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public Response createUser(@RequestBody UserBean bean) {
@@ -97,6 +118,7 @@ public class AdminController {
 		 * response.setDescription("plz login first"); return response; }
 		 */
 	}
+	
 
 	@PatchMapping(path = "/updateUserData", produces = MediaType.APPLICATION_JSON_VALUE)
 	public Response updateUser(@RequestBody UserBean infoBean, HttpServletRequest req) {

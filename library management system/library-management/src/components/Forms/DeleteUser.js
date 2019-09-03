@@ -30,6 +30,7 @@ export class DeleteUser extends Component {
 
       console.log(response.data);
       console.log(response.data.statusCode)
+      alert("deleted Successfully");
       this.props.history.push('/AdminHomePage');
 
     }).catch((error) => {

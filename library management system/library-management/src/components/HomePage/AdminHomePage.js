@@ -1,8 +1,66 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import './Style.css'
+import Axios from 'axios'
 
 export class AdminHomePage extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+     UserData:[],
+     id:'',
+     email:'',
+     name:'',
+     password:'',
+     phone:'',
+     useType:'',
+     searchName:''
+  }
+}
+SerachPageAdmin=(e)=>{
+  debugger;
+  e.preventDefault();
+   console.log("searchName",this.state.searchName);
+ /*  this.props.history.push({
+     pathname: '/SearchAdmin',
+     state: { detail: this.state.searchName }
+   })  */ 
+
+   this.getUserName();
+
+
+}
+getAllUser=()=>{
+                    
+  Axios.get('http://localhost:8080/getAllUser')
+  .then((response) => {
+    
+    let fetchedUser = []; //array 
+
+    for (let key in response.data.userList) {
+
+      //console.log(response.data[key])
+
+      fetchedUser.push({
+        ...response.data.userList[key],
+      
+      })
+      //concate two Object using 
+
+    }
+    this.setState({
+      UserData: fetchedUser
+
+    }) 
+
+    console.log('response', this.state.UserData);
+
+  }).catch((error)=>{
+     
+  })
+}
+
 
   openUser(event) {
     event.preventDefault();
@@ -11,6 +69,36 @@ export class AdminHomePage extends Component {
     this.props.history.push('/DeleteUser');
   }
 
+
+  getUserName=(e)=>{
+                    
+    Axios.get('http://localhost:8080/getUserByName'+'?'+'name='+this.state.searchName)
+    .then((response) => {
+      
+      let fetchedUser = []; //array 
+
+      for (let key in response.data.userList) {
+
+        //console.log(response.data[key])
+
+        fetchedUser.push({
+          ...response.data.userList[key],
+        
+        })
+        //concate two Object using 
+
+      }
+      this.setState({
+        UserData: fetchedUser
+
+      }) 
+
+      console.log('response', this.state.UserData);
+
+    }).catch((error)=>{
+       
+    })
+  }
 
 
 
@@ -38,8 +126,9 @@ export class AdminHomePage extends Component {
             </li>
             <div style={{marginRight: '200px'}} />
             <li className="nav-item">
-              <form className=" form-inline">
-                <input className="form-control" type="search" placeholder="Search User" aria-label="Search" />
+              <form className=" form-inline" onSubmit={this.getUserName}>
+                <input  value={this.state.searchName} onChange={(event)=>{this.setState({searchName:event.target.value})}} 
+              value={this.state.searchName} className="form-control" type="search" placeholder="Search User" aria-label="Search" />
                 <button className="btn btn-outline-success" type="submit">Search</button>
               </form>
             </li>

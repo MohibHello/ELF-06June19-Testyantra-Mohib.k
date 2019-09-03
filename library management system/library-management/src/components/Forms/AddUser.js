@@ -39,6 +39,7 @@ export class AddUser extends Component {
 
       console.log(response.data);
       console.log(response.data.statusCode)
+      alert("added Successfully");
       this.props.history.push('/AdminHomePage');
 
     }).catch((error) => {

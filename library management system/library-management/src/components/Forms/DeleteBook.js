@@ -32,6 +32,7 @@ export class DeleteBook extends Component {
     Axios.delete('http://localhost/deleteBook?bookId=' + account.bookId).then((response) => {
       console.log(response.data);
       console.log(response.data.statusCode)
+      alert("book deleted Successfully");
       this.props.history.push('/LibrarianHomePage');
 
     }).catch((error) => {
