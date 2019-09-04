@@ -23,6 +23,7 @@ public class SearchController {
 	@Autowired
 	TaskRepository taskRepository;
 
+	// controller for getting task by name
 	@GetMapping(path = "/getUserByName", produces = MediaType.APPLICATION_JSON_VALUE)
 	public Response getUserByName(@RequestParam("name") String name, HttpServletRequest req) {
 		Response response = new Response();
@@ -49,6 +50,7 @@ public class SearchController {
 		return response;
 	}// End of getUserByName()
 
+	// controller for getting task based on priority
 	@GetMapping(path = "/getTaskByPriority", produces = { MediaType.APPLICATION_JSON_VALUE,
 			MediaType.APPLICATION_XML_VALUE })
 	public Response getTaskByPriority(@RequestParam("priority") String priority, HttpServletRequest req) {
@@ -74,6 +76,7 @@ public class SearchController {
 		return response;
 	}// End of getTaskByPriority()
 
+	// controller to get task based on task assigned to others
 	@GetMapping(path = "/getAssignToTask", produces = { MediaType.APPLICATION_JSON_VALUE,
 			MediaType.APPLICATION_XML_VALUE })
 	public Response getAssignToTask(@RequestParam("email") String email, HttpServletRequest req) {
@@ -100,6 +103,7 @@ public class SearchController {
 		return response;
 	}// End of getAssignToTask()
 
+	// controller for getting task based on task given to self
 	@GetMapping(path = "/getAssignedTask", produces = { MediaType.APPLICATION_JSON_VALUE,
 			MediaType.APPLICATION_XML_VALUE })
 	public Response getAssignedTask(@RequestParam("email") String email, HttpServletRequest req) {

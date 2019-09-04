@@ -28,6 +28,7 @@ public class TaskController {
 	@Autowired
 	UserRepository userRepository;
 
+	// controller returns Task based on id
 	@GetMapping(path = "/getTask", produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
 	public Response getTask(@RequestParam("id") int id, HttpServletRequest req) {
 
@@ -54,6 +55,7 @@ public class TaskController {
 		return response;
 	}// End of getTask()
 
+	// Controller for creating tasks
 	@PostMapping(value = "/create", produces = MediaType.APPLICATION_JSON_VALUE)
 	public Response createTask(@RequestBody CreateTaskBean task, HttpServletRequest req) {
 
@@ -81,6 +83,7 @@ public class TaskController {
 
 	}// End of createTask()
 
+	// controller for updating the task status
 	@PostMapping(value = "/updateTaskStatus", produces = MediaType.APPLICATION_JSON_VALUE)
 	public Response updateStatus(@RequestParam("taskId") int taskId, @RequestParam("status") String status,
 			HttpServletRequest req) {
@@ -108,6 +111,7 @@ public class TaskController {
 		return response;
 	}
 
+	// controller to retrieve all tasks
 	@GetMapping(path = "/getAllTask", produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
 	public Response getAllTask(HttpServletRequest req) {
 

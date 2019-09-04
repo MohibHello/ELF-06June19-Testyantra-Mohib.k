@@ -30,11 +30,11 @@ public class UserController {
 	@Autowired
 	UserRepository repository;
 
-	//Login Controller For Task Management app
-	@PostMapping(value = "/login", produces = MediaType.APPLICATION_JSON_VALUE )
+	// Login Controller For Task Management
+	@PostMapping(value = "/login", produces = MediaType.APPLICATION_JSON_VALUE)
 	public Response login(@RequestParam("email") String email, @RequestParam("password") String password,
 			HttpServletRequest req) {
-		
+
 		UserBean bean = repository.findByEmail(email).get();
 		Response response = new Response();
 		if (bean != null && bean.getPassword().equals(password)) {
@@ -51,30 +51,30 @@ public class UserController {
 			response.setDescription("Login Failed");
 		}
 		return response;
-	}//End of login()
-	
-	
-	
-	@PostMapping(value = "/createUser",produces = MediaType.APPLICATION_JSON_VALUE)
+	}// End of login()
+
+	// controller for admin to add new user
+	@PostMapping(value = "/createUser", produces = MediaType.APPLICATION_JSON_VALUE)
 	public Response createUser(@RequestBody UserBean user) {
 		Response response = new Response();
 		if (!repository.existsByEmail(user.getEmail())) {
-			
-			log.info("msg"+user.toString());
+
+			log.info("msg" + user.toString());
 			repository.save(user);
 			response.setStatusCode(201);
 			response.setMessage("Success");
 			response.setDescription("User added successfully");
 		} else {
-			log.info("msg"+user.toString());
+			log.info("msg" + user.toString());
 			response.setStatusCode(401);
 			response.setMessage("Failure");
 			response.setDescription("user id already exist ");
 		}
 		return response;
-		
+
 	}// End of createUser()
-	
+
+	// logout controller for session invalidation
 	@GetMapping("/logout")
 	public Response logout(HttpSession session) {
 		Response response = new Response();
@@ -83,10 +83,9 @@ public class UserController {
 		response.setMessage("Success");
 		response.setDescription("Logout successfully");
 		return response;
-	}//End of logout()
-	
-	
+	}// End of logout()
 
+	// controller to read cookie
 	@GetMapping("/readCookie")
 	public Response readCookie(@CookieValue(name = "JSESSIONID") String sessionId) {
 		Response response = new Response();
@@ -94,6 +93,6 @@ public class UserController {
 		response.setMessage("Success");
 		response.setDescription("JSESSIONID:" + sessionId);
 		return response;
-	}//end of readcookie()
+	}// end of readcookie()
 
-}//End of class
+}// End of class
