@@ -21,4 +21,9 @@ public interface TaskRepository extends JpaRepository<CreateTaskBean, Integer> {
 	@Query("Select t " + "from CreateTaskBean t " + "where t.assignedTo=:email")
 	List<CreateTaskBean> getAssignedTask(String email);
 
+	@Query("Select t " + "from CreateTaskBean t " + "where t.subject LIKE :subject%")
+	List<CreateTaskBean> getTaskBySubject(String subject);
+	
+	@Query("Select  count(*) " + "from CreateTaskBean t " + "where t.subject LIKE :name%")
+	int countSubject(String name);
 }

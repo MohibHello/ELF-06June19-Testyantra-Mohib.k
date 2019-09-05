@@ -32,7 +32,7 @@ public class SearchController {
 			if (repository.existsByEmpName(name) > 0) {
 				List<UserBean> userBean = repository.findByEmpName(name);
 				response.setStatusCode(201);
-				response.setMessage("Successsfull");
+				response.setMessage("Success");
 				response.setDescription("Data found");
 
 				response.setUserBean(userBean);
@@ -49,6 +49,33 @@ public class SearchController {
 
 		return response;
 	}// End of getUserByName()
+
+	// controller for getting task based on subject
+	@GetMapping(path = "/getTaskBySubject", produces = { MediaType.APPLICATION_JSON_VALUE,
+			MediaType.APPLICATION_XML_VALUE })
+	public Response getTaskBySubject(@RequestParam("subject") String subject, HttpServletRequest req) {
+
+		Response response = new Response();
+		if (req.getSession(false) != null) {
+			if (taskRepository.countSubject(subject) > 0) {
+				response.setStatusCode(201);
+				response.setMessage("Success");
+				response.setDescription("Task data found successfully");
+				response.setTaskBean(taskRepository.getTaskBySubject(subject));
+			} else {
+				response.setStatusCode(401);
+				response.setMessage("Failure");
+				response.setDescription("Task data not found");
+			}
+
+		} else {
+			response.setStatusCode(501);
+			response.setMessage("Login Failure");
+			response.setDescription("Login First");
+		}
+
+		return response;
+	}// End of getTaskBySubject()
 
 	// controller for getting task based on priority
 	@GetMapping(path = "/getTaskByPriority", produces = { MediaType.APPLICATION_JSON_VALUE,
