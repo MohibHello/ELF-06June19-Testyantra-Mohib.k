@@ -1,4 +1,4 @@
-package com.taskmanagement.repo;
+package com.taskmanagement.repository;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,5 +19,6 @@ public interface UserRepository extends JpaRepository<UserBean, Integer> {
 
 	@Query("select count(*) from UserBean e where e.empName LIKE %:name% ")
 	int existsByEmpName(String name);
+	
 
 }

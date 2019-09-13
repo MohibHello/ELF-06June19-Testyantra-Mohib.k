@@ -1,4 +1,4 @@
-package com.taskmanagement.repo;
+package com.taskmanagement.repository;
 
 import java.util.List;
 
@@ -9,21 +9,21 @@ import com.taskmanagement.dto.CreateTaskBean;
 
 public interface TaskRepository extends JpaRepository<CreateTaskBean, Integer> {
 
-	@Query("Select t " + "from CreateTaskBean t " + "where t.priority LIKE :name%")
+	@Query("Select t from CreateTaskBean t where t.priority LIKE :name%")
 	List<CreateTaskBean> getTaskByPriority(String name);
 
-	@Query("Select  count(*) " + "from CreateTaskBean t " + "where t.priority LIKE :name%")
+	@Query("Select  count(*) from CreateTaskBean t where t.priority LIKE :name%")
 	int countTask(String name);
 
-	@Query("Select t " + "from CreateTaskBean t " + "where t.userBean.email=:email")
+	@Query("Select t from CreateTaskBean t where t.userBean.email=:email")
 	List<CreateTaskBean> getAssignTo(String email);
 
-	@Query("Select t " + "from CreateTaskBean t " + "where t.assignedTo=:email")
+	@Query("Select t from CreateTaskBean t where t.assignedTo=:email")
 	List<CreateTaskBean> getAssignedTask(String email);
 
-	@Query("Select t " + "from CreateTaskBean t " + "where t.subject LIKE :subject%")
+	@Query("Select t from CreateTaskBean t where t.subject LIKE :subject%")
 	List<CreateTaskBean> getTaskBySubject(String subject);
 	
-	@Query("Select  count(*) " + "from CreateTaskBean t " + "where t.subject LIKE :name%")
+	@Query("Select  count(*) from CreateTaskBean t where t.subject LIKE :name%")
 	int countSubject(String name);
 }

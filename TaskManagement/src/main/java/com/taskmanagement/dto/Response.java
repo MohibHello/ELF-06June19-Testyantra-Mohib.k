@@ -1,9 +1,6 @@
-package com.taskmanagement.response;
+package com.taskmanagement.dto;
 
 import java.util.List;
-
-import com.taskmanagement.dto.CreateTaskBean;
-import com.taskmanagement.dto.UserBean;
 
 import lombok.Data;
 

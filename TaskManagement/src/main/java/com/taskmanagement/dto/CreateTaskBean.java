@@ -1,7 +1,7 @@
 package com.taskmanagement.dto;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,18 +29,17 @@ public class CreateTaskBean implements Serializable {
 	@Column(name = "task_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer taskId;
-
 	@Column(name = "description")
 	private String description;
 	@Column(name = "subject")
 	private String subject;
 	@Column(name = "end_date")
-	private Date endDate;
+	private LocalDate endDate;
 	@Column(name = "priority")
 	private String priority;
 	@Column(name = "assign_date")
 	@CreationTimestamp
-	private Date assignDate;
+	private LocalDate assignDate;
 	@Column(name = "assigned_to")
 	private String assignedTo;
 	@Column(name = "status")

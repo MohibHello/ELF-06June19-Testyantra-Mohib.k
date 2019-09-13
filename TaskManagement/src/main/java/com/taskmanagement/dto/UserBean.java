@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
 import lombok.Data;
@@ -17,22 +18,19 @@ import lombok.Data;
 @Table(name = "user")
 @SuppressWarnings(value = { "serial" })
 @JsonRootName(value = "User")
+@JsonIgnoreProperties(value = {"password"}, allowSetters = true)
 public class UserBean implements Serializable {
 
 	@GeneratedValue
 	@Id
 	@Column(name = "emp_id")
 	private Integer empId;
-
 	@Column(name = "emp_name")
 	private String empName;
-
-	@Column(name = "email")
+	@Column(name = "email", unique = true)
 	private String email;
-
 	@Column(name = "password")
 	private String password;
-
 	@Column(name = "designation")
 	private String designation;
 
